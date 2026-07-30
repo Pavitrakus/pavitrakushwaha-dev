@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Pavitra Kushwaha",
   },
   description:
-    "Pavitra Kushwaha, 17-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building the video pipeline at Prolearn ($3.2M pre-seed) and things that dent Silicon Valley. Building ORCA (zero-step agentic AI), byteforge (4,500+ member tech community), Vivacity (3B1B-style educational animations), and D2AR (diffusion vs auto-regressive Hindi NLP benchmark).",
+    "Pavitra Kushwaha, 16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building the video pipeline at Prolearn ($3.2M pre-seed) and things that dent Silicon Valley. Building ORCA (zero-step agentic AI), byteforge (4,500+ member tech community), Vivacity (3B1B-style educational animations), and D2AR (diffusion vs auto-regressive Hindi NLP benchmark).",
   keywords: [
     "Pavitra Kushwaha",
     "AI Researcher",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     url: "https://pavitrakushwaha.dev",
     title: "Pavitra Kushwaha | Founder, Builder, AI Researcher",
     description:
-      "17-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building things that dent Silicon Valley. ORCA, byteforge, Vivacity, D2AR.",
+      "16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building things that dent Silicon Valley. ORCA, byteforge, Vivacity, D2AR.",
     siteName: "Pavitra Kushwaha",
     locale: "en_IN",
     images: [
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     creator: "@Pavitra_Kushwah",
     title: "Pavitra Kushwaha | Founder, Builder, AI Researcher",
     description:
-      "17-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building things that dent Silicon Valley.",
+      "16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building things that dent Silicon Valley.",
     images: ["/og-image.png"],
   },
 };
@@ -109,7 +109,7 @@ const jsonLd = {
       email: "mailto:pavitra@paxus.in",
       jobTitle: ["Founder", "AI Researcher", "Builder", "Engineer"],
       description:
-        "Pavitra Kushwaha is a 17-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur under Prof. Adithya Vadapalli. #1 Top Young Founder of the Year '26 at Uniform2Unicorn. Currently building the video pipeline at Prolearn ($3.2M pre-seed, Bangalore). Founder of byteforge (4,500+ member tech community), PaXus (multi-venture tech company).",
+        "Pavitra Kushwaha is a 16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur under Prof. Adithya Vadapalli. #1 Top Young Founder of the Year '26 at Uniform2Unicorn. Currently building the video pipeline at Prolearn ($3.2M pre-seed, Bangalore). Founder of byteforge (4,500+ member tech community), PaXus (multi-venture tech company).",
       nationality: { "@type": "Country", name: "India" },
       address: {
         "@type": "PostalAddress",
