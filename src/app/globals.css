@@ -17,6 +17,25 @@ html, body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* ─────────────────────────────────────────
+   Smooth page load animation
+───────────────────────────────────────── */
+main {
+  animation: fadeSlideIn 0.4s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─────────────────────────────────────────
@@ -52,11 +71,12 @@ a {
   text-decoration-thickness: 2px;
   text-underline-offset: 0.22em;
   text-decoration-skip-ink: auto;
-  transition: text-underline-offset 0.15s ease;
+  transition: text-underline-offset 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
 }
 
 a:hover {
   text-underline-offset: 0.3em;
+  color: #000;
 }
 
 /* ─────────────────────────────────────────
@@ -150,6 +170,20 @@ hr {
   height: 1.5em;
 }
 
+/* smooth image load */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded,
+img:not([loading="lazy"]) {
+  opacity: 1;
+}
+
 /* section spacer */
 .spacer {
   height: 0.6em;
@@ -170,10 +204,12 @@ button.reveal-toggle {
   text-underline-offset: 0.22em;
   padding: 0;
   display: inline;
+  transition: color 0.2s ease, text-underline-offset 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button.reveal-toggle:hover {
   text-underline-offset: 0.3em;
+  color: #2d6a2d;
 }
 
 /* ─────────────────────────────────────────
@@ -330,7 +366,7 @@ footer a:hover {
   list-style: none;
   display: inline-block;
   user-select: none;
-  transition: color 0.15s;
+  transition: color 0.2s ease;
 }
 
 .project-details summary:hover {
@@ -367,6 +403,18 @@ footer a:hover {
   font-size: 0.92em;
   color: #444;
   line-height: 1.75;
+  animation: expandIn 0.3s ease-out;
+}
+
+@keyframes expandIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ─────────────────────────────────────────

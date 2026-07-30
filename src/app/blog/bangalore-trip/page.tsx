@@ -1,8 +1,82 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "two weeks in bangalore | Pavitra Kushwaha",
+  description:
+    "Two weeks in Bangalore: won two hackathons, built Vivacity with 3B1B-style Manim animations for JEE/NEET, walked into ProLearn's office without an appointment, and ended up broke at a Shell petrol pump. A story about building things in India's startup capital.",
+  keywords: [
+    "Pavitra Kushwaha",
+    "Bangalore hackathon",
+    "Uniform2Unicorn",
+    "ProLearn",
+    "Vivacity",
+    "AIBOOMI",
+    "Agent Arena",
+    "byteforge",
+    "Indian startup story",
+    "student builder",
+    "IIT Bombay Techfest",
+    "edtech India",
+    "Manim animation",
+    "JEE NEET",
+  ],
+  openGraph: {
+    type: "article",
+    url: "https://pavitrakushwaha.dev/blog/bangalore-trip",
+    title: "two weeks in bangalore, or, how i ended up sleeping on a petrol pump and still called it productive",
+    description:
+      "Won two hackathons, built Vivacity, walked into ProLearn without an appointment, and went broke at a Shell petrol pump. Bangalore, June-July 2026.",
+    siteName: "Pavitra Kushwaha",
+    publishedTime: "2026-07-05T00:00:00Z",
+    authors: ["Pavitra Kushwaha"],
+  },
+  twitter: {
+    card: "summary",
+    site: "@Pavitra_Kushwah",
+    creator: "@Pavitra_Kushwah",
+    title: "two weeks in bangalore | Pavitra Kushwaha",
+    description:
+      "Won two hackathons, built Vivacity, walked into ProLearn without an appointment, and went broke at a Shell petrol pump.",
+  },
+  alternates: {
+    canonical: "https://pavitrakushwaha.dev/blog/bangalore-trip",
+  },
+};
+
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "two weeks in bangalore, or, how i ended up sleeping on a petrol pump and still called it productive",
+  author: {
+    "@type": "Person",
+    name: "Pavitra Kushwaha",
+    url: "https://pavitrakushwaha.dev",
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Pavitra Kushwaha",
+    url: "https://pavitrakushwaha.dev",
+  },
+  datePublished: "2026-07-05",
+  dateModified: "2026-07-05",
+  description:
+    "Two weeks in Bangalore: won two hackathons, built Vivacity with Manim animations for JEE/NEET, walked into ProLearn without an appointment, and ended up broke at a Shell petrol pump.",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://pavitrakushwaha.dev/blog/bangalore-trip",
+  },
+  keywords: "Bangalore, hackathon, Vivacity, ProLearn, Pavitra Kushwaha, edtech, student builder",
+  inLanguage: "en-IN",
+};
 
 export default function BangaloreTripPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Link href="/blog" className="back-link">
         ← writing
       </Link>
@@ -33,7 +107,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-03.jpg"
           alt="Pavitra Kushwaha with team arriving in Bangalore for Uniform2Unicorn competition at Polaris School of Technology"
         />
@@ -52,7 +126,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-08.jpg"
           alt="Pavitra Kushwaha and team on Polaris School of Technology campus in Bangalore"
         />
@@ -80,7 +154,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-09.jpg"
           alt="AIBOOMI hackathon banner - Pavitra Kushwaha won first hackathon in Bangalore"
         />
@@ -99,13 +173,13 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-10.jpg"
           alt="Inception and Reactor.inc hackathon banner - Pavitra Kushwaha competing at Bangalore hackathons"
         />
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-04.jpg"
           alt="Pavitra Kushwaha AMD FragFest Agent Arena winners with Nasiko boxes - ₹50,000 first prize"
         />
@@ -117,7 +191,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-05.jpg"
           alt="Pavitra Kushwaha at Tim Hortons HSR Layout Bangalore meeting Pratham Pengoria"
         />
@@ -139,7 +213,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-06.jpg"
           alt="Tim Hortons storefront in HSR Layout Bangalore with Kannada and English signage"
         />
@@ -187,7 +261,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-07.jpg"
           alt="Pavitra Kushwaha at ProLearn office in Bangalore meeting Ravneet Singh former Vedantu Director of Technology"
         />
@@ -244,7 +318,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-11.jpg"
           alt="Pavitra Kushwaha building Vivacity at a Bangalore coworking space with team"
         />
@@ -280,7 +354,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-12.jpg"
           alt="Pavitra Kushwaha playing carrom at a Bangalore cafe during late night downtime"
         />
@@ -302,7 +376,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-01.jpg"
           alt="Pavitra Kushwaha at Versus Festival in Bangalore exploring the city between meetings"
         />
@@ -323,7 +397,7 @@ export default function BangaloreTripPage() {
         </p>
 
         <img
-          className="blog-img"
+          className="blog-img" loading="lazy"
           src="/blog/bangalore-trip/photo-02.jpg"
           alt="Pavitra Kushwaha at arcade in Bangalore before leaving the city"
         />
