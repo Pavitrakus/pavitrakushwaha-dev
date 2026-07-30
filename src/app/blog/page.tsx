@@ -93,7 +93,7 @@ export default function BlogPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          v01 — 2025 ↗
+          v01 - 2025 ↗
         </a>
       </footer>
     </main>

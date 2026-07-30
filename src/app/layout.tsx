@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://pavitrakushwaha.dev"),
   title: "Pavitra Kushwaha | Founder, Builder, AI Researcher",
   description:
-    "Pavitra Kushwaha — 16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building the video pipeline at Prolearn ($3.2M pre-seed) and things that dent Silicon Valley.",
+    "Pavitra Kushwaha, 17-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building the video pipeline at Prolearn ($3.2M pre-seed) and things that dent Silicon Valley.",
   keywords: [
     "Pavitra Kushwaha",
     "AI Researcher",
@@ -80,10 +80,10 @@ const jsonLd = {
         "Hackathons",
       ],
       award: [
-        "#1 Top Young Founder of the Year '26 — Uniform2Unicorn",
+        "#1 Top Young Founder of the Year '26, Uniform2Unicorn",
         "YC Startup School India (6% acceptance rate)",
-        "Top 20 builder — VIBECON (20,000+ applicants)",
-        "Research Fellow — IIT Kanpur",
+        "Top 20 builder, VIBECON (20,000+ applicants)",
+        "Research Fellow, IIT Kanpur",
         "5-figure bug bounty on major AI platform",
         "6-figure bug bounty on major quick-commerce platform",
         "Won 15+ hackathons in 2 months",

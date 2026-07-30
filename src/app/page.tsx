@@ -167,7 +167,7 @@ export default function Home() {
       <p>what i&apos;ve been up to:</p>
 
       <ul>
-        {/* 1. Prolearn — logo has text built in, no word needed */}
+        {/* 1. Prolearn - logo has text built in, no word needed */}
         <li>
           currently building the video pipeline at{" "}
           <a href="https://prolearn.app/" target="_blank" rel="noopener noreferrer">
@@ -346,8 +346,8 @@ export default function Home() {
       <p>
         i spend most of my time at the intersection of systems that think and
         systems that scale. if you care about what happens when intelligence
-        stops being a feature and starts being infrastructure — the architecture
-        decisions, the tradeoffs, the parts that break — we&apos;re probably
+        stops being a feature and starts being infrastructure, the architecture
+        decisions, the tradeoffs, the parts that break, we&apos;re probably
         thinking about the same problems.
       </p>
 
