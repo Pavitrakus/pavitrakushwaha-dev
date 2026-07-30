@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─────────────────────────────────────────
+   Reset & Base
+───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #fff;
+  color: #111;
+  font-family: 'Lora', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  font-size: 20px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────────
+   Layout Container
+───────────────────────────────────────── */
+main {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 13vh 28px 11vh;
+}
+
+/* ─────────────────────────────────────────
+   Typography
+───────────────────────────────────────── */
+h1, h2, h3 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 0 1.4em;
+}
+
+p {
+  margin: 0 0 1.4em;
+}
+
+/* ─────────────────────────────────────────
+   Links — underlined, bold, inherit color
+───────────────────────────────────────── */
+a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+  text-decoration-skip-ink: auto;
+  transition: text-underline-offset 0.15s ease;
+}
+
+a:hover {
+  text-underline-offset: 0.3em;
+}
+
+/* ─────────────────────────────────────────
+   Lists
+───────────────────────────────────────── */
+ul {
+  list-style: disc;
+  padding: 0 0 0 1.1em;
+  margin: 0 0 1.4em;
+}
+
+ul li {
+  margin: 0 0 0.55em;
+  padding-left: 0.1em;
+}
+
+li::marker {
+  color: #888;
+  font-size: 0.68em;
+}
+
+/* ─────────────────────────────────────────
+   Utilities
+───────────────────────────────────────── */
+.muted {
+  color: #999;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.78em;
+}
+
+/* inline icon next to links */
+.with-icon {
+  white-space: nowrap;
+}
+
+.with-icon img {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  border-radius: 3px;
+  object-fit: cover;
+  vertical-align: -0.12em;
+  display: inline;
+}
+
+/* small inline logo before a link (DPS, VIBECON etc) */
+.with-icon-img {
+  display: inline;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.22em;
+  border-radius: 3px;
+  object-fit: cover;
+  vertical-align: -0.14em;
+}
+
+/* social icons row — used as <p className="social-links"> */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.4em;
+  margin: 0 0 1.4em;
+  padding: 0;
+  list-style: none;
+}
+
+.social-links a {
+  font-weight: 400;
+  font-size: 0.82em;
+  font-family: 'JetBrains Mono', monospace;
+  text-decoration: none;
+  color: #555;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1.5px solid #ddd;
+  padding-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.social-links a:hover {
+  color: #111;
+  border-color: #111;
+}
+
+/* divider */
+hr {
+  border: none;
+  height: 1.5em;
+}
+
+/* section spacer */
+.spacer {
+  height: 0.6em;
+}
+
+/* ─────────────────────────────────────────
+   Reveal toggle (for $ bounty)
+───────────────────────────────────────── */
+button.reveal-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: #3a8a3a;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #3a8a3a;
+  text-underline-offset: 0.22em;
+  padding: 0;
+  display: inline;
+}
+
+button.reveal-toggle:hover {
+  text-underline-offset: 0.3em;
+}
+
+/* ─────────────────────────────────────────
+   Back nav
+───────────────────────────────────────── */
+.back-link {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75em;
+  color: #888;
+  text-decoration: none;
+  margin-bottom: 3em;
+  font-weight: 400;
+  border: none;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: #111;
+  text-decoration: none;
+}
+
+/* ─────────────────────────────────────────
+   Footer
+───────────────────────────────────────── */
+footer {
+  border-top: 1px solid #eee;
+  padding-top: 1.4em;
+  margin-top: 2em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72em;
+  color: #aaa;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1.5em;
+  align-items: center;
+}
+
+footer a {
+  color: #aaa;
+  font-weight: 400;
+  text-decoration-color: #ccc;
+  text-decoration-thickness: 1px;
+}
+
+footer a:hover {
+  color: #555;
+  text-decoration-color: #555;
+}
+
+/* ─────────────────────────────────────────
+   Blog / Project listings
+───────────────────────────────────────── */
+.entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4em;
+}
+
+.entry-list li {
+  padding: 0.6em 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  gap: 1.2em;
+  align-items: baseline;
+}
+
+.entry-list li:last-child {
+  border-bottom: none;
+}
+
+.entry-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72em;
+  color: #aaa;
+  flex-shrink: 0;
+  min-width: 3em;
+}
+
+.entry-name {
+  flex: 1;
+}
+
+.entry-desc {
+  display: block;
+  font-size: 0.88em;
+  color: #666;
+  font-weight: 400;
+  margin-top: 0.15em;
+}
+
+/* ─────────────────────────────────────────
+   Blog post images
+───────────────────────────────────────── */
+.blog-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2em auto 0.3em;
+  border-radius: 2px;
+  /* color images for google image search */
+}
+
+.post-signoff {
+  margin-top: 2.5em;
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* ─────────────────────────────────────────
+   Email notify form
+───────────────────────────────────────── */
+.notify-form {
+  display: flex;
+  gap: 0.6em;
+  margin-top: 0.5em;
+  max-width: 440px;
+}
+
+.notify-form input {
+  flex: 1;
+  border: 1.5px solid #ddd;
+  border-radius: 4px;
+  padding: 0.45em 0.75em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78em;
+  outline: none;
+  transition: border-color 0.15s;
+  color: #111;
+  background: #fff;
+}
+
+.notify-form input:focus {
+  border-color: #999;
+}
+
+.notify-form button {
+  border: 1.5px solid #333;
+  border-radius: 4px;
+  padding: 0.45em 1em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78em;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.notify-form button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ─────────────────────────────────────────
+   Text selection — signature yellow
+───────────────────────────────────────── */
+::selection {
+  background: #d9ff57;
+  color: #111;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #d9ff57;
+  color: #111;
+  text-shadow: none;
+}
+
+/* ─────────────────────────────────────────
+   Responsive
+───────────────────────────────────────── */
+@media (max-width: 600px) {
+  html, body {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  main {
+    padding: 8vh 22px 9vh;
+  }
+
+  .notify-form {
+    flex-direction: column;
+  }
+}
