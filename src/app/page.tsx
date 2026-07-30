@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 
 /* ── inline SVG social icons ── */
@@ -88,8 +85,6 @@ const Favicon = ({ domain, alt }: { domain: string; alt: string }) => (
 );
 
 export default function Home() {
-  const [showBounty, setShowBounty] = useState(false);
-
   return (
     <main>
       {/* ── top nav ── */}
@@ -289,19 +284,16 @@ export default function Home() {
           independently found two significant security vulnerabilities: one in a
           major AI platform, one in a major quick-commerce platform&apos;s
           pricing API{" "}
-          <button
+          <span
             className="reveal-toggle"
-            onClick={() => setShowBounty(!showBounty)}
-            title="click to reveal"
+            title="bounty amounts"
           >
             [$]
-          </button>
-          {showBounty && (
-            <span className="muted">
-              {" "}a 5-figure and a 6-figure bounty, respectively. their
-              engineering teams had mixed feelings.
-            </span>
-          )}
+          </span>
+          <span className="muted">
+            {" "}a 5-figure and a 6-figure bounty, respectively. their
+            engineering teams had mixed feelings.
+          </span>
         </li>
 
         {/* 9. byteforge */}

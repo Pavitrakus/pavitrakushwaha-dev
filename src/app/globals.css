@@ -219,7 +219,7 @@ img:not([loading="lazy"]) {
 /* ─────────────────────────────────────────
    Reveal toggle (for $ bounty)
 ───────────────────────────────────────── */
-button.reveal-toggle {
+.reveal-toggle {
   background: none;
   border: none;
   cursor: pointer;
@@ -234,7 +234,7 @@ button.reveal-toggle {
   transition: color 0.2s ease, text-underline-offset 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button.reveal-toggle:hover {
+.reveal-toggle:hover {
   text-underline-offset: 0.3em;
   color: #2d6a2d;
 }
