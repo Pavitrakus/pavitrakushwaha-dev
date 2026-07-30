@@ -177,6 +177,36 @@ button.reveal-toggle:hover {
 }
 
 /* ─────────────────────────────────────────
+   Top nav (home page)
+───────────────────────────────────────── */
+.top-nav {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72em;
+  color: #aaa;
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.top-nav a {
+  color: #aaa;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.top-nav a:hover {
+  color: #111;
+  border-color: #111;
+}
+
+.top-nav-sep {
+  color: #ccc;
+}
+
+/* ─────────────────────────────────────────
    Back nav
 ───────────────────────────────────────── */
 .back-link {

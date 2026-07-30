@@ -92,6 +92,13 @@ export default function Home() {
 
   return (
     <main>
+      {/* ── top nav ── */}
+      <nav className="top-nav">
+        <Link href="/blog">writing</Link>
+        <span className="top-nav-sep">/</span>
+        <Link href="/projects">things i&apos;ve built</Link>
+      </nav>
+
       <h1>hey, i&apos;m pavitra.</h1>
 
       <p>
@@ -328,18 +335,20 @@ export default function Home() {
           <Logo src="/orca-logo.jpg" alt="ORCA" />
           ORCA
         </Link>
-        , D2AR, Execron, ORBIS 2045, LumenSeed{" "}
+        , D2AR, ORBIS 2045, LumenSeed, ClusterOrch-Gym,{" "}
         <Link href="/projects">and more</Link>
       </p>
 
       <p>
-        i write sometimes. <Link href="/blog/fishy-mesh">Fishy Mesh</Link>{" "}
-        <span className="muted">(2025, still cooking)</span>.{" "}
-        <Link href="/blog">all writing</Link>
+        i write sometimes. <Link href="/blog">all writing →</Link>
       </p>
 
       <p>
-        my current research cycle is heavily focused on highly parallelized inference architectures, cryptographic primitives for secure MPC, and designing resilient state machines for autonomous systems. i spend an unreasonable amount of time thinking about distributed intelligence, edge-compute constraints, and optimizing attention boundaries. if you&apos;re building the infrastructure layer for AGI or scaling agentic frameworks beyond simple API wrappers, we&apos;re probably on the same frequency.
+        i spend most of my time at the intersection of systems that think and
+        systems that scale. if you care about what happens when intelligence
+        stops being a feature and starts being infrastructure — the architecture
+        decisions, the tradeoffs, the parts that break — we&apos;re probably
+        thinking about the same problems.
       </p>
 
       <p>
