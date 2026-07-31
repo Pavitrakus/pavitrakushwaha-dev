@@ -197,18 +197,9 @@ hr {
   height: 1.5em;
 }
 
-/* smooth image load */
+/* native lazy loading only, no opacity hiding (would keep images invisible) */
 img {
   transition: opacity 0.3s ease;
-}
-
-img[loading="lazy"] {
-  opacity: 0;
-}
-
-img[loading="lazy"].loaded,
-img:not([loading="lazy"]) {
-  opacity: 1;
 }
 
 /* section spacer */
