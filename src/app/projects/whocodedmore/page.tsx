@@ -74,6 +74,17 @@ export default function WhoCodedMorePage() {
         2026 &middot; Tools / Leaderboard
       </span>
 
+      <img
+        src="/whocodedmore-logo.png"
+        alt="WhoCodedMore — money burning in a glass of water"
+        style={{
+          display: "block",
+          width: "5.4em",
+          height: "auto",
+          margin: "0 0 1em",
+        }}
+      />
+
       <h1 style={{ fontSize: "1.8em", marginBottom: "0.8em", lineHeight: 1.3 }}>
         WhoCodedMore
       </h1>

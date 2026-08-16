@@ -7,8 +7,8 @@ const posts = [
   {
     year: "2026",
     slug: "bangalore-trip",
-    title: "Bangalore Trip",
-    desc: "two weeks in bangalore, or, how i ended up sleeping on a petrol pump and still called it productive. 15 jun - 5 jul 2026.",
+    title: "my month in bangalore (met the best people)",
+    desc: "a month in bangalore: two hackathons, a walk-in at prolearn, two days broke at a petrol pump, and the best people. 15 jun - 5 jul 2026.",
   },
   {
     year: "2026",

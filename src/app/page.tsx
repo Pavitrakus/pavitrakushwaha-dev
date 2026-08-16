@@ -31,16 +31,19 @@ const Logo = ({
   src,
   alt,
   rounded = true,
+  className,
   style: extraStyle,
 }: {
   src: string;
   alt: string;
   rounded?: boolean;
+  className?: string;
   style?: React.CSSProperties;
 }) => (
   <img
     src={src}
     alt={alt}
+    className={className}
     style={{
       display: "inline",
       width: "1em",
@@ -97,13 +100,13 @@ export default function Home() {
       <h1>hey, i&apos;m pavitra.</h1>
 
       <p>
-        i&apos;m a founder, builder, and AI researcher. 16. did high school
+        i&apos;m a founder, builder, and AI researcher. 16. high school
         at{" "}
         <a href="https://dpskalyanpur.com/" target="_blank" rel="noopener noreferrer">
           <Logo src="/dps-logo.webp" alt="DPS" />
           DPS
         </a>
-        , now doing research at{" "}
+        , now research at{" "}
         <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
           <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
           IIT Kanpur
@@ -171,6 +174,7 @@ export default function Home() {
               src="/prolearn-logo.svg"
               alt="Prolearn"
               rounded={false}
+              className="invert-on-dark"
               style={{ width: "auto", height: "1.1em", objectFit: "contain", verticalAlign: "-0.18em" }}
             />
           </a>{" "}
@@ -336,7 +340,12 @@ export default function Home() {
         </Link>
         ,{" "}
         <Link href="/projects/whocodedmore">
-          <Favicon domain="whocodedmore.com" alt="WhoCodedMore" />
+          <Logo
+            src="/whocodedmore-logo.png"
+            alt="WhoCodedMore"
+            rounded={false}
+            style={{ objectFit: "contain" }}
+          />
           WhoCodedMore
         </Link>
         , D2AR, ORBIS 2045, LumenSeed, ClusterOrch-Gym,{" "}

@@ -133,6 +133,10 @@ html, body {
   display: block;
 }
 
+[data-theme="dark"] .invert-on-dark {
+  filter: invert(1);
+}
+
 /* ─────────────────────────────────────────
    Smooth page load animation
 ───────────────────────────────────────── */
@@ -484,6 +488,14 @@ footer a:hover {
 .read-more:hover {
   color: var(--fg);
   border-color: var(--fg);
+}
+
+.entry-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55em 1.1em;
+  margin-top: 0.35em;
+  align-items: baseline;
 }
 
 /* ─────────────────────────────────────────

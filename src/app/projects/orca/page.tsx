@@ -111,6 +111,18 @@ export default function OrcaPage() {
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Why This Matters</h2>
 
         <p>In India, ~500 million mobile users are genuinely not going to download one more app for one specific task. They already know how to use WhatsApp. ORCA meets them exactly where they are. The interface is text. The execution is invisible. The phone becomes a service endpoint, not an app launcher.</p>
+
+        <p style={{ marginTop: "1.5em" }}>
+          <a
+            href="https://orca.cfd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mono"
+            style={{ fontSize: "0.82em" }}
+          >
+            orca.cfd ↗
+          </a>
+        </p>
       </div>
 
       <footer>

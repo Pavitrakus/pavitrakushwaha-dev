@@ -116,6 +116,18 @@ export default function LumenSeedPage() {
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Privacy-First Design</h2>
 
         <p>Medical data is incredibly sensitive. The system runs on local-first principles wherever possible, stripping out PII (personally identifiable information) before any text gets processed by the inference layer. Name, age, patient ID, doctor name, and hospital identifiers are detected using a combination of regex patterns and a fine-tuned NER model, then replaced with anonymized tokens before the text reaches the RAG or generation stages. The original report is never stored or transmitted.</p>
+
+        <p style={{ marginTop: "1.5em" }}>
+          <a
+            href="https://lumenseedai.web.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mono"
+            style={{ fontSize: "0.82em" }}
+          >
+            lumenseedai.web.app ↗
+          </a>
+        </p>
       </div>
 
       <footer>
