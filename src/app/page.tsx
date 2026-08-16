@@ -97,13 +97,13 @@ export default function Home() {
       <h1>hey, i&apos;m pavitra.</h1>
 
       <p>
-        i&apos;m a founder, builder, and AI researcher. 16, delhi. high school
+        i&apos;m a founder, builder, and AI researcher. 16. did high school
         at{" "}
         <a href="https://dpskalyanpur.com/" target="_blank" rel="noopener noreferrer">
           <Logo src="/dps-logo.webp" alt="DPS" />
           DPS
         </a>
-        , doing research at{" "}
+        , now doing research at{" "}
         <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
           <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
           IIT Kanpur
@@ -115,18 +115,19 @@ export default function Home() {
         started making animations in class 3. wrote my first real line of code
         in class 5, just to understand how something worked. never really
         stopped. somewhere along the way the curiosity turned into companies,
-        research papers, and a number of hackathon wins that is getting a little
+        research papers, work with{" "}
+        <a href="https://www.nvidia.com/en-us/research/" target="_blank" rel="noopener noreferrer">
+          <Favicon domain="nvidia.com" alt="NVIDIA" />
+          NVIDIA
+        </a>{" "}
+        Research, and a number of hackathon wins that&apos;s getting a little
         embarrassing to keep count of.
       </p>
 
       <p>
         i&apos;m obsessed with understanding intelligence, how it emerges, how
-        to build it, how to accelerate it. i run{" "}
-        <a href="https://byteforge.space" target="_blank" rel="noopener noreferrer">
-          <Logo src="/byteforge-logo.jpg" alt="byteforge" />
-          byteforge<span style={{ color: "#39FF14", fontWeight: 900 }}>.</span>
-        </a>{" "}
-        and PaXus. the goal is to build something that actually dents{" "}
+        to build it, how to accelerate it. the goal is to build something that
+        actually dents{" "}
         <a href="https://www.google.com/search?q=Silicon+Valley" target="_blank" rel="noopener noreferrer">
           Silicon Valley
         </a>
@@ -155,7 +156,7 @@ export default function Home() {
           <InstagramIcon />instagram
         </a>
         <a href="https://cal.com/pavitrakushwaha" target="_blank" rel="noopener me noreferrer">
-          30 minutes. direct with founder. cal.com/pavitrakushwaha
+          30 minutes. direct with me. cal.com/pavitrakushwaha
         </a>
       </p>
 
@@ -322,10 +323,21 @@ export default function Home() {
       </ul>
 
       <p>
-        things i&apos;ve built:{" "}
-        <Link href="/projects">
+        things i&apos;ve built{" "}
+        <span className="muted">(side projects)</span>:{" "}
+        <Link href="/projects/orca">
           <Logo src="/orca-logo.jpg" alt="ORCA" />
           ORCA
+        </Link>
+        ,{" "}
+        <Link href="/projects/bucket">
+          <Favicon domain="brokebucket.com" alt="Bucket" />
+          Bucket
+        </Link>
+        ,{" "}
+        <Link href="/projects/whocodedmore">
+          <Favicon domain="whocodedmore.com" alt="WhoCodedMore" />
+          WhoCodedMore
         </Link>
         , D2AR, ORBIS 2045, LumenSeed, ClusterOrch-Gym,{" "}
         <Link href="/projects">and more</Link>

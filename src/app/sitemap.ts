@@ -37,6 +37,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // project pages
     {
+      url: `${base}/projects/bucket`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/projects/whocodedmore`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${base}/projects/orca`,
       lastModified: new Date(),
       changeFrequency: "monthly",

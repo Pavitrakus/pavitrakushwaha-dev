@@ -4,16 +4,17 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Projects | Pavitra Kushwaha",
   description:
-    "Things Pavitra Kushwaha has built: ORCA zero-step agentic AI, D2AR Hindi NLP benchmark, ORBIS 2045 hardware AI appliance, ClusterOrch-Gym RL for distributed GPU training, LumenSeed medical report translator, byteforge tech community, and more.",
+    "Side projects Pavitra Kushwaha has shipped around the main work: Bucket application agent, WhoCodedMore, ORCA zero-step agentic AI, D2AR Hindi NLP benchmark, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
   keywords: [
     "Pavitra Kushwaha projects",
+    "Bucket application agent",
+    "WhoCodedMore",
     "ORCA agentic AI",
     "D2AR Hindi NLP",
     "ORBIS 2045 hardware",
     "ClusterOrch-Gym",
     "LumenSeed medical AI",
     "byteforge community",
-    "PaXus",
     "agentic android automation",
     "Hindi NLP benchmark",
     "Raspberry Pi LLM",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     url: "https://pavitrakushwaha.dev/projects",
     title: "Projects | Pavitra Kushwaha",
     description:
-      "Things Pavitra Kushwaha has built: ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge, and more.",
+      "Side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
     siteName: "Pavitra Kushwaha",
   },
   twitter: {
@@ -34,11 +35,47 @@ export const metadata: Metadata = {
     creator: "@Pavitra_Kushwah",
     title: "Projects | Pavitra Kushwaha",
     description:
-      "Things Pavitra Kushwaha has built: ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
+      "Side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
   },
 };
 
-const projects = [
+type Project = {
+  year: string;
+  slug: string | null;
+  name: string;
+  icon: string | null;
+  favicon?: string;
+  shortDesc: string;
+  link: string | null;
+  external?: boolean;
+  tag: string;
+};
+
+const projects: Project[] = [
+  {
+    year: "2026",
+    slug: "bucket",
+    name: "Bucket",
+    icon: null,
+    favicon: "brokebucket.com",
+    shortDesc:
+      "application agent that already knows your story from claude, gpt, and your apps. drafts every field. never submits without you. for yc, grants, visas, and the forms founders still fill by hand.",
+    link: "https://www.brokebucket.com",
+    external: true,
+    tag: "AI / Product",
+  },
+  {
+    year: "2026",
+    slug: "whocodedmore",
+    name: "WhoCodedMore",
+    icon: null,
+    favicon: "whocodedmore.com",
+    shortDesc:
+      "who coded more? one command. real lines, tokens, and water. npx whocodedmore reads local agent logs, ranks you with friends. only totals leave your machine.",
+    link: "https://whocodedmore.com",
+    external: true,
+    tag: "Tools / Leaderboard",
+  },
   {
     year: "2025",
     slug: "orca",
@@ -69,16 +106,6 @@ const projects = [
     link: "https://byteforge.space",
     external: true,
     tag: "Community",
-  },
-  {
-    year: "2025",
-    slug: null,
-    name: "PaXus",
-    icon: null,
-    shortDesc:
-      "a multi-venture technology company across AI, software, digital commerce, and intelligent systems. the parent of most things i build.",
-    link: null,
-    tag: "Company",
   },
   {
     year: "2024",
@@ -121,13 +148,15 @@ export default function ProjectsPage() {
         pavitra
       </Link>
 
-      <h1>things i&apos;ve built.</h1>
+      <h1>
+        things i&apos;ve built.{" "}
+        <span className="muted">(side projects)</span>
+      </h1>
 
       <p>
-        not everything here has a link and not everything with a link is
-        finished. some are research, some are companies, some are somewhere in
-        between. the ones that matter most are usually the ones that took the
-        longest to name.
+        these are things i&apos;ve shipped around the work i actually do, not a
+        pile of parallel companies. some have links. some don&apos;t. some are
+        research. the ones that matter most usually took the longest to name.
       </p>
 
       <ul className="entry-list" style={{ marginTop: "2em" }}>
@@ -149,6 +178,20 @@ export default function ProjectsPage() {
                     display: "inline",
                   }}
                 />
+              ) : p.favicon ? (
+                <img
+                  src={`https://www.google.com/s2/favicons?sz=32&domain=${p.favicon}`}
+                  alt=""
+                  style={{
+                    width: "1em",
+                    height: "1em",
+                    borderRadius: "3px",
+                    objectFit: "contain",
+                    verticalAlign: "-0.12em",
+                    marginRight: "0.25em",
+                    display: "inline",
+                  }}
+                />
               ) : null}
 
               {p.link ? (
@@ -165,20 +208,7 @@ export default function ProjectsPage() {
               )}
 
               {p.tag && (
-                <span
-                  className="muted mono"
-                  style={{
-                    marginLeft: "0.6em",
-                    fontSize: "0.68em",
-                    background: "#f5f5f5",
-                    padding: "0.1em 0.5em",
-                    borderRadius: "3px",
-                    border: "1px solid #eee",
-                    verticalAlign: "0.05em",
-                  }}
-                >
-                  {p.tag}
-                </span>
+                <span className="muted mono entry-tag">{p.tag}</span>
               )}
 
               <span className="entry-desc">{p.shortDesc}</span>
@@ -187,15 +217,7 @@ export default function ProjectsPage() {
                 <span style={{ display: "block", marginTop: "0.3em" }}>
                   <Link
                     href={`/projects/${p.slug}`}
-                    className="mono"
-                    style={{
-                      fontSize: "0.72em",
-                      color: "#888",
-                      textDecoration: "none",
-                      borderBottom: "1.5px solid #ddd",
-                      paddingBottom: "1px",
-                      transition: "color 0.15s, border-color 0.15s",
-                    }}
+                    className="mono read-more"
                   >
                     read more →
                   </Link>
