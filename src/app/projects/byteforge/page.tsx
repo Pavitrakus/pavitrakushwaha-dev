@@ -96,13 +96,13 @@ export default function ByteforgePage() {
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>The Beginning</h2>
 
-        <p>byteforge started as a small Discord server for student builders. A few friends who wanted to share what they were working on, get feedback, and collaborate on projects. No budget, no sponsors, no experience running a community &mdash; just a shared server and a bunch of kids who wanted to build cool things.</p>
+        <p>byteforge started as a small Discord server for student builders. A few friends who wanted to share what they were working on, get feedback, and collaborate on projects. No budget, no sponsors, no experience running a community. just a shared server and a bunch of kids who wanted to build cool things.</p>
 
         <p>It grew incredibly fast. What started as a handful of students turned into a regional movement. byteforge is now north India&apos;s largest independent student tech community with over 4,500 members across Discord, WhatsApp, and in-person events. We are an official Hack Club partner, which connects us to a global network of student-run coding clubs.</p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Execron 1.0 BuildFest</h2>
 
-        <p>The flagship event was Execron 1.0 BuildFest, hosted at <strong>IIT Kanpur</strong>. It brought in 290+ developers for a 24-hour hackathon &mdash; one of the biggest the city had seen. I organized, ran, and somehow survived it. There was no budget, no prior event management experience, just relentless grinding and a lot of calls at 2am. Developers came from Kanpur, Lucknow, Allahabad, and even Delhi. Teams built everything from Web3 applications to AI-powered agri-tech tools for local farmers.</p>
+        <p>The flagship event was Execron 1.0 BuildFest, hosted at <strong>IIT Kanpur</strong>. It brought in 290+ developers for a 24-hour hackathon, one of the biggest the city had seen. I organized, ran, and somehow survived it. There was no budget, no prior event management experience, just relentless grinding and a lot of calls at 2am. Developers came from Kanpur, Lucknow, Allahabad, and even Delhi. Teams built everything from Web3 applications to AI-powered agri-tech tools for local farmers.</p>
 
         <p>Execron proved that you don&apos;t need to live in Silicon Valley or Bangalore to have a vibrant dev culture. You just need a place where builders feel welcome to share their creations. also a place to{" "}<Link href="/visits" className="easter-quiet" title="kanpur sees you">see who showed up weirdly late at night</Link>.</p>
 

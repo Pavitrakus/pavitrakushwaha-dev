@@ -96,10 +96,10 @@ export default function Orbis2045Page() {
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>The Stack</h2>
 
         <p><strong>Compute</strong><br />
-        Raspberry Pi 5 (8GB) running a quantized 7B-parameter model via llama.cpp with GPU offload to the VideoCore VII. The 4-bit quantized model achieves ~12 tokens/second on the Pi 5 &mdash; not fast enough for real-time conversation but perfectly adequate for task-level inference where latency tolerance is 2-5 seconds. The VideoCore VII offloads approximately 40% of matrix operations, reducing CPU-bound inference time by 35% compared to CPU-only.</p>
+        Raspberry Pi 5 (8GB) running a quantized 7B-parameter model via llama.cpp with GPU offload to the VideoCore VII. The 4-bit quantized model achieves ~12 tokens/second on the Pi 5. not fast enough for real-time conversation but perfectly adequate for task-level inference where latency tolerance is 2-5 seconds. The VideoCore VII offloads approximately 40% of matrix operations, reducing CPU-bound inference time by 35% compared to CPU-only.</p>
 
         <p><strong>Networking</strong><br />
-        Mesh-network API for peer-to-peer inference routing. Multiple ORBIS units can form a self-healing mesh using Wi-Fi Direct and BLE neighbor discovery. When a device&apos;s local model is insufficient for a complex query, the request is routed to a peer with capacity, and the response is routed back. No external API keys required at any layer &mdash; the entire network is air-gapped from the public internet.</p>
+        Mesh-network API for peer-to-peer inference routing. Multiple ORBIS units can form a self-healing mesh using Wi-Fi Direct and BLE neighbor discovery. When a device&apos;s local model is insufficient for a complex query, the request is routed to a peer with capacity, and the response is routed back. No external API keys required at any layer. the entire network is air-gapped from the public internet.</p>
 
         <p><strong>Mobile Control</strong><br />
         ADB over Wi-Fi with a custom accessibility service that maps natural language commands to UI automations. The phone connects to the ORBIS over the local network, and the device issues ADB commands just like ORCA&apos;s execution layer, but entirely locally. The accessibility service runs as a persistent foreground app that reports screen state back to ORBIS for context-aware automation.</p>

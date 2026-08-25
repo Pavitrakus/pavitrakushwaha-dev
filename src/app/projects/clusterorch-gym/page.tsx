@@ -91,7 +91,7 @@ export default function ClusterorchGymPage() {
       <PostChrome />
 
       <div className="post-body">
-        <p>When you&apos;re training a model across hundreds of GPUs, things break in weird ways. Node failures, network partitions, NCCL timeout cascades, OOM conditions, silent gradient corruption. ClusterOrch-Gym is a reinforcement learning environment where agents learn to detect these failures and execute recovery policies &mdash; autonomously, at machine speed, without waiting for a human operator to page in.</p>
+        <p>When you&apos;re training a model across hundreds of GPUs, things break in weird ways. Node failures, network partitions, NCCL timeout cascades, OOM conditions, silent gradient corruption. ClusterOrch-Gym is a reinforcement learning environment where agents learn to detect these failures and execute recovery policies autonomously, at machine speed, without waiting for a human operator to page in.</p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>The Environment</h2>
 
@@ -117,13 +117,13 @@ export default function ClusterorchGymPage() {
 
         <p>The benchmark includes 15 distinct failure modes organized into 4 categories:</p>
 
-        <p><strong>Hardware</strong> &mdash; GPU XID errors, PCIe link degradation, ECC memory errors exceeding threshold, fan failure causing thermal throttling.</p>
+        <p><strong>Hardware:</strong> GPU XID errors, PCIe link degradation, ECC memory errors exceeding threshold, fan failure causing thermal throttling.</p>
 
-        <p><strong>Network</strong> &mdash; NCCL watchdog timeout, infiniband link flap, TCP incast congestion, ARP table exhaustion on top-of-rack switches.</p>
+        <p><strong>Network:</strong> NCCL watchdog timeout, infiniband link flap, TCP incast congestion, ARP table exhaustion on top-of-rack switches.</p>
 
-        <p><strong>Software</strong> &mdash; CUDA out-of-memory, NCCL version mismatch across nodes, deadlocked all-reduce due to topology mismatch, checkpoint I/O hang on NFS.</p>
+        <p><strong>Software:</strong> CUDA out-of-memory, NCCL version mismatch across nodes, deadlocked all-reduce due to topology mismatch, checkpoint I/O hang on NFS.</p>
 
-        <p><strong>Silent</strong> &mdash; Gradient corruption (NaN injection with no error signal), straggler node slowing collective ops without failing, silent data corruption from ECC-disabled memory.</p>
+        <p><strong>Silent:</strong> Gradient corruption (NaN injection with no error signal), straggler node slowing collective ops without failing, silent data corruption from ECC-disabled memory.</p>
 
         <p style={{ marginTop: "1.5em" }}>
           <a

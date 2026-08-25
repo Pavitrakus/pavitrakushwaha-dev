@@ -42,8 +42,9 @@ export default function VisitsPage() {
       <h1>visitor trail.</h1>
 
       <p>
-        recent humans who opened this site. city-level only. if you&apos;re on
-        this list — hi. if you&apos;re not — refresh once and commit the crime.
+        recent humans who opened this site and got clocked. city-level only.
+        if you&apos;re on this list: hi freak. if you&apos;re not, refresh once
+        and commit the crime. hwahwhahwa
       </p>
 
       {siteViews != null && (
@@ -83,18 +84,21 @@ export default function VisitsPage() {
           privacy (lol)
         </h2>
         <p>
-          yes u thought right. i hacked ur device and got ur location.
+          yes u thought right. i fucking hacked ur device, stole ur location,
+          and rifled through ur camera roll like a freak.
         </p>
         <p>
-          just kidding — it&apos;s ur ip, then we hide it. never stored. only
-          the city/region/country string survives.
+          just kidding you dumbass. it&apos;s ur ip. we peek, then yeet that shit.
+          never stored. never logged. ur pics stay on ur phone (allegedly).
+          only the city/region/country string survives. everything else can go
+          fuck itself.
         </p>
         <p>
-          (no i really hacked it and took the fyn shit from ur gallery. dw.
-          hwahwhahwha) 😘
+          (no but for real i stole the nasty shit from ur gallery. ur ass is on
+          the map now. dw. hwahwhahwa) 😘
         </p>
         <p className="muted" style={{ fontSize: "0.88em", marginTop: "1em" }}>
-          one browser = one slot for 24h. refresh warriors, go touch grass.
+          one browser = one slot for 1h.
         </p>
       </div>
 

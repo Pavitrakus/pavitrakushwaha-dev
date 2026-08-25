@@ -79,7 +79,7 @@ export default function WhoCodedMorePage() {
 
       <img
         src="/whocodedmore-logo.png"
-        alt="WhoCodedMore — money burning in a glass of water"
+        alt="WhoCodedMore: money burning in a glass of water"
         style={{
           display: "block",
           width: "5.4em",

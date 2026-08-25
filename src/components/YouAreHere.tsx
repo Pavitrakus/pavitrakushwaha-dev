@@ -20,11 +20,11 @@ export function YouAreHere() {
         ×
       </button>
       <p>
-        wait. are you in <strong>{youPlace}</strong>?
+        wait. are you in <strong>{youPlace}</strong> you freak?
       </p>
       <p className="muted mono you-are-here-sub">
-        how the fuck — never mind.{" "}
-        <a href="/visits">see who else showed up →</a>
+        how the fuck did i know. never mind.{" "}
+        <a href="/visits">see who else got caught →</a>
       </p>
     </div>
   );

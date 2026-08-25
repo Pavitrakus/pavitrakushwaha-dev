@@ -174,7 +174,7 @@ export default function BucketPage() {
           chat, discovery, and fills burn real API cost, not a fake form quota.
           $1 is 1,000 credits. every account starts with 5,000. after 90 days
           of inactivity we purge personal memory, credentials, chats, and
-          applications so stale secrets do not linger. your city, though —
+          applications so stale secrets do not linger. your city, though.
           that one{" "}
           <Link href="/visits" className="easter-quiet" title="not actually">
             might already be downstairs

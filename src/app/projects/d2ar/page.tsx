@@ -112,9 +112,9 @@ export default function D2ARPage() {
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Models Benchmarked</h2>
 
-        <p><strong>Auto-Regressive:</strong> GPT-NeoX (20B), OPT (6.7B and 13B), BLOOM (7.1B) &mdash; these models use causal attention where each token attends only to previous tokens, enabling left-to-right generation with strong sequential reasoning capabilities.</p>
+        <p><strong>Auto-Regressive:</strong> GPT-NeoX (20B), OPT (6.7B and 13B), BLOOM (7.1B). these models use causal attention where each token attends only to previous tokens, enabling left-to-right generation with strong sequential reasoning capabilities.</p>
 
-        <p><strong>Diffusion-Based:</strong> Diffusion-LM, MDLM (Masked Diffusion Language Model), SEDD (Score Entropy Discrete Diffusion), PLM-Discrete (Permutation Language Model &mdash; Discrete) &mdash; these models learn the data distribution through iterative denoising rather than autoregressive factorization, allowing bidirectional context but lacking causal attention scaffolding.</p>
+        <p><strong>Diffusion-Based:</strong> Diffusion-LM, MDLM (Masked Diffusion Language Model), SEDD (Score Entropy Discrete Diffusion), PLM-Discrete (Permutation Language Model, Discrete). these models learn the data distribution through iterative denoising rather than autoregressive factorization, allowing bidirectional context but lacking causal attention scaffolding.</p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Key Findings</h2>
 

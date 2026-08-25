@@ -23,7 +23,7 @@ export function PostChrome({ path }: Props) {
     e.preventDefault();
     const who = name.trim() || "someone";
     const body = [
-      "hey pavitra —",
+      "hey pavitra,",
       `hi i'm ${who}.`,
       "i fucking liked this enough that i wanted to say something.",
       "",
@@ -31,7 +31,7 @@ export function PostChrome({ path }: Props) {
       "",
       "add this comment on website pls 😘",
       "",
-      "— sent from pavitrakushwaha.dev",
+      "sent from pavitrakushwaha.dev",
     ].join("\n");
 
     const mailto = `mailto:pavitra@paxus.in?subject=${encodeURIComponent(

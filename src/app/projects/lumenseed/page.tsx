@@ -96,7 +96,7 @@ export default function LumenSeedPage() {
 
         <p>LumenSeed translates medical reports into clear, friendly language that anyone can read. It doesn&apos;t give medical advice. It just explains what the terms mean, what the normal ranges are, and what questions you should actually ask your doctor during your next visit.</p>
 
-        <p>Won <strong>1st place at SparkX, Techfest IIT Bombay</strong> &mdash; the annual science and technology festival of IIT Bombay, one of India&apos;s largest tech fests.</p>
+        <p>Won <strong>1st place at SparkX, Techfest IIT Bombay</strong>, the annual science and technology festival of IIT Bombay, one of India&apos;s largest tech fests.</p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Architecture</h2>
 

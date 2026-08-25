@@ -1,4 +1,4 @@
-/** Stable seeded bases — look lived-in from day one. Real unique views INCR on top. */
+/** Stable seeded bases. Look lived-in from day one. Real unique views INCR on top. */
 
 export const SITE_VIEW_SEED = 1847;
 
@@ -19,7 +19,7 @@ const PAGE_SEEDS: Record<string, number> = {
 export function pageViewSeed(path: string): number {
   const normalized = path.replace(/\/$/, "") || "/";
   if (PAGE_SEEDS[normalized] != null) return PAGE_SEEDS[normalized];
-  // stable hash → 180–780
+  // stable hash -> 180-780
   let h = 0;
   for (let i = 0; i < normalized.length; i++) {
     h = (h * 31 + normalized.charCodeAt(i)) >>> 0;

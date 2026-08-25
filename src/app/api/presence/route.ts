@@ -11,7 +11,7 @@ export const runtime = "nodejs";
 
 const COOKIE_SEEN = "pk_seen";
 const COOKIE_SITE = "pk_site_view";
-const DAY = 60 * 60 * 24;
+const HOUR = 60 * 60;
 
 function pathViewCookie(path: string) {
   let h = 0;
@@ -121,7 +121,7 @@ export async function POST(req: NextRequest) {
       httpOnly: true,
       sameSite: "lax",
       secure,
-      maxAge: DAY,
+      maxAge: HOUR,
       path: "/",
     });
   }
@@ -130,7 +130,7 @@ export async function POST(req: NextRequest) {
       httpOnly: true,
       sameSite: "lax",
       secure,
-      maxAge: DAY,
+      maxAge: HOUR,
       path: "/",
     });
   }
@@ -139,7 +139,7 @@ export async function POST(req: NextRequest) {
       httpOnly: true,
       sameSite: "lax",
       secure,
-      maxAge: DAY,
+      maxAge: HOUR,
       path: "/",
     });
   }
