@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { PresenceProvider } from "@/components/PresenceProvider";
-import { YouAreHere } from "@/components/YouAreHere";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -211,7 +210,6 @@ export default function RootLayout({
       <body>
         <PresenceProvider>
           <ThemeToggle />
-          <YouAreHere />
           {children}
         </PresenceProvider>
       </body>

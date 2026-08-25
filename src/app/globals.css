@@ -618,54 +618,6 @@ footer a:hover {
   color: var(--fg-faint);
 }
 
-.you-are-here {
-  position: fixed;
-  left: 18px;
-  bottom: 18px;
-  z-index: 50;
-  max-width: min(360px, calc(100vw - 36px));
-  padding: 0.85em 1em 0.9em;
-  background: var(--bg);
-  color: var(--fg);
-  border: 1px solid var(--border-line);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  animation: youFlashIn 0.35s ease-out;
-  font-size: 0.92em;
-  line-height: 1.45;
-}
-
-.you-are-here p {
-  margin: 0 0 0.35em;
-}
-
-.you-are-here-sub {
-  margin: 0 !important;
-  font-size: 0.78em !important;
-}
-
-.you-are-here-close {
-  position: absolute;
-  top: 6px;
-  right: 8px;
-  border: none;
-  background: none;
-  color: var(--fg-muted);
-  cursor: pointer;
-  font-size: 1.1em;
-  line-height: 1;
-}
-
-@keyframes youFlashIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .visits-privacy {
   margin-top: 2.5em;
   padding-top: 1.4em;
@@ -768,12 +720,5 @@ footer a:hover {
 
   .notify-form {
     flex-direction: column;
-  }
-
-  .you-are-here {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    max-width: none;
   }
 }
