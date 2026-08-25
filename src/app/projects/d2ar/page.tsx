@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const metadata: Metadata = {
   title: "D2AR | Pavitra Kushwaha",
@@ -85,6 +88,8 @@ export default function D2ARPage() {
         Diffusion vs Auto-Regressive: a systematic benchmark for Hindi NLP.
       </p>
 
+      <PostChrome />
+
       <div className="post-body">
         <p>D2AR is the most comprehensive benchmark of diffusion language models for Hindi to date. It evaluates 8 models across 4 Hindi NLP tasks with a rigorous, reproducible evaluation framework. The research was published as a full paper and the evaluation framework is fully open-source.</p>
 
@@ -115,7 +120,11 @@ export default function D2ARPage() {
 
         <p>Diffusion models showed competitive performance on generation tasks (text summarization: within 2.3% of auto-regressive) but lagged significantly on structured NLP tasks (NER: 14.7% gap, sentiment analysis: 11.2% gap). The architectural reason: diffusion models lack the causal attention scaffolding that auto-regressive models use for sequential reasoning, which becomes critical for morphologically rich languages like Hindi where word order and inflection carry semantic weight.</p>
 
-        <p>The full paper, dataset splits, and evaluation code are available on GitHub.</p>
+        <p>The full paper, dataset splits, and evaluation code are available on GitHub. if you actually read this far you&apos;re either a researcher or a stalker.{" "}
+          <Link href="/visits" className="easter-quiet" title="diffusion of responsibility">
+            pick a lane
+          </Link>
+          .</p>
 
         <p style={{ marginTop: "1.5em" }}>
           <a
@@ -130,11 +139,9 @@ export default function D2ARPage() {
         </p>
       </div>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/projects">projects</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

@@ -516,6 +516,179 @@ footer a:hover {
 }
 
 /* ─────────────────────────────────────────
+   Post headers / chrome / presence
+───────────────────────────────────────── */
+.post-header {
+  margin-bottom: 1.6em;
+}
+
+.post-date,
+.post-subtitle {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72em;
+  color: var(--fg-muted);
+  margin-bottom: 0.55em;
+}
+
+.post-title {
+  font-size: 1.55em;
+  line-height: 1.3;
+  font-weight: 600;
+  margin: 0 0 0.4em;
+}
+
+.post-chrome {
+  margin: 0 0 1.6em;
+}
+
+.post-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35em 0.55em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72em;
+}
+
+.post-meta-sep {
+  opacity: 0.7;
+}
+
+.leave-note-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--fg-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--border-line);
+  text-underline-offset: 0.22em;
+}
+
+.leave-note-btn:hover {
+  color: var(--fg);
+  text-decoration-color: var(--fg);
+}
+
+.leave-note-form {
+  margin-top: 0.9em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  max-width: 440px;
+}
+
+.leave-note-form input,
+.leave-note-form textarea {
+  border: 1.5px solid var(--input-border);
+  border-radius: 4px;
+  padding: 0.45em 0.75em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78em;
+  outline: none;
+  color: var(--fg);
+  background: var(--bg);
+  resize: vertical;
+}
+
+.leave-note-form button {
+  align-self: flex-start;
+  border: 1.5px solid var(--btn-border);
+  border-radius: 4px;
+  padding: 0.45em 1em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78em;
+  background: var(--bg);
+  color: var(--btn-fg);
+  cursor: pointer;
+}
+
+.leave-note-form button:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-fg);
+}
+
+.footer-trail {
+  color: var(--fg-muted) !important;
+}
+
+.footer-views {
+  color: var(--fg-faint);
+}
+
+.you-are-here {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 50;
+  max-width: min(360px, calc(100vw - 36px));
+  padding: 0.85em 1em 0.9em;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border-line);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: youFlashIn 0.35s ease-out;
+  font-size: 0.92em;
+  line-height: 1.45;
+}
+
+.you-are-here p {
+  margin: 0 0 0.35em;
+}
+
+.you-are-here-sub {
+  margin: 0 !important;
+  font-size: 0.78em !important;
+}
+
+.you-are-here-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  border: none;
+  background: none;
+  color: var(--fg-muted);
+  cursor: pointer;
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+@keyframes youFlashIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visits-privacy {
+  margin-top: 2.5em;
+  padding-top: 1.4em;
+  border-top: 1px solid var(--border);
+}
+
+.visits-privacy p {
+  margin-bottom: 0.85em;
+}
+
+.easter-quiet {
+  font-weight: 400 !important;
+  color: var(--fg-muted) !important;
+  text-decoration-color: var(--border-line) !important;
+  text-decoration-thickness: 1px !important;
+}
+
+.easter-aside {
+  margin-top: 1.4em;
+  font-size: 0.88em;
+}
+
+/* ─────────────────────────────────────────
    Email notify form
 ───────────────────────────────────────── */
 .notify-form {
@@ -595,5 +768,12 @@ footer a:hover {
 
   .notify-form {
     flex-direction: column;
+  }
+
+  .you-are-here {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    max-width: none;
   }
 }

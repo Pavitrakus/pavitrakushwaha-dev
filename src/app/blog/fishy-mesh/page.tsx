@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export default function FishyMeshPage() {
   const [email, setEmail] = useState("");
@@ -37,6 +39,14 @@ export default function FishyMeshPage() {
         take longer to become a sentence than they do to become a thought.
       </p>
 
+      <PostChrome path="/blog/fishy-mesh" />
+
+      <p className="easter-aside muted">
+        unfinished on purpose. or because i got distracted hacking your{" "}
+        <Link href="/visits" title="gallery. allegedly.">location again</Link>.
+        same difference.
+      </p>
+
       <hr />
 
       <div
@@ -67,11 +77,9 @@ export default function FishyMeshPage() {
         )}
       </div>
 
-      <footer>
-        <span>© {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">← home</Link>
-        <Link href="/blog">← writing</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/blog">writing</Link>}
+      />
     </main>
   );
 }

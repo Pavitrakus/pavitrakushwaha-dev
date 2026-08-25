@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const posts = [
   {
@@ -48,7 +49,11 @@ export default function BlogPage() {
       <p>
         i write when something is bothering me enough that talking about it
         isn&apos;t enough. it&apos;s sporadic. it&apos;s honest. drop your
-        email below and i&apos;ll ping you when something new goes up.
+        email below and i&apos;ll ping you when something new goes up. or just{" "}
+        <Link href="/visits" className="easter-quiet" title="the gallery joke lives here">
+          lurk louder
+        </Link>
+        .
       </p>
 
       <ul className="entry-list" style={{ marginTop: "2em" }}>
@@ -85,17 +90,9 @@ export default function BlogPage() {
         )}
       </div>
 
-      <footer>
-        <span>© {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">← home</Link>
-        <a
-          href="https://pavitrakushwaha.dev/v01"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          v01 - 2025 ↗
-        </a>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

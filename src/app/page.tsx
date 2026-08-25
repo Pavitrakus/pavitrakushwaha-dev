@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteFooter } from "@/components/SiteFooter";
 
 /* ── inline SVG social icons ── */
 const XIcon = () => (
@@ -138,11 +139,15 @@ export default function Home() {
       </p>
 
       <p>
-        for fun: long bike rides, breaking APIs, and researching the{" "}
+        for fun: long bike rides, breaking APIs, researching the{" "}
         <a href="https://www.simulation-argument.com/simulation.pdf" target="_blank" rel="noopener noreferrer">
           simulation hypothesis
         </a>{" "}
-        at unreasonable hours.
+        at unreasonable hours, and occasionally{" "}
+        <Link href="/visits" className="easter-quiet" title="yes i know where you are. chill.">
+          reading the room
+        </Link>
+        .
       </p>
 
       <p className="social-links">
@@ -374,13 +379,14 @@ export default function Home() {
         . i reply to interesting things.
       </p>
 
-      <footer>
-        <span>2026 pavitra kushwaha</span>
-        <Link href="/v01">v01 2025</Link>
-        <a href="/Pavitra_Kushwaha_Resume_Full.pdf" target="_blank" rel="noopener noreferrer">
-          resume
-        </a>
-      </footer>
+      <SiteFooter
+        showHome={false}
+        links={
+          <a href="/Pavitra_Kushwaha_Resume_Full.pdf" target="_blank" rel="noopener noreferrer">
+            resume
+          </a>
+        }
+      />
     </main>
   );
 }

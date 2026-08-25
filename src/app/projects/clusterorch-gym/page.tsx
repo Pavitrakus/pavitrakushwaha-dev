@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const metadata: Metadata = {
   title: "ClusterOrch-Gym | Pavitra Kushwaha",
@@ -85,6 +88,8 @@ export default function ClusterorchGymPage() {
         a reinforcement learning benchmark for training AI agents to diagnose and fix distributed GPU training failures.
       </p>
 
+      <PostChrome />
+
       <div className="post-body">
         <p>When you&apos;re training a model across hundreds of GPUs, things break in weird ways. Node failures, network partitions, NCCL timeout cascades, OOM conditions, silent gradient corruption. ClusterOrch-Gym is a reinforcement learning environment where agents learn to detect these failures and execute recovery policies &mdash; autonomously, at machine speed, without waiting for a human operator to page in.</p>
 
@@ -130,14 +135,16 @@ export default function ClusterorchGymPage() {
           >
             github.com/Pavitrakus/clusterorch-gym ↗
           </a>
+          {" · "}
+          <Link href="/visits" className="easter-quiet" title="gpu tears">
+            who else is here
+          </Link>
         </p>
       </div>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/projects">projects</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

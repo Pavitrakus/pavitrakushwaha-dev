@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const metadata: Metadata = {
   title: "ORCA | Pavitra Kushwaha",
@@ -83,6 +86,8 @@ export default function OrcaPage() {
         zero-step agentic task automation on android. you text what you need and it happens in the background.
       </p>
 
+      <PostChrome />
+
       <div className="post-body">
         <p>the problem with apps is that there are way too many of them, and every single one is just another chore between wanting something done and actually having it happen. you unlock your phone, search for the app, wait for it to load, parse whatever interface they designed this week, click five buttons, and close it. orca is our attempt at killing that entire chain.</p>
 
@@ -110,7 +115,7 @@ export default function OrcaPage() {
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Why This Matters</h2>
 
-        <p>In India, ~500 million mobile users are genuinely not going to download one more app for one specific task. They already know how to use WhatsApp. ORCA meets them exactly where they are. The interface is text. The execution is invisible. The phone becomes a service endpoint, not an app launcher.</p>
+        <p>In India, ~500 million mobile users are genuinely not going to download one more app for one specific task. They already know how to use WhatsApp. ORCA meets them exactly where they are. The interface is text. The execution is invisible. The phone becomes a service endpoint, not an app launcher.{" "}<Link href="/visits" className="easter-quiet" title="yes, including you">also i know which city you opened this from</Link>.</p>
 
         <p style={{ marginTop: "1.5em" }}>
           <a
@@ -125,11 +130,9 @@ export default function OrcaPage() {
         </p>
       </div>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/projects">projects</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

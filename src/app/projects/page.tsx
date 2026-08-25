@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Projects | Pavitra Kushwaha",
@@ -170,7 +171,11 @@ export default function ProjectsPage() {
           github
         </a>
         . some of the best have real users. a few are just favorites. the ones
-        that matter most usually took the longest to name.
+        that matter most usually took the longest to name.{" "}
+        <Link href="/visits" className="easter-quiet" title="don't ask how i know who visited">
+          stalkers welcome
+        </Link>
+        .
       </p>
 
       <ul className="entry-list" style={{ marginTop: "2em" }}>
@@ -251,11 +256,9 @@ export default function ProjectsPage() {
         . some of it shouldn&apos;t be public but is anyway.
       </p>
 
-      <footer>
-        <span>2026 pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/v01">v01 2025</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/blog">writing</Link>}
+      />
     </main>
   );
 }

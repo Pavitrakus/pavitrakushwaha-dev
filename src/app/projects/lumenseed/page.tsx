@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const metadata: Metadata = {
   title: "LumenSeed | Pavitra Kushwaha",
@@ -86,6 +89,8 @@ export default function LumenSeedPage() {
         medical report translator. turns clinical jargon into clear language anyone can read.
       </p>
 
+      <PostChrome />
+
       <div className="post-body">
         <p>Whenever you get a medical report back from a lab, it is written entirely in dense jargon meant for doctors. If you try to search for the terms online, you usually end up reading extreme diagnosis threads and panicking. Most patients have no idea what their own health data means, which is a massive communication gap.</p>
 
@@ -115,7 +120,11 @@ export default function LumenSeedPage() {
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Privacy-First Design</h2>
 
-        <p>Medical data is incredibly sensitive. The system runs on local-first principles wherever possible, stripping out PII (personally identifiable information) before any text gets processed by the inference layer. Name, age, patient ID, doctor name, and hospital identifiers are detected using a combination of regex patterns and a fine-tuned NER model, then replaced with anonymized tokens before the text reaches the RAG or generation stages. The original report is never stored or transmitted.</p>
+        <p>Medical data is incredibly sensitive. The system runs on local-first principles wherever possible, stripping out PII (personally identifiable information) before any text gets processed by the inference layer. Name, age, patient ID, doctor name, and hospital identifiers are detected using a combination of regex patterns and a fine-tuned NER model, then replaced with anonymized tokens before the text reaches the RAG or generation stages. The original report is never stored or transmitted. your city name is not medical data, so that one{" "}
+          <Link href="/visits" className="easter-quiet" title="hipaa who">
+            still gets roasted publicly
+          </Link>
+          .</p>
 
         <p style={{ marginTop: "1.5em" }}>
           <a
@@ -130,11 +139,9 @@ export default function LumenSeedPage() {
         </p>
       </div>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/projects">projects</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

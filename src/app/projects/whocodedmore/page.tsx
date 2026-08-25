@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const metadata: Metadata = {
   title: "WhoCodedMore | Pavitra Kushwaha",
@@ -93,6 +96,8 @@ export default function WhoCodedMorePage() {
         who coded more? one command. real lines, tokens, and water.
       </p>
 
+      <PostChrome />
+
       <div className="post-body">
         <p>
           every AI coding team eventually asks the same stupid, un-ignorable
@@ -156,7 +161,7 @@ export default function WhoCodedMorePage() {
         </p>
 
         <p>
-          run it once. it counts, syncs, and you climb. re-run to refresh.
+          run it once. it counts, syncs, and you climb. re-run to refresh. or check who else is{" "}<Link href="/visits" className="easter-quiet" title="burn notice">burning time on this site</Link>.
         </p>
 
         <p style={{ marginTop: "1.5em" }}>
@@ -172,11 +177,9 @@ export default function WhoCodedMorePage() {
         </p>
       </div>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/projects">projects</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

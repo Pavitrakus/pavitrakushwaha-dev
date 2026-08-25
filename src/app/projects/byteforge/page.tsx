@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const metadata: Metadata = {
   title: "byteforge. | Pavitra Kushwaha",
@@ -84,6 +87,8 @@ export default function ByteforgePage() {
         north india&apos;s largest independent student tech community. 4,500+ members. official Hack Club partner.
       </p>
 
+      <PostChrome />
+
       <div className="post-body">
         <p>Kanpur is a huge industrial city, but when it comes to tech and building software, it felt like a complete desert. If you&apos;re a kid here who wants to code projects or build startups, there was no community. Everyone is focused on studying for entrance exams or getting traditional credentials, which is fine, but it gets lonely when you just want to stay up all night building random tools.</p>
 
@@ -99,7 +104,7 @@ export default function ByteforgePage() {
 
         <p>The flagship event was Execron 1.0 BuildFest, hosted at <strong>IIT Kanpur</strong>. It brought in 290+ developers for a 24-hour hackathon &mdash; one of the biggest the city had seen. I organized, ran, and somehow survived it. There was no budget, no prior event management experience, just relentless grinding and a lot of calls at 2am. Developers came from Kanpur, Lucknow, Allahabad, and even Delhi. Teams built everything from Web3 applications to AI-powered agri-tech tools for local farmers.</p>
 
-        <p>Execron proved that you don&apos;t need to live in Silicon Valley or Bangalore to have a vibrant dev culture. You just need a place where builders feel welcome to share their creations.</p>
+        <p>Execron proved that you don&apos;t need to live in Silicon Valley or Bangalore to have a vibrant dev culture. You just need a place where builders feel welcome to share their creations. also a place to{" "}<Link href="/visits" className="easter-quiet" title="kanpur sees you">see who showed up weirdly late at night</Link>.</p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>What byteforge Does</h2>
 
@@ -125,11 +130,9 @@ export default function ByteforgePage() {
         </p>
       </div>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/projects">projects</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

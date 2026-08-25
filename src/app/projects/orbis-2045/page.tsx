@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const metadata: Metadata = {
   title: "ORBIS 2045 | Pavitra Kushwaha",
@@ -85,6 +88,8 @@ export default function Orbis2045Page() {
         a purpose-built hardware device that runs a local large language model and controls your phone, all without any cloud dependency.
       </p>
 
+      <PostChrome />
+
       <div className="post-body">
         <p>ORBIS 2045 is a standalone hardware appliance that runs a local LLM and controls your phone, entirely offline. No cloud dependency, no API subscriptions, no data leaving your desk. It sits on your desk as a physical statement that intelligence doesn&apos;t need a data center.</p>
 
@@ -106,14 +111,16 @@ export default function Orbis2045Page() {
 
         <p>The chassis is 3D-printed with a matte black PETG finish and angled geometry that looks like it was pulled from a sci-fi prop department. The ventilation grilles are designed as parametric hexagonal lattices optimized for passive airflow. The front panel has a single amber LED strip that doubles as a status indicator and ambient light. It is a statement device. It sits on your desk and reminds you that intelligence doesn&apos;t need a data center.</p>
 
-        <p>Dimensions: 180mm x 120mm x 80mm. Weight: ~420g with the Pi and cooling fan. Power: 5V/3A via USB-C, consumes ~12W at peak inference load.</p>
+        <p>Dimensions: 180mm x 120mm x 80mm. Weight: ~420g with the Pi and cooling fan. Power: 5V/3A via USB-C, consumes ~12W at peak inference load. if you&apos;re reading this from a data center city,{" "}
+          <Link href="/visits" className="easter-quiet" title="2045 called">
+            the trail already knows
+          </Link>
+          .</p>
       </div>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/projects">projects</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

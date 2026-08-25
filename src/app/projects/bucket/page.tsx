@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
+
 
 export const metadata: Metadata = {
   title: "Bucket | Pavitra Kushwaha",
@@ -81,6 +84,8 @@ export default function BucketPage() {
       <p className="muted" style={{ fontSize: "0.9em", fontStyle: "italic", marginBottom: "1.8em" }}>
         say it once. we apply. an application agent that already knows your story.
       </p>
+
+      <PostChrome />
 
       <div className="post-body">
         <p>
@@ -169,7 +174,12 @@ export default function BucketPage() {
           chat, discovery, and fills burn real API cost, not a fake form quota.
           $1 is 1,000 credits. every account starts with 5,000. after 90 days
           of inactivity we purge personal memory, credentials, chats, and
-          applications so stale secrets do not linger.
+          applications so stale secrets do not linger. your city, though —
+          that one{" "}
+          <Link href="/visits" className="easter-quiet" title="not actually">
+            might already be downstairs
+          </Link>
+          .
         </p>
 
         <p style={{ marginTop: "1.5em" }}>
@@ -185,11 +195,9 @@ export default function BucketPage() {
         </p>
       </div>
 
-      <footer>
-        <span>&copy; {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">home</Link>
-        <Link href="/projects">projects</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/projects">projects</Link>}
+      />
     </main>
   );
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PostChrome } from "@/components/PostChrome";
+import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
   title: "two weeks in bangalore | Pavitra Kushwaha",
@@ -89,6 +91,8 @@ export default function BangaloreTripPage() {
         </h1>
         <p className="post-subtitle">15 Jun - 5 Jul 2026</p>
       </div>
+
+      <PostChrome path="/blog/bangalore-trip" />
 
       <div className="post-body">
         <p>
@@ -410,13 +414,18 @@ export default function BangaloreTripPage() {
           <em>Vivacity is still being built. What comes next - that&apos;s
           what we&apos;re figuring out.</em>
         </p>
+        <p className="easter-aside muted">
+          ps: if you made it this far,{" "}
+          <Link href="/visits" title="yes this is the stalker page">
+            someone from your city might already be on the list
+          </Link>
+          . creepy? a little. fun? also a little.
+        </p>
       </div>
 
-      <footer>
-        <span>© {new Date().getFullYear()} pavitra kushwaha</span>
-        <Link href="/">← home</Link>
-        <Link href="/blog">← writing</Link>
-      </footer>
+      <SiteFooter
+        links={<Link href="/blog">writing</Link>}
+      />
     </main>
   );
 }
