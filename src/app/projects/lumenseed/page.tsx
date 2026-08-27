@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "LumenSeed | Pavitra Kushwaha",
     description:
       "medical report translator using OCR, UMLS entity linking, LangChain RAG with Weaviate. Won 1st at Techfest IIT Bombay SparkX.",

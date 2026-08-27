@@ -77,8 +77,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "Pavitra Kushwaha | Founder, Builder, AI Researcher",
     description:
       "16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building things that dent Silicon Valley.",
@@ -171,7 +171,7 @@ const jsonLd = {
       sameAs: [
         "https://github.com/Pavitrakus",
         "https://linkedin.com/in/pavitra-kushwaha/",
-        "https://x.com/Pavitra_Kushwah",
+        "https://x.com/pavikshw",
         "https://www.instagram.com/pavitrakuswaha/",
         "https://cal.com/pavitrakushwaha",
       ],
@@ -192,7 +192,7 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t);}else if(window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();`,
           }}
         />
-        <link rel="me" href="https://x.com/Pavitra_Kushwah" />
+        <link rel="me" href="https://x.com/pavikshw" />
         <link rel="me" href="https://github.com/Pavitrakus" />
         <link rel="me" href="https://linkedin.com/in/pavitra-kushwaha/" />
         <link rel="me" href="https://www.instagram.com/pavitrakuswaha/" />

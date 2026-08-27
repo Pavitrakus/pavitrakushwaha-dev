@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "Projects | Pavitra Kushwaha",
     description:
       "Side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",

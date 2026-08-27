@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "D2AR | Pavitra Kushwaha",
     description:
       "systematic benchmark comparing 8 language models (4 diffusion, 4 auto-regressive) on Hindi NLP tasks.",

@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "two weeks in bangalore | Pavitra Kushwaha",
     description:
       "Won two hackathons, built Vivacity, walked into ProLearn without an appointment, and went broke at a Shell petrol pump.",

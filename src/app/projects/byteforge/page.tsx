@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "byteforge. | Pavitra Kushwaha",
     description:
       "north india's largest independent student tech community. 4,500+ members. Hack Club partner. Execron 1.0 at IIT Kanpur.",

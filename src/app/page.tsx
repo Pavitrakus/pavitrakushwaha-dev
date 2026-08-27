@@ -151,7 +151,7 @@ export default function Home() {
       </p>
 
       <p className="social-links">
-        <a href="https://x.com/Pavitra_Kushwah" target="_blank" rel="noopener me noreferrer">
+        <a href="https://x.com/pavikshw" target="_blank" rel="noopener me noreferrer">
           <XIcon />x
         </a>
         <a href="https://github.com/Pavitrakus" target="_blank" rel="noopener me noreferrer">
@@ -373,8 +373,8 @@ export default function Home() {
         building something ambitious? reach me at{" "}
         <a href="mailto:pavitra@paxus.in">pavitra@paxus.in</a>. for everything
         else, find me on{" "}
-        <a href="https://x.com/Pavitra_Kushwah" target="_blank" rel="noopener noreferrer">
-          x @Pavitra_Kushwah
+        <a href="https://x.com/pavikshw" target="_blank" rel="noopener noreferrer">
+          x @pavikshw
         </a>
         . i reply to interesting things.
       </p>

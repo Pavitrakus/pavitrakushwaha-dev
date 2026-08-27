@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "Bucket | Pavitra Kushwaha",
     description:
       "Say it once. We apply. Memory from Claude, GPT, and your apps. Drafts every field. You confirm.",

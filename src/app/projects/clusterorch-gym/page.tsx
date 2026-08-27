@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "ClusterOrch-Gym | Pavitra Kushwaha",
     description:
       "RL benchmark for training AI agents to diagnose and fix distributed GPU training failures across 8/64/256 GPU clusters.",

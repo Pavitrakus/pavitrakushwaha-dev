@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "WhoCodedMore | Pavitra Kushwaha",
     description:
       "Who coded more? npx whocodedmore. real lines, tokens, and water. only totals leave your machine.",

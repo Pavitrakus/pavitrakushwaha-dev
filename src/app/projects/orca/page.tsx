@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "ORCA | Pavitra Kushwaha",
     description:
       "zero-step agentic task automation on android via whatsapp/telegram. LLM intent parsing, DAG of UI gestures, headless device cluster.",

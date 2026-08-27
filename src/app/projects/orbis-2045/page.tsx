@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@Pavitra_Kushwah",
-    creator: "@Pavitra_Kushwah",
+    site: "@pavikshw",
+    creator: "@pavikshw",
     title: "ORBIS 2045 | Pavitra Kushwaha",
     description:
       "standalone hardware device running a locally-hosted 7B LLM with ADB mobile control. Pi 5, llama.cpp, mesh-network, 3D-printed chassis.",
