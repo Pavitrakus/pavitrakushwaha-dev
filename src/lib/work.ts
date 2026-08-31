@@ -116,16 +116,16 @@ export const work: WorkItem[] = [
   {
     slug: "supabase",
     year: "2026",
-    title: "supabase content",
-    tag: "Postgres / Content",
+    title: "engineer",
+    tag: "Postgres",
     oneLiner:
-      "made technical content with supabase around the postgres stack builders actually ship.",
+      "engineer on a supabase project. postgres, auth, the stack builders actually ship.",
     mark: { kind: "favicon", domain: "supabase.com", alt: "Supabase" },
     orgHref: "https://supabase.com",
     body: [
-      "i worked with supabase on technical content. the stack gives builders postgres, auth, storage, realtime, and edge functions without hiding the database underneath.",
+      "i engineered on a supabase project. postgres, auth, storage, realtime, and edge functions, with the database still in view instead of hidden behind a toy api.",
       "row level security is where the product becomes real. the client can carry a public key because authorization lives in postgres policies tied to the session. reads and writes get separate rules, and every rule has to survive the obvious test: a different user changing the owner id and asking for someone else's row.",
-      "good backend content should leave a builder with a working mental model. sessions become claims, claims reach postgres, policies decide what the query can touch, and storage follows the same identity. that chain is what i wrote around.",
+      "sessions become claims, claims reach postgres, policies decide what the query can touch, and storage follows the same identity. that chain is what i was wiring.",
     ],
   },
   {

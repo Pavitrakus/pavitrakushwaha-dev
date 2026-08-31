@@ -133,7 +133,7 @@ export default function Home() {
         <a href="https://www.instagram.com/pavitrakuswaha/" target="_blank" rel="noopener me noreferrer">
           <InstagramIcon />instagram
         </a>
-        <a href="https://cal.com/pavitrakushwaha" target="_blank" rel="noopener me noreferrer">
+        <a href="https://cal.com/pavitrakushwaha" target="_blank" rel="noopener me noreferrer" className="social-cal">
           30 minutes. direct with me. cal.com/pavitrakushwaha
         </a>
       </p>

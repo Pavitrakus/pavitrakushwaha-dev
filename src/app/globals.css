@@ -114,6 +114,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: clip;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   transition: background 0.22s ease, color 0.22s ease;
 }
 
@@ -375,6 +378,7 @@ li::marker {
   color: var(--social);
   display: inline-flex;
   align-items: center;
+  gap: 0.32em;
   border-bottom: 2px solid color-mix(in srgb, var(--social) 55%, transparent);
   padding-bottom: 2px;
   transition: color 0.15s, border-color 0.15s;
@@ -388,6 +392,7 @@ li::marker {
 .social-links svg {
   width: 15px;
   height: 15px;
+  flex-shrink: 0;
   filter: contrast(1.15);
 }
 
@@ -969,6 +974,7 @@ footer a:hover {
   color: #8d8980;
   font-size: 0.56em;
   line-height: 1.55;
+  overflow-wrap: break-word;
 }
 
 .viva-sim-note {
@@ -1031,6 +1037,7 @@ footer a:hover {
   line-height: 1.3;
   font-weight: 600;
   margin: 0 0 0.4em;
+  overflow-wrap: break-word;
 }
 
 .notes-date {
@@ -1269,17 +1276,88 @@ footer a:hover {
 ───────────────────────────────────────── */
 @media (max-width: 600px) {
   html, body {
-    font-size: 18px;
-    line-height: 1.65;
+    font-size: 16.5px;
+    line-height: 1.62;
   }
 
   main {
-    padding: 8vh 22px 9vh;
+    padding:
+      max(4.8vh, calc(env(safe-area-inset-top, 0px) + 44px))
+      16px
+      max(6.5vh, calc(env(safe-area-inset-bottom, 0px) + 28px));
+  }
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  p {
+    margin-bottom: 1.15em;
+  }
+
+  .top-nav {
+    font-size: 0.64em;
+    gap: 0.32em;
+    flex-wrap: wrap;
+    margin-bottom: 1.45em;
+    padding-right: 2.4em;
   }
 
   .theme-toggle {
-    top: 12px;
-    right: 10px;
+    top: max(8px, env(safe-area-inset-top, 0px));
+    right: max(6px, env(safe-area-inset-right, 0px));
+    width: 42px;
+    height: 42px;
+  }
+
+  .back-link {
+    margin-bottom: 2em;
+  }
+
+  .social-links {
+    gap: 0.28em 0.72em;
+    margin-bottom: 1.15em;
+  }
+
+  .social-links a {
+    font-size: 0.68em;
+    border-bottom-width: 1px;
+    padding-bottom: 1px;
+  }
+
+  .social-links svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .social-links .social-cal {
+    flex: 1 0 100%;
+    font-size: 0.6em;
+    margin-top: 0.12em;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+  }
+
+  .post-title {
+    font-size: 1.28em;
+  }
+
+  .post-body {
+    overflow-wrap: break-word;
+  }
+
+  .viva-sim {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .home-work {
+    padding-left: 1em;
+  }
+
+  .home-work li {
+    margin-bottom: 0.8em;
+    overflow-wrap: break-word;
   }
 
   .notify-form {
@@ -1288,46 +1366,140 @@ footer a:hover {
 
   .featured-grid {
     grid-template-columns: 1fr;
+    gap: 1.15em;
+    margin-bottom: 1.6em;
   }
 
   .featured-card p {
-    font-size: 0.88em;
+    font-size: 0.86em;
   }
 
-  .viva-sim-canvas-wrap {
-    height: 260px;
+  .featured-card h3 {
+    font-size: 0.95em;
   }
 
+  .entry-list li {
+    flex-direction: column;
+    gap: 0.18em;
+    padding: 0.7em 0;
+  }
+
+  .entry-tag {
+    display: inline-block;
+    margin-left: 0;
+    margin-top: 0.2em;
+  }
+
+  .viva-sim-canvas-wrap,
   .viva-sim-compact .viva-sim-canvas-wrap {
-    height: 260px;
+    height: 240px;
   }
 
   .viva-sim-full .viva-sim-canvas-wrap {
-    height: 320px;
+    height: 280px;
   }
 
-  .viva-sim-head {
-    align-items: flex-start;
+  .viva-sim-head,
+  .viva-sim-subhead {
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    flex-wrap: wrap;
+    gap: 0.25em 0.6em;
+  }
+
+  .viva-sim-transport {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.6em 0.7em;
+  }
+
+  .viva-sim-transport label {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .viva-sim-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.35em;
+    padding: 0.65em 0.7em 0.45em;
+  }
+
+  .viva-sim-metrics strong {
+    font-size: 0.64em;
+  }
+
+  .viva-sim-caption,
+  .viva-sim-note,
+  .viva-sim-log {
+    padding-left: 0.7em;
+    padding-right: 0.7em;
   }
 
   .viva-sim-verbs {
-    gap: 0.35em;
+    gap: 0.32em;
+    padding: 0.6em 0.7em;
   }
 
   .viva-verb {
     flex: 1 0 auto;
+    min-height: 32px;
   }
 
-  .viva-sim-metrics {
-    grid-template-columns: 1fr;
-    gap: 0.15em;
+  .viva-branch {
+    font-size: 0.5em;
+    grid-template-columns: 1.8em 1fr auto;
+    gap: 0.35em;
+    padding: 0.38em 0.25em;
+  }
+
+  footer {
+    font-size: 0.62em;
+    gap: 0.4em 0.9em;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
   .you-are-here {
     left: 12px;
     right: 12px;
-    bottom: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom, 0px));
     max-width: none;
+  }
+}
+
+@media (max-width: 420px) {
+  html, body {
+    font-size: 16px;
+  }
+
+  main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .social-links {
+    gap: 0.22em 0.58em;
+  }
+
+  .social-links a {
+    font-size: 0.64em;
+  }
+
+  .social-links svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .social-links .social-cal {
+    font-size: 0.55em;
+  }
+
+  .viva-sim-canvas-wrap,
+  .viva-sim-compact .viva-sim-canvas-wrap {
+    height: 220px;
+  }
+
+  .viva-sim-full .viva-sim-canvas-wrap {
+    height: 248px;
   }
 }
 
