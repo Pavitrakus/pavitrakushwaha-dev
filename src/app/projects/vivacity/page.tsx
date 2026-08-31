@@ -72,8 +72,8 @@ export default function VivacityPage() {
       </h1>
 
       <p className="muted" style={{ fontSize: "0.9em", fontStyle: "italic", marginBottom: "1.8em" }}>
-        simulation runtime for ai agents. i&apos;m cofounder and cpo, working
-        on product and pipelines
+        executable simulation runtime for ai agents. i&apos;m founder and
+        cpo. the workbench below is an example, to explain the loop. not an api
       </p>
 
       <PostChrome />
@@ -86,15 +86,16 @@ export default function VivacityPage() {
           world that keeps existing between calls. vivacity compiles a spec
           into persistent state, accepts actions against that state, opens
           addressable branches, and runs checks before one branch becomes the
-          live world. a rendered frame is one observation from that world
+          live world. a rendered frame is one observation from that world.
+          the orbit above is just an example: newtonian two-body motion
+          in 3d, μ = 1, velocity verlet, and the same verbs an agent would call
         </p>
 
         <p>
           i run product and pipelines with aditya on systems and tanish on
           research. our public surface is{" "}
           <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
-            <Favicon domain="tryvivacity.com" alt="Vivacity" />
-            tryvivacity.com
+            <Favicon domain="tryvivacity.com" alt="Vivacity" />tryvivacity.com
           </a>
           .
         </p>
@@ -115,13 +116,11 @@ export default function VivacityPage() {
           observe can return arrays, telemetry, contact state, or a camera
           view. a visual branch might use{" "}
           <a href="https://deepmind.google" target="_blank" rel="noopener noreferrer">
-            <Favicon domain="deepmind.google" alt="DeepMind" />
-            Genie
+            <Favicon domain="deepmind.google" alt="DeepMind" />Genie
           </a>
           ,{" "}
           <a href="https://www.nvidia.com/" target="_blank" rel="noopener noreferrer">
-            <Favicon domain="nvidia.com" alt="NVIDIA" />
-            Cosmos
+            <Favicon domain="nvidia.com" alt="NVIDIA" />Cosmos
           </a>
           , World Labs, or Decart when the scene carries more useful signal
           than a closed-form model. the result still lands in a domain schema
@@ -151,8 +150,7 @@ export default function VivacityPage() {
         <p>
           <strong>robotics sims</strong>. contact, kinematics, sensors.{" "}
           <a href="https://developer.nvidia.com/isaac" target="_blank" rel="noopener noreferrer">
-            <Favicon domain="nvidia.com" alt="NVIDIA" />
-            Isaac
+            <Favicon domain="nvidia.com" alt="NVIDIA" />Isaac
           </a>
           , MuJoCo, that whole shelf.
         </p>
@@ -196,22 +194,41 @@ export default function VivacityPage() {
         </p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>
-          what the sim on this page is doing
+          verification belongs in the loop
         </h2>
 
         <p>
-          this is a two-body world integrated with velocity verlet at μ = 1.
-          play steps the horizon, observe stores S_t, and act applies a
-          tangential Δv that changes eccentricity. fork clones the current
-          state into five addressable futures. verify measures specific-energy
-          drift from the snapshot, commit promotes the lowest-drift branch,
-          and rollback restores the checkpoint
+          checks depend on the domain. this orbit uses negative specific
+          energy, periapsis above 1 R, and energy drift below 1e-3. a
+          warehouse would use clearance and units. a circuit would use
+          conservation at a node. a fork keeps the parent available while an
+          alternative is evaluated. a failed branch can be discarded. a
+          passing branch can become the new state. the point is that the
+          consequence of each decision stays inspectable
+        </p>
+
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>
+          model, units, and what this page is
+        </h2>
+
+        <p>
+          experiment 001 integrates newtonian two-body motion in 3d with
+          velocity verlet. μ and the central radius R are both 1. the parent
+          starts circular at 1.8 R, inclined, with speed √(μ/r). each branch
+          is simulated for 20 dimensionless time units at Δt = 0.0125.
+          integration stops if the body meets the surface. there is no drag,
+          no third body, no production backend. act scales velocity by +10%.
+          fork opens three futures: two exact impulses at ±12%, and one
+          noisy learned backend. verify reports energy and periapsis.
+          commit promotes the selected branch only if the checks pass.
+          the learned fork is meant to fail. rollback restores the stored
+          parent. reset returns the circular orbit
         </p>
 
         <p>
           play with it. then{" "}
           <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
-            book a demo
+            talk to the team
           </a>{" "}
           if your agent actually needs a world it can branch.
         </p>

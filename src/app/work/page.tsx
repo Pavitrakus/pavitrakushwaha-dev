@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Favicon, Logo, YC } from "@/components/Brand";
@@ -21,13 +22,35 @@ function Mark({ mark }: { mark: WorkMark }) {
       src={mark.src}
       alt={mark.alt}
       rounded={!mark.contain}
-      className={mark.src.endsWith(".svg") ? "invert-on-dark" : undefined}
+      className={[
+        mark.src.endsWith(".svg") ? "invert-on-dark" : undefined,
+        mark.contain ? "wordmark" : undefined,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       style={
         mark.contain
-          ? { objectFit: "contain", width: "auto", height: "1em" }
+          ? { objectFit: "contain", width: "auto", height: "0.95em" }
           : undefined
       }
     />
+  );
+}
+
+function OrgLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: ReactNode;
+}) {
+  if (href.startsWith("/")) {
+    return <Link href={href}>{children}</Link>;
+  }
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {children}
+    </a>
   );
 }
 
@@ -50,7 +73,13 @@ export default function WorkPage() {
           <li key={w.slug}>
             <span className="entry-year">{w.year}</span>
             <span className="entry-name">
-              <Mark mark={w.mark} />
+              {w.orgHref ? (
+                <OrgLink href={w.orgHref}>
+                  <Mark mark={w.mark} />
+                </OrgLink>
+              ) : (
+                <Mark mark={w.mark} />
+              )}
               {w.also?.map((m, i) => (
                 <Mark key={i} mark={m} />
               ))}
@@ -63,6 +92,11 @@ export default function WorkPage() {
                 <Link href={`/work/${w.slug}`} className="mono read-more">
                   read more →
                 </Link>
+                {w.orgHref && (
+                  <OrgLink href={w.orgHref}>
+                    <span className="mono read-more">site →</span>
+                  </OrgLink>
+                )}
               </span>
             </span>
           </li>

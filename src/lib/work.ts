@@ -12,6 +12,7 @@ export type WorkItem = {
   mark: WorkMark;
   moreHref?: string;
   moreLabel?: string;
+  orgHref?: string;
   also?: WorkMark[];
   body: string[];
 };
@@ -25,6 +26,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "cofounder and cpo. simulation runtime for agents: create, observe, act, fork, verify, commit.",
     mark: { kind: "favicon", domain: "tryvivacity.com", alt: "Vivacity" },
+    orgHref: "https://tryvivacity.com",
     moreHref: "/projects/vivacity",
     moreLabel: "the stack and the live sim",
     body: [
@@ -42,6 +44,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "mpc and cryptography under prof. adithya vadapalli, cse. still 16. still in high school.",
     mark: { kind: "logo", src: "/iitk-logo.jpg", alt: "IIT Kanpur" },
+    orgHref: "https://www.iitk.ac.in/",
     body: [
       "i work with prof. adithya vadapalli in cse at iit kanpur as a research fellow. the problem is secure computation: several parties should be able to evaluate a function over private inputs and learn only what the protocol allows.",
       "that puts me around secret sharing, garbled circuits, oblivious transfer, adversary models, and the communication costs that decide whether a construction can leave the paper. round count matters. so does the exact point where a party can abort or infer something from timing.",
@@ -56,6 +59,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "worked with cédric augonnet at nvidia research. programming systems, accelerators, and the people who make heterogeneous machines usable.",
     mark: { kind: "favicon", domain: "nvidia.com", alt: "NVIDIA" },
+    orgHref: "https://research.nvidia.com/person/cedric-augonnet",
     body: [
       "i worked with cédric augonnet at nvidia research. cédric is a senior research scientist in programming languages, systems, and tools. he designed starpu during his phd, a runtime for scheduling task graphs across cpus and accelerators.",
       "his public work spans asynchronous programming models and gpu systems. cudastf is one example: a sequential task-flow interface over cuda streams and graphs where data dependencies shape execution. that paper and runtime are his work; my collaboration with him is a separate line on my own record.",
@@ -70,6 +74,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "contributed to openai/codex, the open-source coding agent that lives in a terminal.",
     mark: { kind: "favicon", domain: "openai.com", alt: "OpenAI" },
+    orgHref: "https://github.com/openai/codex",
     body: [
       "i contributed to openai/codex, the open-source coding agent. codex reads a repository, uses terminal tools, works inside a sandbox, and leaves a diff a human can inspect.",
       "the loop is simple enough to say out loud: the model proposes an action, policy decides whether it can run, the tool returns an observation, and the next step sees that result. the hard engineering lives around approvals, filesystem boundaries, logs, and the point where generated text becomes a real command.",
@@ -84,6 +89,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "$2k from edge city. the pool was jensen huang's leather jacket after sotheby's hit $960k.",
     mark: { kind: "favicon", domain: "edgecity.live", alt: "Edge City" },
+    orgHref: "https://www.inflectiongrants.com/",
     body: [
       "i got an inflection grant from edge city. it is $2k for builders under 25 who have something early enough that a small amount of money can still bend the path.",
       "the funny part is the pool. jensen huang signed one of his black leather jackets, sotheby's sold it for $960k, and the proceeds went to the edge institute programs that support these grants and fellowships.",
@@ -98,6 +104,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "built execron 1.0 at iit kanpur. 24 hours, 290+ builders, $75k in prizes and credits plus $2k cash.",
     mark: { kind: "logo", src: "/byteforge-logo.jpg", alt: "byteforge" },
+    orgHref: "/projects/byteforge",
     moreHref: "/projects/byteforge",
     moreLabel: "byteforge, the community under it",
     body: [
@@ -114,6 +121,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "made technical content with supabase around the postgres stack builders actually ship.",
     mark: { kind: "favicon", domain: "supabase.com", alt: "Supabase" },
+    orgHref: "https://supabase.com",
     body: [
       "i worked with supabase on technical content. the stack gives builders postgres, auth, storage, realtime, and edge functions without hiding the database underneath.",
       "row level security is where the product becomes real. the client can carry a public key because authorization lives in postgres policies tied to the session. reads and writes get separate rules, and every rule has to survive the obvious test: a different user changing the owner id and asking for someone else's row.",
@@ -123,20 +131,21 @@ export const work: WorkItem[] = [
   {
     slug: "prolearn",
     year: "2026",
-    title: "prolearn, video pipeline",
+    title: "engineer",
     tag: "Edtech / Pipelines",
     oneLiner:
-      "$3.2m pre-seed. walked in off the street. left building the video engine.",
+      "engineer on the video pipeline. ravneet singh: ex vedantu, founder of fc.one. walked in off the street.",
     mark: {
       kind: "logo",
       src: "/prolearn-logo.svg",
       alt: "Prolearn",
       contain: true,
     },
+    orgHref: "https://prolearn.app",
     body: [
-      "i walked into prolearn's bangalore office unannounced and ended up building on the video pipeline. prolearn had raised a $3.2m pre-seed and was turning jee and neet topics into generated lessons.",
+      "i walked into prolearn's bangalore office unannounced and ended up as an engineer on the video pipeline. ravneet singh founded the company after leading technology at vedantu and co-founding fc.one. prolearn had raised a $3.2m pre-seed and was turning jee and neet topics into generated lessons.",
       "a useful lesson needs a script, equations, scene timing, assets, voice, and a render that survives a student's pause button. the pipeline has to carry notation cleanly from the first structured output to the final frame. you cannot hallucinate a jacobian in a jee video and call it a style choice.",
-      "that walk-in is in the bangalore note. the useful residue is the pipeline habit: keep every intermediate artifact, make a bad frame reproducible, and know which stage lied.",
+      "that walk-in is in the bangalore note. the useful residue is the pipeline habit: keep every intermediate artifact, make a bad frame reproducible, and know which stage lied. i work with ravneet on stipend and credit, which is not enough to offset engine costs, and is heartening anyway.",
     ],
   },
   {
@@ -159,6 +168,7 @@ export const work: WorkItem[] = [
     tag: "YC",
     oneLiner: "y combinator startup school india. 6% acceptance.",
     mark: { kind: "yc" },
+    orgHref: "https://www.startupschool.org/",
     body: [
       "i was selected for y combinator startup school india in a cohort with a reported 6% acceptance rate.",
       "the useful part was being around founders who could tell when a metric was decorative. talk to users, ship, look at what came back, then do it again before the deck grows another page.",
@@ -203,6 +213,7 @@ export const work: WorkItem[] = [
       "keynoted sparkx and won a match in the international 8kg robowars event with two self-built bots.",
     mark: { kind: "logo", src: "/techfest-logo.jpg", alt: "Techfest" },
     also: [{ kind: "favicon", domain: "iitb.ac.in", alt: "IIT Bombay" }],
+    orgHref: "https://techfest.org/",
     body: [
       "at techfest, iit bombay, our team entered the international robowars 8kg class with two combat robots we built ourselves. we cleared the first round and won a match. tanish was in the pit with me.",
       "an 8kg bot gives you a small battery budget, a drivetrain, a weapon, and a chassis that has to stay controllable after the first hit. every gram moves a tradeoff between torque, armor, traction, weapon inertia, and the chance that your own machine flips.",
@@ -230,6 +241,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "founded it. 4,500+ members. north india's largest independent student tech community.",
     mark: { kind: "logo", src: "/byteforge-logo.jpg", alt: "byteforge" },
+    orgHref: "/projects/byteforge",
     moreHref: "/projects/byteforge",
     moreLabel: "the full writeup",
     body: [
@@ -258,6 +270,7 @@ export const work: WorkItem[] = [
     tag: "Media",
     oneLiner: "former content analyst. catalogs, taste, the pipeline before the model.",
     mark: { kind: "favicon", domain: "kukufm.com", alt: "KuKu" },
+    orgHref: "https://kukufm.com",
     body: [
       "i worked as a content analyst at kuku, the company behind kuku fm and kuku tv. i reviewed and curated around 90,000 minutes of content, which means i spent a lot of time inside catalogs, labels, and the decisions that shape a feed.",
       "that job made data quality painfully concrete. metadata decides what a system can retrieve, compare, and recommend. a wrong label can travel farther than the person who made it, especially once a model starts sounding confident about it.",

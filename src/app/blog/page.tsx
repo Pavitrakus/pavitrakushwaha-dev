@@ -8,6 +8,12 @@ import { notes } from "@/lib/notes";
 const posts = [
   {
     year: "2026",
+    slug: "how-it-started",
+    title: "how it all started",
+    desc: "kanpur, a first computer, orca, quitting the jee track, bangalore, and how that hunger became vivacity.",
+  },
+  {
+    year: "2026",
     slug: "bangalore-trip",
     title: "my month in bangalore (met the best people)",
     desc: "a month in bangalore: two hackathons, a walk-in at prolearn, two days broke at a petrol pump, and the best people. 15 jun - 5 jul 2026.",

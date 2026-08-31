@@ -17,13 +17,13 @@ export function Logo({
       src={src}
       alt=""
       aria-hidden="true"
-      className={className}
+      className={["inline-mark", className].filter(Boolean).join(" ")}
       style={{
-        display: "inline",
+        display: "inline-block",
         width: "1em",
         height: "1em",
         objectFit: "cover",
-        verticalAlign: "-0.14em",
+        verticalAlign: "-0.2em",
         marginRight: "0.22em",
         borderRadius: rounded ? "3px" : "0",
         ...extraStyle,
@@ -38,12 +38,13 @@ export function Favicon({ domain }: { domain: string; alt: string }) {
       src={`https://www.google.com/s2/favicons?sz=64&domain=${domain}`}
       alt=""
       aria-hidden="true"
+      className="inline-mark"
       style={{
-        display: "inline",
+        display: "inline-block",
         width: "1em",
         height: "1em",
         objectFit: "contain",
-        verticalAlign: "-0.14em",
+        verticalAlign: "-0.2em",
         marginRight: "0.22em",
         borderRadius: "3px",
       }}
