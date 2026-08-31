@@ -7,7 +7,7 @@ import { work, type WorkMark } from "@/lib/work";
 export const metadata: Metadata = {
   title: "work",
   description:
-    "everything pavitra has been up to: vivacity, iitk, nvidia cardiac, openai codex, inflection, execron, and the rest.",
+    "everything pavitra has been up to: vivacity, iitk, nvidia with cédric augonnet, openai codex oss, inflection, execron, and the rest.",
   alternates: { canonical: "https://pavitrakushwaha.dev/work" },
 };
 
@@ -51,6 +51,9 @@ export default function WorkPage() {
             <span className="entry-year">{w.year}</span>
             <span className="entry-name">
               <Mark mark={w.mark} />
+              {w.also?.map((m, i) => (
+                <Mark key={i} mark={m} />
+              ))}
               <Link href={`/work/${w.slug}`}>{w.title}</Link>
               {w.tag && (
                 <span className="muted mono entry-tag">{w.tag}</span>

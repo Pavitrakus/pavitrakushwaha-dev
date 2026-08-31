@@ -113,7 +113,13 @@ export default function BlogPage() {
       </div>
 
       <SiteFooter
-        links={<Link href="/projects">projects</Link>}
+        links={
+          <>
+            <Link href="/blog/notes">notes</Link>
+            <Link href="/work">work</Link>
+            <Link href="/projects">projects</Link>
+          </>
+        }
       />
     </main>
   );

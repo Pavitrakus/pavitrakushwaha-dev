@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/work/nvidia-argonaut",
+        destination: "/work/nvidia-augonnet",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

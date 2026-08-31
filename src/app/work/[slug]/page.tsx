@@ -67,6 +67,9 @@ export default async function WorkItemPage({ params }: Props) {
 
       <h1 className="post-title">
         <Mark mark={item.mark} />
+        {item.also?.map((m, i) => (
+          <Mark key={i} mark={m} />
+        ))}
         {item.title}
       </h1>
 

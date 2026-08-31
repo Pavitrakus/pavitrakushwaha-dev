@@ -191,11 +191,12 @@ export default function VivacityPage() {
         </h2>
 
         <p>
-          toy two-body, exact-physics backend. observe stores S_t. act kicks
-          Δv. fork clones the orbit into addressable ghosts (max 5). verify
-          checks a crude energy residual against the last snapshot. rollback
-          restores the parent and kills the ghosts. it&apos;s a postcard of
-          the contract, the real router has more teeth.
+          toy two-body, velocity verlet, μ = 1. play steps the horizon.
+          observe stores S_t. act kicks a tangential Δv so eccentricity
+          moves. fork clones the orbit into addressable ghosts (max 5).
+          verify checks energy against the last snapshot. rollback restores
+          the parent and kills the ghosts. a postcard of the contract. the
+          real router has more teeth.
         </p>
 
         <p>

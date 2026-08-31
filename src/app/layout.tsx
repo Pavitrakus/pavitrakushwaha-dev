@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     url: "https://pavitrakushwaha.dev",
     title: "Pavitra Kushwaha | CPO, Vivacity",
     description:
-      "16. Cofounder and CPO of Vivacity. Research fellow at IIT Kanpur. Simulation runtime for agents, NVIDIA cardiac work, Codex OSS, Inflection grant.",
+      "16. Cofounder and CPO of Vivacity. Research fellow at IIT Kanpur. Simulation runtime for agents. Work with NVIDIA Research, OpenAI Codex OSS, Inflection grant.",
     siteName: "Pavitra Kushwaha",
     locale: "en_IN",
     images: [

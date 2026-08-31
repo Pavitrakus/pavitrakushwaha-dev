@@ -7,6 +7,7 @@ const PAGE_SEEDS: Record<string, number> = {
   "/blog/bangalore-trip": 612,
   "/blog/fishy-mesh": 241,
   "/projects/vivacity": 640,
+  "/work/nvidia-augonnet": 276,
   "/work": 390,
   "/blog/notes": 228,
   "/blog/notes/the-jacket-one": 194,

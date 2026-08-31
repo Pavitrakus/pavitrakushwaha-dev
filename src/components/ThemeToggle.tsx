@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 export type Theme = "void" | "dark" | "light";
 
 const NEXT: Record<Theme, Theme> = {
@@ -33,18 +35,25 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeToggle() {
+  const [theme, setTheme] = useState<Theme>("void");
+
+  useEffect(() => {
+    setTheme(readTheme());
+  }, []);
+
+  const label = LABEL[theme];
+
   return (
     <button
       type="button"
       className="theme-toggle"
-      aria-label="cycle color theme"
-      title="ultra dark, dark, light"
+      data-mode={theme}
+      aria-label={`theme: ${label}. click for ${LABEL[NEXT[theme]]}`}
+      title={`${label} · click to cycle ultra dark, dark, light`}
       onClick={() => {
         const next = NEXT[readTheme()];
         applyTheme(next);
-        const btn = document.querySelector(".theme-toggle");
-        if (btn) btn.setAttribute("data-mode", next);
-        btn?.setAttribute("title", LABEL[next]);
+        setTheme(next);
       }}
     >
       <span className="icon-moon icon-moon-void">

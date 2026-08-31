@@ -127,11 +127,14 @@ export default function Home() {
           </a>
         </li>
         <li>
-          <Link href="/work/nvidia-argonaut">
+          <Link href="/work/nvidia-augonnet">
             <Favicon domain="nvidia.com" alt="NVIDIA" />
             NVIDIA
           </Link>{" "}
-          Research, cardiac simulation (Argonaut)
+          Research, with{" "}
+          <a href="https://www.linkedin.com/in/caugonne" target="_blank" rel="noopener noreferrer">
+            Cédric Augonnet
+          </a>
         </li>
         <li>
           wrote into{" "}
@@ -236,9 +239,13 @@ export default function Home() {
       <SiteFooter
         showHome={false}
         links={
-          <a href="/Pavitra_Kushwaha_Resume_Full.pdf" target="_blank" rel="noopener noreferrer">
-            resume
-          </a>
+          <>
+            <Link href="/work">work</Link>
+            <Link href="/blog/notes">notes</Link>
+            <a href="/Pavitra_Kushwaha_Resume_Full.pdf" target="_blank" rel="noopener noreferrer">
+              resume
+            </a>
+          </>
         }
       />
     </main>

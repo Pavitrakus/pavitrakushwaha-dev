@@ -12,6 +12,7 @@ export type WorkItem = {
   mark: WorkMark;
   moreHref?: string;
   moreLabel?: string;
+  also?: WorkMark[];
   body: string[];
 };
 
@@ -48,18 +49,17 @@ export const work: WorkItem[] = [
     ],
   },
   {
-    slug: "nvidia-argonaut",
+    slug: "nvidia-augonnet",
     year: "2026",
-    title: "nvidia research, cardiac argonaut",
-    tag: "Simulation / Cardiac",
+    title: "nvidia research, cédric augonnet",
+    tag: "Runtimes / CUDA",
     oneLiner:
-      "patient-specific cardiac flow. the mesh has to match a living heart before anyone renders it.",
+      "worked with cédric augonnet at nvidia research. runtimes, cuda task graphs, how work actually moves across devices.",
     mark: { kind: "favicon", domain: "nvidia.com", alt: "NVIDIA" },
     body: [
-      "worked with nvidia research on cardiac simulation (argonaut). the object is a heart, specific to a patient, flowing blood under constraints a clip cannot invent.",
-      "3d navier-stokes on patient geometries is the gold standard and it is brutal. reduced-order models try to keep pressure and flow on the centerline without waiting on a cluster. graph nets (meshgraphnet-class) trained on 3d traces can step a 1d rom that still respects junctions and pathology. physicsnemo is the neighborhood this lives in: data parallel, checkpointing, cugraphs, multi-gpu training for the gnn.",
-      "downstream of that, the ansys / nvidia in-silico cardiac stack (pyansys-heart, ls-dyna, omniverse) is how a clinician asks what a patient's heart looks like and gets a model instead of a mood board. argonaut sat in that problem: geometry, hemodynamics, a surrogate that has to be honest about energy and mass.",
-      "if verify() fails on a heart, a person is attached to the residual. that is why the mesh comes first and the pretty picture comes last.",
+      "worked with cédric augonnet at nvidia research. he is a senior research scientist there. before that he designed starpu, the runtime that schedules tasks over cpus and accelerators without pretending they are the same machine. at nvidia the same instinct lives in cuda: programming models, sequential task flow, graphs that actually move data.",
+      "his public work is the neighborhood i sat in. cudastf (sc24, best paper finalist with alexandrescu, sidelnik, garland) is a sequential task-flow layer over cuda streams and graphs. you declare data, you declare tasks, the runtime wires the dependencies. i worked with him on that class of problem. the paper is his.",
+      "same instinct as vivacity. a world that can fork and verify needs a scheduler that knows what is state and what is an observation. the pretty picture comes last.",
     ],
   },
   {
@@ -71,8 +71,8 @@ export const work: WorkItem[] = [
       "wrote into openai/codex. the coding agent labs actually run in a terminal.",
     mark: { kind: "favicon", domain: "openai.com", alt: "OpenAI" },
     body: [
-      "openai/codex is the local coding agent: tools, a sandbox, a loop that reads your repo and does the boring work you would otherwise type by hand. i wrote into that oss.",
-      "the interesting surface is the tool loop. the model proposes a command, the runtime decides if it is allowed, stdout comes back as observation, the next step conditions on that. same contract as a world: observe, act, verify, commit. a coding agent that can rm -rf without a policy is a weapon. a coding agent that cannot touch the filesystem is a chatbot.",
+      "openai/codex is the local coding agent: tools, a sandbox, a loop that reads your repo and does the boring work you would otherwise type by hand. i wrote into that oss. the interesting part is the loop.",
+      "the model proposes a command, the runtime decides if it is allowed, stdout comes back as observation, the next step conditions on that. same contract as a world: observe, act, verify, commit. a coding agent without a policy is a weapon. a coding agent that cannot touch the filesystem is a chatbot.",
       "i care about the edges: approval boundaries, how diffs get applied, what gets logged so a human can reconstruct why the agent touched a file. that is the same paranoia i bring to vivacity pipelines.",
     ],
   },
@@ -83,7 +83,7 @@ export const work: WorkItem[] = [
     tag: "Grant",
     oneLiner:
       "$2k from edge city. the pool was jensen huang's leather jacket after sotheby's hit $960k.",
-    mark: { kind: "favicon", domain: "nvidia.com", alt: "NVIDIA" },
+    mark: { kind: "favicon", domain: "edgecity.live", alt: "Edge City" },
     body: [
       "inflection grants are $2k to people under 25. edge city runs them. they want the weird, early, too-ambitious-for-a-spreadsheet version of you.",
       "the money in that pool came from jensen huang's tom ford leather jacket. sotheby's, 65 bids, 45 collectors, $960k. sixteen times the estimate. proceeds to the edge institute: fellowships, grants, popup villages.",
@@ -184,6 +184,11 @@ export const work: WorkItem[] = [
     tag: "Competition",
     oneLiner: "google, deepmind, openai, cursor. two months. still counting.",
     mark: { kind: "favicon", domain: "google.com", alt: "Google" },
+    also: [
+      { kind: "favicon", domain: "deepmind.google", alt: "DeepMind" },
+      { kind: "favicon", domain: "openai.com", alt: "OpenAI" },
+      { kind: "favicon", domain: "cursor.com", alt: "Cursor" },
+    ],
     body: [
       "fifteen plus in about two months, including ones from google, deepmind, openai, and cursor. the wins are real. the more useful residue is the muscle: a weekend, a constraint, a demo that has to boot.",
       "google and deepmind problems tend to want a model that generalizes. openai and cursor ones tend to want an agent that can use tools without lighting the repo on fire. i like both. one is evals and loss. the other is a tool loop with a policy.",
@@ -198,6 +203,7 @@ export const work: WorkItem[] = [
     oneLiner:
       "keynoted sparkx. won international robowars 8kg. shoutout tanish.",
     mark: { kind: "logo", src: "/techfest-logo.jpg", alt: "Techfest" },
+    also: [{ kind: "favicon", domain: "iitb.ac.in", alt: "IIT Bombay" }],
     body: [
       "techfest iit bombay. i keynoted sparkx '25, then we won international robowars in 8kg. tanish on the bot with me.",
       "8kg is a nasty class. you get a drive train, a weapon, a battery budget, and a referee who will dq you for a wire that looks like a whip. the fight is won in the drivetrain and the weapon belt, in the hours you spend balancing torque against the moment the weapon takes a bite and the bot wants to flip.",
@@ -214,9 +220,7 @@ export const work: WorkItem[] = [
     mark: { kind: "favicon", domain: "github.com", alt: "security" },
     body: [
       "two independent finds. one on a major ai platform. one on a major quick-commerce pricing api. 5-figure and 6-figure respectively. their engineering teams had mixed feelings. i am not naming them here because i like sleeping.",
-      "the ai one lived in the authorization and tool boundary. a model with tools is an rpc surface. if a prompt can make the runtime do a privileged call the user was never granted, you have confused the model's confidence with the system's policy. put the policy on the tool. system-prompt manners do nothing.",
-      "the commerce one lived in pricing. race, replay, or an idor on the quote object, the class of bug where the cart total is a suggestion and the server believes it. you want a signed quote, a ttl, a server-side recompute at capture. anything else is a coupon for whoever can refresh fast enough.",
-      "i reported, they paid, the holes closed. that is the whole transaction.",
+      "the short version is trust boundaries. a model with tools is an rpc surface. a cart total is not a suggestion. i reported, they paid, the holes closed. that is the whole transaction.",
     ],
   },
   {

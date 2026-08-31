@@ -769,7 +769,7 @@ footer a:hover {
 .viva-sim-canvas {
   display: block;
   width: 100%;
-  height: 180px;
+  height: 210px;
   background: #000;
   border: 1px solid var(--border-line);
 }
@@ -804,10 +804,39 @@ footer a:hover {
   color: var(--btn-hover-fg);
 }
 
+.viva-verb-play {
+  border-color: #c9a66b;
+  color: #c9a66b;
+}
+
+[data-theme="light"] .viva-verb-play {
+  border-color: #8a7040;
+  color: #8a7040;
+}
+
+.viva-verb-play.is-on {
+  background: #c9a66b;
+  color: #111;
+}
+
+[data-theme="light"] .viva-verb-play.is-on {
+  background: #8a7040;
+  color: #fff;
+}
+
 .viva-sim-hud {
   margin: 0.65em 0 0;
   font-size: 0.72em;
   color: var(--fg-muted);
+}
+
+.viva-sim-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em 1.2em;
+  margin: 0.45em 0 0;
+  font-size: 0.68em;
+  color: var(--fg-dim);
 }
 
 .viva-sim-log {
