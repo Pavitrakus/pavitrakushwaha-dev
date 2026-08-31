@@ -184,10 +184,10 @@ export default function Home() {
           worked with the{" "}
           <Link href="/work/supabase" className="work-row">
             <Favicon domain="supabase.com" alt="Supabase" />
-            supabase team on mcp
+            supabase team on mpc
             <span className="work-arrow" aria-hidden="true">→</span>
           </Link>
-          , so their product can sit in an agent&apos;s tool loop
+          , for their company
         </li>
 
         <li>

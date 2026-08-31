@@ -116,16 +116,16 @@ export const work: WorkItem[] = [
   {
     slug: "supabase",
     year: "2026",
-    title: "supabase mcp",
-    tag: "MCP / Infra",
+    title: "supabase mpc",
+    tag: "MPC / Postgres",
     oneLiner:
-      "worked with the supabase team on mcp for their company. the stack, callable from an agent.",
+      "worked with the supabase team on mpc for their company.",
     mark: { kind: "favicon", domain: "supabase.com", alt: "Supabase" },
     orgHref: "https://supabase.com",
     body: [
-      "i worked with the supabase team on mcp for their company. the job was a protocol surface: an agent should be able to talk to postgres, auth, storage, and the rest of the stack as tools, without wrapping the database in a toy api.",
-      "mcp is the handshake. the interesting part is what the tool is allowed to touch. sessions become claims, claims reach postgres, policies decide the row, and storage follows the same identity. that is the chain we were putting in front of a reasoning loop.",
-      "i like that work because it sits where product, protocol, and postgres meet. they already have builders. they needed the stack to be callable without lying about what a query can do.",
+      "i worked with the supabase team on mpc for their company. multi-party computation: several parties should be able to evaluate a function over private inputs and learn only what the protocol allows.",
+      "that is the same family of questions i read at iitk. secret sharing, rounds, abort, what a party can infer from timing. here it had to sit on a real postgres stack instead of a paper protocol.",
+      "the interesting part is the join. the database still has rows, policies, and a session. the computation still has shares and a threat model. neither side gets to pretend the other is a toy.",
     ],
   },
   {
