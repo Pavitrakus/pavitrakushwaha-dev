@@ -84,14 +84,14 @@ export default function Home() {
     <main>
       {/* ── top nav ── */}
       <nav className="top-nav">
-        <Link href="/work">work</Link>
+        <Link href="/work">Work</Link>
         <span className="top-nav-sep">/</span>
-        <Link href="/blog">writing</Link>
+        <Link href="/blog">Writing</Link>
         <span className="top-nav-sep">/</span>
-        <Link href="/projects">things i&apos;ve built</Link>
+        <Link href="/projects">Projects</Link>
       </nav>
 
-      <h1>hey, i&apos;m pavitra.</h1>
+      <h1>Hey, I&apos;m Pavitra.</h1>
 
       <p>
         i&apos;m 16, founder of{" "}
@@ -138,9 +138,24 @@ export default function Home() {
         </a>
       </p>
 
-      <p>what i&apos;ve been up to:</p>
+      <section className="home-section home-vivacity" aria-labelledby="vivacity-home-title">
+        <header className="section-head">
+          <h2 id="vivacity-home-title">Vivacity</h2>
+          <span className="mono section-meta">example 001</span>
+        </header>
+        <p className="section-kicker">
+          a two-body world an agent can inspect, kick, and fork. not a product api.
+        </p>
+        <VivacitySim mode="compact" />
+        <p className="home-vivacity-link">
+          <Link href="/projects/vivacity">inside the runtime →</Link>
+        </p>
+      </section>
 
-      <ul className="home-work">
+      <section className="home-section" aria-labelledby="work-home-title">
+        <h2 id="work-home-title">What I&apos;ve been up to</h2>
+
+        <ul className="home-work">
         <li>
           worked with{" "}
           <Link href="/work/nvidia-augonnet" className="work-row">
@@ -245,64 +260,63 @@ export default function Home() {
         </li>
       </ul>
 
-      <p>
-        <Link href="/work">see everything i&apos;ve done →</Link>
+      <p className="home-more">
+        <Link href="/work">see everything I&apos;ve done →</Link>
         <span className="muted">
-          {" "}15+ hackathons, u2u, yc, vibecon, two bounties, byteforge,
+          15+ hackathons, u2u, yc, vibecon, two bounties, byteforge,
           the synthetic intelligence paper, and kuku live there
         </span>
       </p>
-
-      <section className="home-vivacity" aria-labelledby="vivacity-home-title">
-        <p id="vivacity-home-title" className="home-vivacity-title">
-          this is just an example, to explain what{" "}
-          <Link href="/projects/vivacity">
-            <Favicon domain="tryvivacity.com" alt="Vivacity" />
-            Vivacity
-          </Link>{" "}
-          is. a two-body world an agent can inspect, kick, and fork
-        </p>
-        <VivacitySim mode="compact" />
-        <p className="home-vivacity-link">
-          <Link href="/projects/vivacity">inside the runtime →</Link>
-        </p>
       </section>
 
-      <p>
-        things i&apos;ve built{" "}
-        <span className="muted">(side projects)</span>:{" "}
-        <Link href="/projects/orca">
-          <Logo src="/orca-logo.jpg" alt="ORCA" />
-          ORCA
-        </Link>
-        ,{" "}
-        <Link href="/projects/bucket">
-          <Favicon domain="brokebucket.com" alt="Bucket" />
-          Bucket
-        </Link>
-        ,{" "}
-        <Link href="/projects/whocodedmore">
-          <Logo
-            src="/whocodedmore-logo.png"
-            alt="WhoCodedMore"
-            rounded={false}
-            style={{ objectFit: "contain" }}
-          />
-          WhoCodedMore
-        </Link>
-        , D2AR, ORBIS 2045, LumenSeed, ClusterOrch-Gym,{" "}
-        <Link href="/projects">and more</Link>
-      </p>
+      <section className="home-section" aria-labelledby="built-home-title">
+        <h2 id="built-home-title">Things I&apos;ve built</h2>
+        <p className="section-kicker">side projects, sitting next to the company.</p>
+        <ul className="home-projects">
+          <li>
+            <Link href="/projects/orca">
+              <Logo src="/orca-logo.jpg" alt="ORCA" />
+              ORCA
+            </Link>
+          </li>
+          <li>
+            <Link href="/projects/bucket">
+              <Favicon domain="brokebucket.com" alt="Bucket" />
+              Bucket
+            </Link>
+          </li>
+          <li>
+            <Link href="/projects/whocodedmore">
+              <Logo
+                src="/whocodedmore-logo.png"
+                alt="WhoCodedMore"
+                rounded={false}
+                style={{ objectFit: "contain" }}
+              />
+              WhoCodedMore
+            </Link>
+          </li>
+          <li>D2AR</li>
+          <li>ORBIS 2045</li>
+          <li>LumenSeed</li>
+          <li>ClusterOrch-Gym</li>
+          <li>
+            <Link href="/projects">and more</Link>
+          </li>
+        </ul>
+      </section>
 
-      <p>
-        when a day is worth keeping, i put it in{" "}
-        <Link href="/notes">notes</Link>
-        . the longer pieces stay in <Link href="/blog">writing</Link>
-      </p>
+      <section className="home-section" aria-labelledby="notes-home-title">
+        <h2 id="notes-home-title">Notes and writing</h2>
+        <p className="section-kicker">
+          when a day is worth keeping, i put it in{" "}
+          <Link href="/notes">notes</Link>
+          . the longer pieces stay in <Link href="/blog">writing</Link>.
+        </p>
+        <FeaturedCards />
+      </section>
 
-      <FeaturedCards />
-
-      <p>
+      <p className="home-close">
         most days are split between the vivacity runtime, mpc papers, and
         whatever broke after midnight. if one of those sounds like your
         problem, send it to{" "}

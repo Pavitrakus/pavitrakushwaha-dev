@@ -51,7 +51,7 @@ export default function BlogPage() {
         ← pavitra
       </Link>
 
-      <h1>writing.</h1>
+      <h1>Writing</h1>
 
       <p>
         i write when something keeps rattling around after the conversation
@@ -75,9 +75,7 @@ export default function BlogPage() {
         ))}
       </ul>
 
-      <h2 style={{ fontSize: "1em", fontWeight: 600, marginTop: "2.4em", marginBottom: "0.5em" }}>
-        notes
-      </h2>
+      <h2>Notes</h2>
       <p className="muted" style={{ fontSize: "0.92em" }}>
         shorter things from days i want to remember. a grant landing, a fork
         finally behaving, or whatever made the week weird.{" "}

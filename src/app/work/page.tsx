@@ -61,7 +61,7 @@ export default function WorkPage() {
         ← pavitra
       </Link>
 
-      <h1>what i&apos;ve been up to.</h1>
+      <h1>What I&apos;ve been up to</h1>
 
       <p>
         the home page gets the short version. this is the full record, with

@@ -168,7 +168,7 @@ export default function ProjectsPage() {
       </Link>
 
       <h1>
-        things i&apos;ve built.
+        Things I&apos;ve built
       </h1>
 
       <p>

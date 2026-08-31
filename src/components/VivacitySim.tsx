@@ -179,11 +179,10 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
       tabIndex={mode === "full" ? 0 : undefined}
     >
       <div className="viva-sim-head">
-        <span className="mono viva-sim-kicker">example / two-body</span>
+        <span className="mono viva-sim-kicker">Vivacity / Orbital dynamics</span>
         <span className="mono viva-sim-exp">001</span>
       </div>
       <div className="viva-sim-subhead">
-        <span className="mono">orbital dynamics</span>
         <span className="mono viva-sim-hint">drag to look · scroll to dolly</span>
       </div>
       <div className="viva-sim-canvas-wrap">

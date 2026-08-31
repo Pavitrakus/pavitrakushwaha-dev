@@ -39,7 +39,7 @@ export default function VisitsPage() {
         ← pavitra
       </Link>
 
-      <h1>visitor trail.</h1>
+      <h1>Visitor trail</h1>
 
       <p>
         recent humans who opened this site and got clocked. city-level only.

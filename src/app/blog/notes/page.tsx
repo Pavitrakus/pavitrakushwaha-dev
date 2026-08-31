@@ -17,7 +17,7 @@ export default function NotesPage() {
         ← writing
       </Link>
 
-      <h1>notes.</h1>
+      <h1>Notes</h1>
 
       <p>
         some days deserve a few paragraphs before they blur into the next
