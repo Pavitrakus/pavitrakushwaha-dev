@@ -111,34 +111,24 @@ export default function Home() {
       </p>
 
       <p>
-        started making animations in class 3. wrote my first real line of code
-        in class 5, just to understand how something worked. never really
-        stopped. somewhere along the way the curiosity turned into companies,
-        research papers, work with{" "}
+        started making animations in class 3, wrote my first real line of
+        code in class 5, and never really stopped. that turned into companies,
+        papers, work with{" "}
         <a href="https://www.nvidia.com/en-us/research/" target="_blank" rel="noopener noreferrer">
           <Favicon domain="nvidia.com" alt="NVIDIA" />
           NVIDIA
         </a>{" "}
-        Research, and a number of hackathon wins that&apos;s getting a little
-        embarrassing to keep count of.
-      </p>
-
-      <p>
-        i&apos;m obsessed with understanding intelligence, how it emerges, how
-        to build it, how to accelerate it. the goal is to build something that
-        actually dents{" "}
+        Research, and a pile of hackathon wins that&apos;s getting embarrassing
+        to count. most days i&apos;m trying to understand intelligence well
+        enough to dent{" "}
         <a href="https://www.google.com/search?q=Silicon+Valley" target="_blank" rel="noopener noreferrer">
           Silicon Valley
         </a>
-        . working on it.
-      </p>
-
-      <p>
-        for fun: long bike rides, breaking APIs, researching the{" "}
+        . for fun: long bike rides, breaking APIs, the{" "}
         <a href="https://www.simulation-argument.com/simulation.pdf" target="_blank" rel="noopener noreferrer">
           simulation hypothesis
         </a>{" "}
-        at unreasonable hours, and occasionally{" "}
+        at 3am, and occasionally{" "}
         <Link href="/visits" className="easter-quiet" title="yes i know where you are. chill.">
           reading the room
         </Link>
@@ -162,22 +152,6 @@ export default function Home() {
           30 minutes. direct with me. cal.com/pavitrakushwaha
         </a>
       </p>
-
-      <section className="home-vivacity" aria-labelledby="vivacity-home-title">
-        <p id="vivacity-home-title" className="home-vivacity-title">
-          building{" "}
-          <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
-            <Favicon domain="tryvivacity.com" alt="Vivacity" />
-            Vivacity
-          </a>
-          : a simulation runtime where agents can inspect a world, change it,
-          fork a few futures, and keep one after the checks pass
-        </p>
-        <VivacitySim mode="compact" />
-        <p className="home-vivacity-link">
-          <Link href="/projects/vivacity">the runtime and the full sim →</Link>
-        </p>
-      </section>
 
       <p>what i&apos;ve been up to:</p>
 
@@ -273,13 +247,23 @@ export default function Home() {
         </span>
       </p>
 
+      <section className="home-vivacity" aria-labelledby="vivacity-home-title">
+        <p id="vivacity-home-title" className="home-vivacity-title">
+          a live world from{" "}
+          <Link href="/projects/vivacity">
+            <Favicon domain="tryvivacity.com" alt="Vivacity" />
+            Vivacity
+          </Link>
+          . play it, kick it, fork a future
+        </p>
+        <VivacitySim mode="compact" />
+        <p className="home-vivacity-link">
+          <Link href="/projects/vivacity">how the runtime works →</Link>
+        </p>
+      </section>
+
       <p>
-        building now:{" "}
-        <Link href="/projects/vivacity">
-          <Favicon domain="tryvivacity.com" alt="Vivacity" />
-          Vivacity
-        </Link>
-        . things i&apos;ve built{" "}
+        things i&apos;ve built{" "}
         <span className="muted">(side projects)</span>:{" "}
         <Link href="/projects/orca">
           <Logo src="/orca-logo.jpg" alt="ORCA" />

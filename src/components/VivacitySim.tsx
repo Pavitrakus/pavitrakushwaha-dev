@@ -61,6 +61,8 @@ function elements(b: Body) {
 
 export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const modeRef = useRef(mode);
+  modeRef.current = mode;
   const state = useRef({
     body: seed(),
     forks: [] as ForkGhost[],
@@ -69,10 +71,10 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
     log: [] as string[],
     flash: 0,
     ok: true,
-    playing: false,
+    playing: mode === "compact",
     trail: [] as { x: number; y: number }[],
   });
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(mode === "compact");
   const [hud, setHud] = useState(() => {
     const el = elements(seed());
     return {
@@ -303,11 +305,17 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
 
       const cx = w * 0.5;
       const cy = h * 0.54;
-      const scale = Math.min(w, h) * 0.22;
+      const phone = window.matchMedia("(max-width: 600px)").matches;
+      const compact = modeRef.current === "compact";
+      const scale = compact
+        ? Math.min(w, h) * (phone ? 0.24 : 0.22)
+        : Math.min(w, h) * 0.22;
       const toX = (x: number) => cx + x * scale;
       const toY = (y: number) => cy + y * scale * 0.72;
 
-      ctx.strokeStyle = "rgba(201,166,107,0.16)";
+      ctx.strokeStyle = compact
+        ? "rgba(201,166,107,0.10)"
+        : "rgba(201,166,107,0.16)";
       ctx.fillStyle = "rgba(201,166,107,0.45)";
       ctx.font = "10px 'JetBrains Mono', monospace";
       ctx.lineWidth = 1;
@@ -315,7 +323,7 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
         ctx.beginPath();
         ctx.ellipse(cx, cy, R * scale, R * scale * 0.72, 0, 0, Math.PI * 2);
         ctx.stroke();
-        ctx.fillText(`${R}R`, cx + R * scale + 4, cy - 4);
+        if (!compact) ctx.fillText(`${R}R`, cx + R * scale + 4, cy - 4);
       }
 
       if (s.trail.length > 1) {
@@ -351,14 +359,16 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
       ctx.lineTo(px + s.body.vx * scale * 0.55, py + s.body.vy * scale * 0.4);
       ctx.stroke();
 
-      ctx.fillStyle = "rgba(201,166,107,0.85)";
-      ctx.font = "10px 'JetBrains Mono', monospace";
-      const liveEl = elements(s.body);
-      ctx.fillText("μ = 1 / R = 1", 10, 16);
-      ctx.fillText(`r ${liveEl.r.toFixed(3)} R`, 10, h - 12);
-      ctx.fillStyle = "rgba(236,234,230,0.55)";
-      ctx.fillText("velocity verlet", w - 108, 16);
-      ctx.fillText(`Δt ${DT} τ`, w - 88, h - 12);
+      if (!compact) {
+        ctx.fillStyle = "rgba(201,166,107,0.85)";
+        ctx.font = "10px 'JetBrains Mono', monospace";
+        const liveEl = elements(s.body);
+        ctx.fillText("μ = 1 / R = 1", 10, 16);
+        ctx.fillText(`r ${liveEl.r.toFixed(3)} R`, 10, h - 12);
+        ctx.fillStyle = "rgba(236,234,230,0.55)";
+        ctx.fillText("velocity verlet", w - 108, 16);
+        ctx.fillText(`Δt ${DT} τ`, w - 88, h - 12);
+      }
 
       if (s.flash > 0.05) {
         ctx.strokeStyle = s.ok
@@ -380,15 +390,17 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
   }, []);
 
   return (
-    <div className={`viva-sim ${mode === "full" ? "viva-sim-full" : ""}`}>
-      <div className="viva-sim-head">
-        <span className="mono viva-sim-mark">vivacity runtime</span>
-        <span className="mono muted">{hud.note}</span>
-      </div>
+    <div className={`viva-sim ${mode === "full" ? "viva-sim-full" : "viva-sim-compact"}`}>
+      {mode === "full" && (
+        <div className="viva-sim-head">
+          <span className="mono viva-sim-mark">vivacity runtime</span>
+          <span className="mono muted">{hud.note}</span>
+        </div>
+      )}
       <canvas
         ref={canvasRef}
         className="viva-sim-canvas"
-        aria-label="two-body orbit you can play, kick, fork, and verify"
+        aria-label="two-body orbit you can play, kick, and fork"
       />
       <div className="viva-sim-verbs" role="group" aria-label="runtime verbs">
         <button
@@ -399,20 +411,20 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
         >
           {playing ? "pause" : "play"}
         </button>
-        <button type="button" className="viva-verb" onClick={observe}>
-          observe()
-        </button>
         <button type="button" className="viva-verb" onClick={act}>
-          act(+Δv)
+          {mode === "compact" ? "kick" : "act(+Δv)"}
         </button>
         <button type="button" className="viva-verb" onClick={fork}>
-          fork()
-        </button>
-        <button type="button" className="viva-verb" onClick={verify}>
-          verify()
+          {mode === "compact" ? "fork" : "fork()"}
         </button>
         {mode === "full" && (
           <>
+            <button type="button" className="viva-verb" onClick={observe}>
+              observe()
+            </button>
+            <button type="button" className="viva-verb" onClick={verify}>
+              verify()
+            </button>
             <button type="button" className="viva-verb" onClick={commit}>
               commit()
             </button>
@@ -422,14 +434,18 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
           </>
         )}
       </div>
-      <p className="mono viva-sim-hud">
-        {hud.verb} · E={hud.E.toFixed(3)} · e={hud.e.toFixed(3)} · peri={hud.peri.toFixed(2)} R
-      </p>
-      <p className="mono viva-sim-metrics">
-        <span>specific energy {hud.E.toFixed(4)}</span>
-        <span>eccentricity {hud.e.toFixed(3)}</span>
-        <span>periapsis {hud.peri.toFixed(3)} R</span>
-      </p>
+      {mode === "full" && (
+        <>
+          <p className="mono viva-sim-hud">
+            {hud.verb} · E={hud.E.toFixed(3)} · e={hud.e.toFixed(3)} · peri={hud.peri.toFixed(2)} R
+          </p>
+          <p className="mono viva-sim-metrics">
+            <span>specific energy {hud.E.toFixed(4)}</span>
+            <span>eccentricity {hud.e.toFixed(3)}</span>
+            <span>periapsis {hud.peri.toFixed(3)} R</span>
+          </p>
+        </>
+      )}
       {mode === "full" && (
         <ol className="viva-sim-log mono" aria-live="polite">
           {log.length === 0 ? (
