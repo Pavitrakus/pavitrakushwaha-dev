@@ -1,7 +1,15 @@
 import type { MetadataRoute } from "next";
+import { work } from "@/lib/work";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://pavitrakushwaha.dev";
+
+  const workPages = work.map((w) => ({
+    url: `${base}/work/${w.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
 
   return [
     {
@@ -10,6 +18,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${base}/work`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    ...workPages,
     {
       url: `${base}/projects`,
       lastModified: new Date(),
@@ -29,6 +44,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${base}/blog/notes`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/blog/notes/the-jacket-one`,
+      lastModified: new Date("2026-08-28"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${base}/blog/notes/forked-before-breakfast`,
+      lastModified: new Date("2026-08-21"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${base}/blog/bangalore-trip`,
       lastModified: new Date("2026-07-05"),
       changeFrequency: "monthly",
@@ -42,6 +75,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     // project pages
+    {
+      url: `${base}/projects/vivacity`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     {
       url: `${base}/projects/bucket`,
       lastModified: new Date(),

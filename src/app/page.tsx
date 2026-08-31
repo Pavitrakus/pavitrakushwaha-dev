@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Favicon, Logo } from "@/components/Brand";
+import { VivacitySim } from "@/components/VivacitySim";
 
-/* ── inline SVG social icons ── */
 const XIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
     style={{ display: "inline", verticalAlign: "-0.1em", marginRight: "0.2em" }}>
@@ -27,73 +28,15 @@ const InstagramIcon = () => (
   </svg>
 );
 
-/* ── small inline logo image ── */
-const Logo = ({
-  src,
-  alt,
-  rounded = true,
-  className,
-  style: extraStyle,
-}: {
-  src: string;
-  alt: string;
-  rounded?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-}) => (
-  <img
-    src={src}
-    alt={alt}
-    className={className}
-    style={{
-      display: "inline",
-      width: "1em",
-      height: "1em",
-      objectFit: "cover",
-      verticalAlign: "-0.14em",
-      marginRight: "0.22em",
-      borderRadius: rounded ? "3px" : "0",
-      ...extraStyle,
-    }}
-  />
-);
-
-/* ── YC orange box ── */
-const YC = () => (
-  <span style={{
-    display: "inline-block",
-    width: "1em", height: "1em",
-    background: "#FF6600", borderRadius: "2px",
-    color: "#fff", fontWeight: 700,
-    fontSize: "0.7em", lineHeight: "1em",
-    textAlign: "center", verticalAlign: "-0.02em",
-    marginRight: "0.22em", fontFamily: "sans-serif",
-  }}>Y</span>
-);
-
-/* ── favicon from a domain (uses Google's favicon service) ── */
-const Favicon = ({ domain, alt }: { domain: string; alt: string }) => (
-  <img
-    src={`https://www.google.com/s2/favicons?sz=32&domain=${domain}`}
-    alt={alt}
-    style={{
-      display: "inline",
-      width: "1em",
-      height: "1em",
-      objectFit: "contain",
-      verticalAlign: "-0.14em",
-      marginRight: "0.22em",
-      borderRadius: "3px",
-    }}
-  />
-);
-
 export default function Home() {
   return (
     <main>
-      {/* ── top nav ── */}
       <nav className="top-nav">
         <Link href="/blog">writing</Link>
+        <span className="top-nav-sep">/</span>
+        <Link href="/blog/notes">notes</Link>
+        <span className="top-nav-sep">/</span>
+        <Link href="/work">work</Link>
         <span className="top-nav-sep">/</span>
         <Link href="/projects">things i&apos;ve built</Link>
       </nav>
@@ -101,54 +44,46 @@ export default function Home() {
       <h1>hey, i&apos;m pavitra.</h1>
 
       <p>
-        i&apos;m a founder, builder, and AI researcher. 16. high school
-        at{" "}
-        <a href="https://dpskalyanpur.com/" target="_blank" rel="noopener noreferrer">
-          <Logo src="/dps-logo.webp" alt="DPS" />
-          DPS
+        16. cofounder and cpo of{" "}
+        <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
+          <Favicon domain="tryvivacity.com" alt="Vivacity" />
+          Vivacity
         </a>
-        , now research at{" "}
+        . research fellow at{" "}
         <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
           <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
           IIT Kanpur
+        </a>
+        , still in high school at{" "}
+        <a href="https://dpskalyanpur.com/" target="_blank" rel="noopener noreferrer">
+          <Logo src="/dps-logo.webp" alt="DPS" />
+          DPS
         </a>
         .
       </p>
 
       <p>
-        started making animations in class 3. wrote my first real line of code
-        in class 5, just to understand how something worked. never really
-        stopped. somewhere along the way the curiosity turned into companies,
-        research papers, work with{" "}
-        <a href="https://www.nvidia.com/en-us/research/" target="_blank" rel="noopener noreferrer">
-          <Favicon domain="nvidia.com" alt="NVIDIA" />
-          NVIDIA
-        </a>{" "}
-        Research, and a number of hackathon wins that&apos;s getting a little
-        embarrassing to keep count of.
+        started making animations in class 3. wrote actual code in class 5
+        because i wanted to know why the thing moved. that curiosity grew
+        teeth. now it&apos;s a runtime where an agent can instantiate a world,
+        poke it, fork five futures, and only commit the branch that still
+        conserves energy.{" "}
+        <Link href="/projects/vivacity">the long version lives here</Link>.
       </p>
 
       <p>
-        i&apos;m obsessed with understanding intelligence, how it emerges, how
-        to build it, how to accelerate it. the goal is to build something that
-        actually dents{" "}
-        <a href="https://www.google.com/search?q=Silicon+Valley" target="_blank" rel="noopener noreferrer">
-          Silicon Valley
-        </a>
-        . working on it.
-      </p>
-
-      <p>
-        for fun: long bike rides, breaking APIs, researching the{" "}
+        for fun: long bike rides, breaking APIs, the{" "}
         <a href="https://www.simulation-argument.com/simulation.pdf" target="_blank" rel="noopener noreferrer">
           simulation hypothesis
         </a>{" "}
-        at unreasonable hours, and occasionally{" "}
+        at stupid hours, and{" "}
         <Link href="/visits" className="easter-quiet" title="yes i know where you are. chill.">
           reading the room
         </Link>
         .
       </p>
+
+      <VivacitySim />
 
       <p className="social-links">
         <a href="https://x.com/pavikshw" target="_blank" rel="noopener me noreferrer">
@@ -171,10 +106,63 @@ export default function Home() {
       <p>what i&apos;ve been up to:</p>
 
       <ul>
-        {/* 1. Prolearn - logo has text built in, no word needed */}
         <li>
-          currently building the video pipeline at{" "}
-          <a href="https://prolearn.app/" target="_blank" rel="noopener noreferrer">
+          cofounder and cpo of{" "}
+          <Link href="/work/vivacity">
+            <Favicon domain="tryvivacity.com" alt="Vivacity" />
+            Vivacity
+          </Link>
+          . agent runtime.{" "}
+          <Link href="/projects/vivacity">the stack</Link>
+        </li>
+        <li>
+          research fellow at{" "}
+          <Link href="/work/iitk-mpc">
+            <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
+            IIT Kanpur
+          </Link>
+          , mpc under{" "}
+          <a href="https://scholar.google.com/citations?user=jeOME6wAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+            Prof. Adithya Vadapalli
+          </a>
+        </li>
+        <li>
+          <Link href="/work/nvidia-argonaut">
+            <Favicon domain="nvidia.com" alt="NVIDIA" />
+            NVIDIA
+          </Link>{" "}
+          Research, cardiac simulation (Argonaut)
+        </li>
+        <li>
+          wrote into{" "}
+          <Link href="/work/openai-codex">
+            <Favicon domain="openai.com" alt="OpenAI" />
+            OpenAI Codex
+          </Link>{" "}
+          OSS
+        </li>
+        <li>
+          <Link href="/work/inflection">inflection grant</Link>
+          . jensen&apos;s jacket money. hwahwhahwa
+        </li>
+        <li>
+          organized{" "}
+          <Link href="/work/execron">
+            <Logo src="/byteforge-logo.jpg" alt="byteforge" />
+            Execron 1.0
+          </Link>{" "}
+          at IITK. $75k plus $2k cash
+        </li>
+        <li>
+          content with{" "}
+          <Link href="/work/supabase">
+            <Favicon domain="supabase.com" alt="Supabase" />
+            Supabase
+          </Link>
+        </li>
+        <li>
+          video pipeline at{" "}
+          <Link href="/work/prolearn">
             <Logo
               src="/prolearn-logo.svg"
               alt="Prolearn"
@@ -182,158 +170,29 @@ export default function Home() {
               className="invert-on-dark"
               style={{ width: "auto", height: "1.1em", objectFit: "contain", verticalAlign: "-0.18em" }}
             />
-          </a>{" "}
-          ($3.2M pre-seed, Bangalore edtech) as an engineer, working with{" "}
-          <a href="https://in.linkedin.com/in/ravneetsk" target="_blank" rel="noopener noreferrer">
-            Ravneet Singh
-          </a>{" "}
-          (founder of{" "}
-          <a href="https://prolearn.app/" target="_blank" rel="noopener noreferrer">
-            Prolearn
-          </a>{" "}
-          and{" "}
-          <a href="https://fc.one" target="_blank" rel="noopener noreferrer">
-            FC.one
-          </a>
-          , former CTO of{" "}
-          <a href="https://vedantu.com" target="_blank" rel="noopener noreferrer">
-            Vedantu
-          </a>
-          )
+          </Link>
         </li>
-
-        {/* 2. IIT Kanpur research */}
         <li>
-          research fellow at{" "}
-          <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
-            <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
-            IIT Kanpur
-          </a>
-          , working on MPC and cryptography under{" "}
-          <a href="https://scholar.google.com/citations?user=jeOME6wAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-            Prof. Adithya Vadapalli
-          </a>{" "}
-          (CSE dept.)
-        </li>
-
-        {/* 3. U2U */}
-        <li>
-          ranked <strong>#1</strong> across 3,500+ at{" "}
-          <a href="https://uniform2unicorn.polariscampus.com/" target="_blank" rel="noopener noreferrer">
-            <Logo src="/u2u-logo.png" alt="Uniform2Unicorn" />
-            Uniform2Unicorn
-          </a>
-          , India&apos;s Top Young Founder of the Year &apos;26. won Rs. 1,00,000
-          cash, Rs. 10,00,000 in credits, and an exclusive dinner with{" "}
-          <a href="https://www.youtube.com/@IqlipseNova" target="_blank" rel="noopener noreferrer">
-            Iqlipse Nova
-          </a>{" "}
-          <span className="muted">(team: aditya bhatia and tanish anand)</span>
-        </li>
-
-        {/* 4. YC */}
-        <li>
-          selected for{" "}
-          <YC />
-          <a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer">
-            Y Combinator
-          </a>{" "}
-          Startup School India, 6% acceptance rate
-        </li>
-
-        {/* 5. VIBECON */}
-        <li>
-          top 20 builder in India out of 20,000+ at{" "}
-          <a href="https://vibecon.com" target="_blank" rel="noopener noreferrer">
-            <Logo src="/vibecon-logo.png" alt="VIBECON" />
-            VIBECON
-          </a>
-          , where i also interviewed{" "}
-          <a href="https://x.com/mukundjha" target="_blank" rel="noopener noreferrer">
-            Mukund Jha
-          </a>{" "}
-          (Emergent Labs) and{" "}
-          <a href="https://www.ycombinator.com/people/jared-friedman" target="_blank" rel="noopener noreferrer">
-            Jared Friedman
-          </a>{" "}
-          (YC partner)
-        </li>
-
-        {/* 6. Hackathons with logos */}
-        <li>
-          won 15+ hackathons in the last 2 months, including ones from{" "}
-          <a href="https://ai.google.dev/" target="_blank" rel="noopener noreferrer">
-            <Favicon domain="google.com" alt="Google" />
-            Google
-          </a>
-          ,{" "}
-          <a href="https://openai.com" target="_blank" rel="noopener noreferrer">
-            <Favicon domain="openai.com" alt="OpenAI" />
-            OpenAI
-          </a>
-          , and{" "}
-          <a href="https://cursor.com" target="_blank" rel="noopener noreferrer">
-            <Favicon domain="cursor.com" alt="Cursor" />
-            Cursor
-          </a>
-        </li>
-
-        {/* 7. Techfest IIT Bombay */}
-        <li>
-          keynoted{" "}
-          <a href="https://techfest.org/" target="_blank" rel="noopener noreferrer">
+          international robowars 8kg,{" "}
+          <Link href="/work/techfest-robowars">
             <Logo src="/techfest-logo.jpg" alt="Techfest" />
-            SparkX at Techfest &apos;25
-          </a>{" "}
-          (IIT Bombay) and won international robowars 8kg{" "}
-          <span className="muted">(shoutout tanish)</span>
-        </li>
-
-        {/* 8. Bounties combined */}
-        <li>
-          independently found two significant security vulnerabilities: one in a
-          major AI platform, one in a major quick-commerce platform&apos;s
-          pricing API{" "}
-          <span
-            className="reveal-toggle"
-            title="bounty amounts"
-          >
-            [$]
-          </span>
-          <span className="muted">
-            {" "}a 5-figure and a 6-figure bounty, respectively. their
-            engineering teams had mixed feelings.
-          </span>
-        </li>
-
-        {/* 9. byteforge */}
-        <li>
-          founded{" "}
-          <a href="https://byteforge.space" target="_blank" rel="noopener noreferrer">
-            <Logo src="/byteforge-logo.jpg" alt="byteforge" />
-            byteforge<span style={{ color: "#39FF14", fontWeight: 900 }}>.</span>
-          </a>
-          , one of north India&apos;s largest independent tech communities,
-          4,500+ members
-        </li>
-
-        {/* 10. Research paper */}
-        <li>
-          published a research paper on Synthetic Intelligence at 16
-        </li>
-
-        {/* 11. KuKu TV */}
-        <li>
-          former content analyst at{" "}
-          <a href="https://kukufm.com" target="_blank" rel="noopener noreferrer">
-            KuKu TV
-          </a>
+            Techfest IIT Bombay
+          </Link>
         </li>
       </ul>
 
       <p>
+        <Link href="/work">see all →</Link>
+      </p>
+
+      <p>
         things i&apos;ve built{" "}
         <span className="muted">(side projects)</span>:{" "}
+        <Link href="/projects/vivacity">
+          <Favicon domain="tryvivacity.com" alt="Vivacity" />
+          Vivacity
+        </Link>
+        ,{" "}
         <Link href="/projects/orca">
           <Logo src="/orca-logo.jpg" alt="ORCA" />
           ORCA
@@ -358,21 +217,16 @@ export default function Home() {
       </p>
 
       <p>
-        i write sometimes. <Link href="/blog">all writing →</Link>
+        when a day actually happens i dump it in{" "}
+        <Link href="/blog/notes">notes</Link>. the long pieces stay in{" "}
+        <Link href="/blog">writing</Link>.
       </p>
 
       <p>
-        i spend most of my time at the intersection of systems that think and
-        systems that scale. if you care about what happens when intelligence
-        stops being a feature and starts being infrastructure, the architecture
-        decisions, the tradeoffs, the parts that break, we&apos;re probably
-        thinking about the same problems.
-      </p>
-
-      <p>
-        building something ambitious? reach me at{" "}
-        <a href="mailto:pavitra@paxus.in">pavitra@paxus.in</a>. for everything
-        else, find me on{" "}
+        if you care about agents that can hold a world, fork it, and prove
+        the step before they commit, we&apos;re already in the same room.
+        reach me at{" "}
+        <a href="mailto:pavitra@paxus.in">pavitra@paxus.in</a>. otherwise{" "}
         <a href="https://x.com/pavikshw" target="_blank" rel="noopener noreferrer">
           x @pavikshw
         </a>

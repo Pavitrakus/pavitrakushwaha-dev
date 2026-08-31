@@ -6,11 +6,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://pavitrakushwaha.dev"),
   title: {
-    default: "Pavitra Kushwaha | Founder, Builder, AI Researcher",
+    default: "Pavitra Kushwaha | CPO, Vivacity",
     template: "%s | Pavitra Kushwaha",
   },
   description:
-    "Pavitra Kushwaha, 16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building the video pipeline at Prolearn ($3.2M pre-seed) and things that dent Silicon Valley. Building ORCA (zero-step agentic AI), byteforge (4,500+ member tech community), Vivacity (3B1B-style educational animations), and D2AR (diffusion vs auto-regressive Hindi NLP benchmark).",
+    "Pavitra Kushwaha, 16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur. Work with NVIDIA Research, OpenAI Codex OSS, Inflection, Supabase, and Execron 1.0 at IITK.",
   keywords: [
     "Pavitra Kushwaha",
     "AI Researcher",
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: "https://pavitrakushwaha.dev",
-    title: "Pavitra Kushwaha | Founder, Builder, AI Researcher",
+    title: "Pavitra Kushwaha | CPO, Vivacity",
     description:
-      "16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building things that dent Silicon Valley. ORCA, byteforge, Vivacity, D2AR.",
+      "16. Cofounder and CPO of Vivacity. Research fellow at IIT Kanpur. Simulation runtime for agents, NVIDIA cardiac work, Codex OSS, Inflection grant.",
     siteName: "Pavitra Kushwaha",
     locale: "en_IN",
     images: [
@@ -79,9 +79,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@pavikshw",
     creator: "@pavikshw",
-    title: "Pavitra Kushwaha | Founder, Builder, AI Researcher",
+    title: "Pavitra Kushwaha | CPO, Vivacity",
     description:
-      "16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur. #1 Top Young Founder of the Year '26. Building things that dent Silicon Valley.",
+      "16. Cofounder and CPO of Vivacity. Research fellow at IIT Kanpur. Simulation runtime for agents.",
     images: ["/og-image.png"],
   },
 };
@@ -109,9 +109,9 @@ const jsonLd = {
       name: "Pavitra Kushwaha",
       url: "https://pavitrakushwaha.dev/",
       email: "mailto:pavitra@paxus.in",
-      jobTitle: ["Founder", "AI Researcher", "Builder", "Engineer"],
+      jobTitle: ["CPO", "Cofounder", "AI Researcher", "Engineer"],
       description:
-        "Pavitra Kushwaha is a 16-year-old founder, builder, and AI researcher from Delhi. Research Fellow at IIT Kanpur under Prof. Adithya Vadapalli. #1 Top Young Founder of the Year '26 at Uniform2Unicorn. Currently building the video pipeline at Prolearn ($3.2M pre-seed, Bangalore). Founder of byteforge (4,500+ member tech community), PaXus (multi-venture tech company).",
+        "Pavitra Kushwaha is 16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur under Prof. Adithya Vadapalli. Founder of byteforge.",
       nationality: { "@type": "Country", name: "India" },
       address: {
         "@type": "PostalAddress",
@@ -128,6 +128,7 @@ const jsonLd = {
         "Hackathons",
         "Android ADB",
         "LLM Agents",
+        "Simulation Runtime",
         "Edge Computing",
         "NLP",
         "Reinforcement Learning",
@@ -151,15 +152,17 @@ const jsonLd = {
         "Published research paper on Synthetic Intelligence at 16",
         "Keynoted SparkX at Techfest '25 (IIT Bombay)",
         "Won international robowars 8kg at Techfest '25",
+        "Inflection Grant (Edge City / Jensen Huang jacket fund)",
+        "Organized Execron 1.0 at IIT Kanpur",
       ],
       hasOccupation: [
         {
           "@type": "Occupation",
-          name: "Engineer",
+          name: "CPO",
           employer: {
             "@type": "Organization",
-            name: "Prolearn",
-            url: "https://prolearn.app",
+            name: "Vivacity",
+            url: "https://tryvivacity.com",
           },
         },
       ],
@@ -185,11 +188,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-theme="void" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t);}else if(window.matchMedia("(prefers-color-scheme: dark)").matches){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="void"||t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t);}else{document.documentElement.setAttribute("data-theme","void");}}catch(e){document.documentElement.setAttribute("data-theme","void");}})();`,
           }}
         />
         <link rel="me" href="https://x.com/pavikshw" />

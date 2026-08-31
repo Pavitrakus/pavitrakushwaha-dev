@@ -102,7 +102,7 @@ export default function ByteforgePage() {
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Execron 1.0 BuildFest</h2>
 
-        <p>The flagship event was Execron 1.0 BuildFest, hosted at <strong>IIT Kanpur</strong>. It brought in 290+ developers for a 24-hour hackathon, one of the biggest the city had seen. I organized, ran, and somehow survived it. There was no budget, no prior event management experience, just relentless grinding and a lot of calls at 2am. Developers came from Kanpur, Lucknow, Allahabad, and even Delhi. Teams built everything from Web3 applications to AI-powered agri-tech tools for local farmers.</p>
+        <p>The flagship was Execron 1.0 at elite campus, <strong>IIT Kanpur</strong>. biggest hackathon the state has seen. 290+ builders, 24 hours. my team and i raised the whole thing and paid it out: $75k plus $2k cash. grinding, 2am calls, people coming in from Kanpur, Lucknow, Allahabad, Delhi. teams shipped web3, agri-tech, whatever they were actually angry about.</p>
 
         <p>Execron proved that you don&apos;t need to live in Silicon Valley or Bangalore to have a vibrant dev culture. You just need a place where builders feel welcome to share their creations. also a place to{" "}<Link href="/visits" className="easter-quiet" title="kanpur sees you">see who showed up weirdly late at night</Link>.</p>
 

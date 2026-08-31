@@ -6,6 +6,11 @@ export const SITE_VIEW_SEED = 1847;
 const PAGE_SEEDS: Record<string, number> = {
   "/blog/bangalore-trip": 612,
   "/blog/fishy-mesh": 241,
+  "/projects/vivacity": 640,
+  "/work": 390,
+  "/blog/notes": 228,
+  "/blog/notes/the-jacket-one": 194,
+  "/blog/notes/forked-before-breakfast": 211,
   "/projects/orca": 538,
   "/projects/bucket": 417,
   "/projects/whocodedmore": 489,

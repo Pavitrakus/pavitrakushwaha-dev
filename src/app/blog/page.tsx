@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
+import { notes } from "@/lib/notes";
 
 const posts = [
   {
@@ -48,8 +49,11 @@ export default function BlogPage() {
 
       <p>
         i write when something is bothering me enough that talking about it
-        isn&apos;t enough. it&apos;s sporadic. it&apos;s honest. drop your
-        email below and i&apos;ll ping you when something new goes up. or just{" "}
+        isn&apos;t enough. the long ones live here. the days that actually
+        happened live in{" "}
+        <Link href="/blog/notes">notes</Link>
+        . drop your email and i&apos;ll ping you when something new goes up,
+        or just{" "}
         <Link href="/visits" className="easter-quiet" title="the gallery joke lives here">
           lurk louder
         </Link>
@@ -63,6 +67,24 @@ export default function BlogPage() {
             <span className="entry-name">
               <Link href={p.link ? p.link : `/blog/${p.slug}`}>{p.title}</Link>
               <span className="entry-desc">{p.desc}</span>
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      <h2 style={{ fontSize: "1em", fontWeight: 600, marginTop: "2.2em" }}>
+        notes
+      </h2>
+      <p className="muted" style={{ fontSize: "0.92em" }}>
+        shorter. a good day, a grant, a fork that verified.{" "}
+        <Link href="/blog/notes">all notes →</Link>
+      </p>
+      <ul className="entry-list">
+        {notes.map((n) => (
+          <li key={n.slug}>
+            <span className="entry-year">{n.date.slice(5)}</span>
+            <span className="entry-name">
+              <Link href={`/blog/notes/${n.slug}`}>{n.title}</Link>
             </span>
           </li>
         ))}

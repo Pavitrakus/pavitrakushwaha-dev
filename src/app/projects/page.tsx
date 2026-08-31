@@ -5,8 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 export const metadata: Metadata = {
   title: "Projects | Pavitra Kushwaha",
   description:
-    "Side projects Pavitra Kushwaha has shipped around the main work: Bucket application agent, WhoCodedMore, ORCA zero-step agentic AI, D2AR Hindi NLP benchmark, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
+    "Vivacity simulation runtime, Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge. Pavitra Kushwaha, CPO of Vivacity.",
   keywords: [
+    "Vivacity simulation runtime",
     "Pavitra Kushwaha projects",
     "Bucket application agent",
     "WhoCodedMore",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://pavitrakushwaha.dev/projects",
     title: "Projects | Pavitra Kushwaha",
     description:
-      "Side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
+      "Vivacity, Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
     siteName: "Pavitra Kushwaha",
   },
   twitter: {
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     creator: "@pavikshw",
     title: "Projects | Pavitra Kushwaha",
     description:
-      "Side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
+      "Vivacity, Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
   },
 };
 
@@ -64,6 +65,17 @@ function siteLabel(url: string) {
 }
 
 const projects: Project[] = [
+  {
+    year: "2026",
+    slug: "vivacity",
+    name: "Vivacity",
+    icon: null,
+    favicon: "tryvivacity.com",
+    shortDesc:
+      "simulation runtime for AI agents. create, observe, act, fork, verify, commit. pixels are an observation. i am cofounder and cpo.",
+    site: "https://tryvivacity.com",
+    tag: "Runtime / Agents",
+  },
   {
     year: "2026",
     slug: "bucket",
@@ -157,7 +169,7 @@ export default function ProjectsPage() {
 
       <h1>
         things i&apos;ve built.{" "}
-        <span className="muted">(side projects)</span>
+        <span className="muted">(vivacity first, then the rest)</span>
       </h1>
 
       <p>

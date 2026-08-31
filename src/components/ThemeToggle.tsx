@@ -1,13 +1,26 @@
 "use client";
 
-type Theme = "light" | "dark";
+export type Theme = "void" | "dark" | "light";
+
+const NEXT: Record<Theme, Theme> = {
+  void: "dark",
+  dark: "light",
+  light: "void",
+};
+
+const LABEL: Record<Theme, string> = {
+  void: "ultra dark",
+  dark: "dark",
+  light: "light",
+};
+
+function isTheme(value: string | null): value is Theme {
+  return value === "void" || value === "dark" || value === "light";
+}
 
 function readTheme(): Theme {
   const current = document.documentElement.getAttribute("data-theme");
-  if (current === "dark" || current === "light") return current;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return isTheme(current) ? current : "void";
 }
 
 function applyTheme(theme: Theme) {
@@ -24,14 +37,21 @@ export function ThemeToggle() {
     <button
       type="button"
       className="theme-toggle"
-      aria-label="toggle color theme"
-      title="toggle color theme"
+      aria-label="cycle color theme"
+      title="ultra dark, dark, light"
       onClick={() => {
-        applyTheme(readTheme() === "dark" ? "light" : "dark");
+        const next = NEXT[readTheme()];
+        applyTheme(next);
+        const btn = document.querySelector(".theme-toggle");
+        if (btn) btn.setAttribute("data-mode", next);
+        btn?.setAttribute("title", LABEL[next]);
       }}
     >
-      <span className="icon-moon">
-        <MoonIcon />
+      <span className="icon-moon icon-moon-void">
+        <MoonIcon filled />
+      </span>
+      <span className="icon-moon icon-moon-dark">
+        <MoonIcon filled={false} />
       </span>
       <span className="icon-sun">
         <SunIcon />
@@ -40,7 +60,7 @@ export function ThemeToggle() {
   );
 }
 
-const MoonIcon = () => (
+const MoonIcon = ({ filled }: { filled: boolean }) => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path
       d="M21 14.3A8.4 8.4 0 0 1 9.7 3 7.6 7.6 0 1 0 21 14.3Z"
@@ -48,6 +68,7 @@ const MoonIcon = () => (
       strokeWidth="1.7"
       strokeLinecap="round"
       strokeLinejoin="round"
+      fill={filled ? "currentColor" : "none"}
     />
   </svg>
 );

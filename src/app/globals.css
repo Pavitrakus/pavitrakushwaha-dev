@@ -1,6 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
+  color-scheme: dark;
+  --bg: #000;
+  --fg: #f3f1eb;
+  --fg-soft: #d2cec6;
+  --fg-dim: #a8a49b;
+  --fg-muted: #8e8a81;
+  --fg-faint: #6e6a62;
+  --fg-link-hover: #fff;
+  --border: #1c1c1c;
+  --border-soft: #161616;
+  --border-line: #2a2a2a;
+  --border-hair: #3a3a3a;
+  --surface: #0c0c0c;
+  --surface-border: #222;
+  --social: #b8b4ab;
+  --input-border: #2a2a2a;
+  --btn-border: #c8c4bb;
+  --btn-fg: #f3f1eb;
+  --btn-hover-bg: #f3f1eb;
+  --btn-hover-fg: #000;
+  --quote-border: #2a2a2a;
+  --quote-fg: #a8a49b;
+  --marker: #8e8a81;
+  --bounty: #7dca7d;
+  --bounty-hover: #9ad89a;
+  --nav: #8e8a81;
+  --nav-border: #2a2a2a;
+  --toggle-hover: rgba(255, 255, 255, 0.08);
+  --sim-line: rgba(217, 255, 87, 0.22);
+}
+
+[data-theme="void"] {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
   color-scheme: light;
   --bg: #fff;
   --fg: #111;
@@ -117,15 +153,30 @@ html, body {
   place-items: center;
 }
 
+.theme-toggle .icon-moon-void {
+  display: grid;
+}
+
+.theme-toggle .icon-moon-dark,
 .theme-toggle .icon-sun {
   display: none;
 }
 
-[data-theme="dark"] .theme-toggle .icon-moon {
+[data-theme="dark"] .theme-toggle .icon-moon-void,
+[data-theme="dark"] .theme-toggle .icon-sun {
   display: none;
 }
 
-[data-theme="dark"] .theme-toggle .icon-sun {
+[data-theme="dark"] .theme-toggle .icon-moon-dark {
+  display: grid;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon-void,
+[data-theme="light"] .theme-toggle .icon-moon-dark {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
   display: grid;
 }
 
@@ -133,7 +184,9 @@ html, body {
   display: block;
 }
 
-[data-theme="dark"] .invert-on-dark {
+[data-theme="dark"] .invert-on-dark,
+[data-theme="void"] .invert-on-dark,
+:root:not([data-theme="light"]) .invert-on-dark {
   filter: invert(1);
 }
 
@@ -683,6 +736,105 @@ footer a:hover {
 .notify-form button:hover {
   background: var(--btn-hover-bg);
   color: var(--btn-hover-fg);
+}
+
+/* ─────────────────────────────────────────
+   Vivacity runtime sim
+───────────────────────────────────────── */
+.viva-sim {
+  margin: 0 0 1.8em;
+  padding: 0.85em 0.9em 0.95em;
+  border: 1px solid var(--border-line);
+  background: var(--surface);
+}
+
+.viva-sim-full {
+  padding: 1em 1em 1.1em;
+}
+
+.viva-sim-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4em 1em;
+  margin-bottom: 0.55em;
+}
+
+.viva-sim-mark {
+  font-size: 0.72em;
+  color: var(--fg);
+  letter-spacing: 0.04em;
+}
+
+.viva-sim-canvas {
+  display: block;
+  width: 100%;
+  height: 180px;
+  background: #000;
+  border: 1px solid var(--border-line);
+}
+
+[data-theme="light"] .viva-sim-canvas {
+  background: #111110;
+}
+
+.viva-sim-full .viva-sim-canvas {
+  height: 280px;
+}
+
+.viva-sim-verbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-top: 0.7em;
+}
+
+.viva-verb {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68em;
+  padding: 0.35em 0.65em;
+  border: 1px solid var(--btn-border);
+  background: transparent;
+  color: var(--btn-fg);
+  cursor: pointer;
+}
+
+.viva-verb:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-fg);
+}
+
+.viva-sim-hud {
+  margin: 0.65em 0 0;
+  font-size: 0.72em;
+  color: var(--fg-muted);
+}
+
+.viva-sim-log {
+  list-style: none;
+  padding: 0.6em 0 0;
+  margin: 0.4em 0 0;
+  border-top: 1px solid var(--border-soft);
+  font-size: 0.7em;
+  color: var(--fg-dim);
+}
+
+.viva-sim-log li {
+  margin: 0 0 0.25em;
+  padding: 0;
+}
+
+.notes-date {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72em;
+  color: var(--fg-faint);
+  display: block;
+  margin-bottom: 0.4em;
+}
+
+.note-body p {
+  margin: 0 0 1em;
+  color: var(--fg-soft);
 }
 
 /* ─────────────────────────────────────────
