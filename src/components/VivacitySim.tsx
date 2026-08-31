@@ -335,9 +335,11 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
       ctx.font = "10px 'JetBrains Mono', monospace";
       const liveEl = elements(s.body);
       ctx.fillText("μ = 1 / R = 1", 10, 16);
-      ctx.fillText(`r ${liveEl.r.toFixed(3)} R`, 10, h - 12);
+      ctx.fillText(`r ${liveEl.r.toFixed(3)} R`, 10, h - 26);
+      ctx.fillText(`|v| ${liveEl.v.toFixed(4)} R/τ`, 10, h - 12);
       ctx.fillStyle = "rgba(236,234,230,0.55)";
-      ctx.fillText("velocity verlet", w - 108, 16);
+      ctx.fillText("VELOCITY VERLET", w - 118, 16);
+      ctx.fillText("INCLINED PROJECTION", 10, h - 42);
       ctx.fillText(`Δt ${DT} τ`, w - 88, h - 12);
 
       if (s.flash > 0.05) {
@@ -404,7 +406,7 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
       {mode === "full" && (
         <ol className="viva-sim-log mono" aria-live="polite">
           {log.length === 0 ? (
-            <li>world live. play it. this is state, not a clip.</li>
+            <li>world live. play it. state first, pixels later.</li>
           ) : (
             log.map((line, i) => <li key={`${uid}-${i}`}>{line}</li>)
           )}

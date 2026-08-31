@@ -57,7 +57,7 @@ export const work: WorkItem[] = [
       "worked with cédric augonnet at nvidia research. runtimes, cuda task graphs, how work actually moves across devices.",
     mark: { kind: "favicon", domain: "nvidia.com", alt: "NVIDIA" },
     body: [
-      "worked with cédric augonnet at nvidia research. he is a senior research scientist there. before that he designed starpu, the runtime that schedules tasks over cpus and accelerators without pretending they are the same machine. at nvidia the same instinct lives in cuda: programming models, sequential task flow, graphs that actually move data.",
+      "worked with cédric augonnet at nvidia research. he is a senior research scientist there. before that he designed starpu, the runtime that schedules tasks over cpus and accelerators with one data-aware scheduler. at nvidia that instinct lives in cuda: programming models, sequential task flow, graphs that actually move data.",
       "his public work is the neighborhood i sat in. cudastf (sc24, best paper finalist with alexandrescu, sidelnik, garland) is a sequential task-flow layer over cuda streams and graphs. you declare data, you declare tasks, the runtime wires the dependencies. i worked with him on that class of problem. the paper is his.",
       "same instinct as vivacity. a world that can fork and verify needs a scheduler that knows what is state and what is an observation. the pretty picture comes last.",
     ],
@@ -72,7 +72,7 @@ export const work: WorkItem[] = [
     mark: { kind: "favicon", domain: "openai.com", alt: "OpenAI" },
     body: [
       "openai/codex is the local coding agent: tools, a sandbox, a loop that reads your repo and does the boring work you would otherwise type by hand. i wrote into that oss. the interesting part is the loop.",
-      "the model proposes a command, the runtime decides if it is allowed, stdout comes back as observation, the next step conditions on that. same contract as a world: observe, act, verify, commit. a coding agent without a policy is a weapon. a coding agent that cannot touch the filesystem is a chatbot.",
+      "the model proposes a command, the runtime decides if it is allowed, stdout comes back as observation, the next step conditions on that. same contract as a world: observe, act, verify, commit.",
       "i care about the edges: approval boundaries, how diffs get applied, what gets logged so a human can reconstruct why the agent touched a file. that is the same paranoia i bring to vivacity pipelines.",
     ],
   },
@@ -247,9 +247,9 @@ export const work: WorkItem[] = [
     oneLiner: "published at 16. intelligence as something you grow.",
     mark: { kind: "logo", src: "/iitk-logo.jpg", alt: "research" },
     body: [
-      "i published a paper on synthetic intelligence at 16. the claim is simple and i will not dress it up: most of what we ship as 'ai' is a frozen mapping. si is the bet that you can grow a system whose dynamics stay open, that can be coupled to a world and keep adapting.",
-      "the vocabulary sits next to organoid work, coupled dynamics, systems that are alive in the engineering sense: state that persists, energy that has to balance, a loop with the environment. it is the same instinct as vivacity. a clip is an observation. a world has to continue existing after the frame.",
-      "i was 16. i still am. the paper is a stake in the ground. the cathedral can wait.",
+      "i published a paper on synthetic intelligence at 16. most of what we ship as ai is a frozen mapping. si is the bet that you can grow a system whose dynamics stay open, coupled to a world, still adapting.",
+      "state that persists, energy that has to balance, a loop with the environment. same instinct as vivacity. a clip is an observation. a world has to keep existing after the frame.",
+      "i was 16. i still am. the paper is a stake in the ground.",
     ],
   },
   {

@@ -84,6 +84,10 @@ export default function Home() {
       </p>
 
       <VivacitySim />
+      <p className="muted mono" style={{ fontSize: "0.78em", marginTop: "-1.1em" }}>
+        circular orbit. play, kick velocity, fork the futures.{" "}
+        <Link href="/projects/vivacity">full runtime →</Link>
+      </p>
 
       <p className="social-links">
         <a href="https://x.com/pavikshw" target="_blank" rel="noopener me noreferrer">
@@ -145,7 +149,10 @@ export default function Home() {
           OSS
         </li>
         <li>
-          <Link href="/work/inflection">inflection grant</Link>
+          <Link href="/work/inflection">
+            <Favicon domain="edgecity.live" alt="Edge City" />
+            inflection grant
+          </Link>
           . jensen&apos;s jacket money. hwahwhahwa
         </li>
         <li>
@@ -161,18 +168,6 @@ export default function Home() {
           <Link href="/work/supabase">
             <Favicon domain="supabase.com" alt="Supabase" />
             Supabase
-          </Link>
-        </li>
-        <li>
-          video pipeline at{" "}
-          <Link href="/work/prolearn">
-            <Logo
-              src="/prolearn-logo.svg"
-              alt="Prolearn"
-              rounded={false}
-              className="invert-on-dark"
-              style={{ width: "auto", height: "1.1em", objectFit: "contain", verticalAlign: "-0.18em" }}
-            />
           </Link>
         </li>
         <li>
