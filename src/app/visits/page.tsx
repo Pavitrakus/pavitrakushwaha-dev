@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
+import { usePresence } from "@/components/PresenceProvider";
 
 type VisitRow = {
   city: string | null;
@@ -14,24 +15,33 @@ type VisitRow = {
 };
 
 export default function VisitsPage() {
+  const { ready } = usePresence();
   const [visits, setVisits] = useState<VisitRow[]>([]);
   const [siteViews, setSiteViews] = useState<number | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
+    if (!ready) return;
+    let cancelled = false;
     (async () => {
       try {
-        const res = await fetch("/api/visits");
-        if (res.ok) {
-          const data = await res.json();
-          setVisits(data.visits || []);
-          setSiteViews(data.siteViews ?? null);
-        }
+        const res = await fetch("/api/visits", { cache: "no-store" });
+        if (!res.ok) throw new Error("visits");
+        const data = await res.json();
+        if (cancelled) return;
+        setVisits(data.visits || []);
+        setSiteViews(data.siteViews ?? null);
+      } catch {
+        if (!cancelled) setFailed(true);
       } finally {
-        setLoaded(true);
+        if (!cancelled) setLoaded(true);
       }
     })();
-  }, []);
+    return () => {
+      cancelled = true;
+    };
+  }, [ready]);
 
   return (
     <main>
@@ -55,6 +65,11 @@ export default function VisitsPage() {
 
       {!loaded ? (
         <p className="muted mono">loading the stalker log…</p>
+      ) : failed ? (
+        <p className="muted">
+          the trail hiccuped. refresh once. if it stays empty, redis is
+          having a moment.
+        </p>
       ) : visits.length === 0 ? (
         <p className="muted">
           nobody interesting yet. or redis is still waking up. either way,

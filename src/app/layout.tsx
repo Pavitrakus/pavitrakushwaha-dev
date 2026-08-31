@@ -13,11 +13,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://pavitrakushwaha.dev"),
   title: {
-    default: "Pavitra Kushwaha | CPO, Vivacity",
+    default: "Pavitra Kushwaha - Engineer, Founder, Researcher",
     template: "%s | Pavitra Kushwaha",
   },
   description:
-    "Pavitra Kushwaha, 16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur, builder, and founder of byteforge.",
+    "Pavitra Kushwaha. Engineer, founder, researcher. Building Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur.",
   keywords: [
     "Pavitra Kushwaha",
     "AI Researcher",
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     url: "https://pavitrakushwaha.dev",
-    title: "Pavitra Kushwaha | CPO, Vivacity",
+    title: "Pavitra Kushwaha - Engineer, Founder, Researcher",
     description:
-      "16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur.",
+      "Engineer, founder, researcher. Building Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur.",
     siteName: "Pavitra Kushwaha",
     locale: "en_IN",
     images: [
@@ -85,9 +85,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@pavikshw",
     creator: "@pavikshw",
-    title: "Pavitra Kushwaha | CPO, Vivacity",
+    title: "Pavitra Kushwaha - Engineer, Founder, Researcher",
     description:
-      "16. Cofounder and CPO of Vivacity. Research fellow at IIT Kanpur.",
+      "Engineer, founder, researcher. Building Vivacity. Research fellow at IIT Kanpur.",
     images: ["/og-image.png"],
   },
 };
@@ -115,9 +115,9 @@ const jsonLd = {
       name: "Pavitra Kushwaha",
       url: "https://pavitrakushwaha.dev/",
       email: "mailto:pavitra@paxus.in",
-      jobTitle: ["CPO", "Cofounder", "AI Researcher", "Engineer"],
+      jobTitle: ["Engineer", "Founder", "Researcher"],
       description:
-        "Pavitra Kushwaha is 16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur under Prof. Adithya Vadapalli and founder of byteforge.",
+        "Pavitra Kushwaha is an engineer, founder, and researcher. He is building Vivacity, a simulation runtime for AI agents, and is a research fellow at IIT Kanpur.",
       nationality: { "@type": "Country", name: "India" },
       knowsAbout: [
         "Artificial Intelligence",
@@ -160,7 +160,7 @@ const jsonLd = {
       hasOccupation: [
         {
           "@type": "Occupation",
-          name: "CPO",
+          name: "Cofounder",
           employer: {
             "@type": "Organization",
             name: "Vivacity",

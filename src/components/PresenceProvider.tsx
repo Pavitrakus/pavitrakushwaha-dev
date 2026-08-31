@@ -52,6 +52,7 @@ export function PresenceProvider({ children }: { children: React.ReactNode }) {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ path: pathname }),
+          cache: "no-store",
         });
         if (!res.ok || cancelled) return;
         const data = await res.json();

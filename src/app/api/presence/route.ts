@@ -8,6 +8,7 @@ import {
 } from "@/lib/view-seeds";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 const COOKIE_SEEN = "pk_seen";
 const COOKIE_SITE = "pk_site_view";
@@ -19,16 +20,44 @@ function pathViewCookie(path: string) {
   return `pk_view_${h.toString(36)}`;
 }
 
+function safeDecode(value: string | null): string | null {
+  if (!value) return null;
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
+function firstHeader(req: NextRequest, names: string[]): string | null {
+  for (const name of names) {
+    const value = safeDecode(req.headers.get(name));
+    if (value && value.trim()) return value.trim();
+  }
+  return null;
+}
+
 function readGeo(req: NextRequest): Omit<Visit, "at"> {
-  const city = req.headers.get("x-vercel-ip-city");
-  const region =
-    req.headers.get("x-vercel-ip-country-region") ||
-    req.headers.get("x-vercel-ip-region");
-  const country = req.headers.get("x-vercel-ip-country");
+  const city = firstHeader(req, [
+    "x-vercel-ip-city",
+    "cf-ipcity",
+    "x-appengine-city",
+  ]);
+  const region = firstHeader(req, [
+    "x-vercel-ip-country-region",
+    "x-vercel-ip-region",
+    "cf-region",
+    "cf-region-code",
+  ]);
+  const country = firstHeader(req, [
+    "x-vercel-ip-country",
+    "cf-ipcountry",
+    "x-appengine-country",
+  ]);
   return {
-    city: city ? decodeURIComponent(city) : null,
-    region: region ? decodeURIComponent(region) : null,
-    country: country ? decodeURIComponent(country) : null,
+    city,
+    region,
+    country: country && country.toLowerCase() === "xx" ? null : country,
   };
 }
 

@@ -23,15 +23,9 @@ export function SiteFooter({ links, showHome = true }: Props) {
       {showHome && <Link href="/">home</Link>}
       {links}
       <Link href="/v01">v01 2025</Link>
-      {lastPlace ? (
-        <Link href="/visits" className="footer-trail">
-          last: {lastPlace}
-        </Link>
-      ) : (
-        <Link href="/visits" className="footer-trail">
-          visitor trail →
-        </Link>
-      )}
+      <Link href="/visits" className="footer-trail">
+        {lastPlace ? `visitor trail · last ${lastPlace}` : "visitor trail →"}
+      </Link>
       {views && <span className="footer-views">{views} views</span>}
     </footer>
   );

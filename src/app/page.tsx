@@ -144,11 +144,15 @@ export default function Home() {
           <span className="mono section-meta">example 001</span>
         </header>
         <p className="section-kicker">
-          a two-body world an agent can inspect, kick, and fork. not a product api.
+          Simulation infrastructure for agents that need to reason about
+          what happens next.
         </p>
         <VivacitySim mode="compact" />
         <p className="home-vivacity-link">
-          <Link href="/projects/vivacity">inside the runtime →</Link>
+          <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
+            visit vivacity ↗
+          </a>
+          <Link href="/projects/vivacity">try the model →</Link>
         </p>
       </section>
 
@@ -174,6 +178,16 @@ export default function Home() {
             <span className="work-arrow" aria-hidden="true">→</span>
           </Link>
           , the terminal agent with a real tool and approval loop
+        </li>
+
+        <li>
+          worked with the{" "}
+          <Link href="/work/supabase" className="work-row">
+            <Favicon domain="supabase.com" alt="Supabase" />
+            supabase team on mcp
+            <span className="work-arrow" aria-hidden="true">→</span>
+          </Link>
+          , so their product can sit in an agent&apos;s tool loop
         </li>
 
         <li>
@@ -271,39 +285,30 @@ export default function Home() {
 
       <section className="home-section" aria-labelledby="built-home-title">
         <h2 id="built-home-title">Things I&apos;ve built</h2>
-        <p className="section-kicker">side projects, sitting next to the company.</p>
-        <ul className="home-projects">
-          <li>
-            <Link href="/projects/orca">
-              <Logo src="/orca-logo.jpg" alt="ORCA" />
-              ORCA
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects/bucket">
-              <Favicon domain="brokebucket.com" alt="Bucket" />
-              Bucket
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects/whocodedmore">
-              <Logo
-                src="/whocodedmore-logo.png"
-                alt="WhoCodedMore"
-                rounded={false}
-                style={{ objectFit: "contain" }}
-              />
-              WhoCodedMore
-            </Link>
-          </li>
-          <li>D2AR</li>
-          <li>ORBIS 2045</li>
-          <li>LumenSeed</li>
-          <li>ClusterOrch-Gym</li>
-          <li>
-            <Link href="/projects">and more</Link>
-          </li>
-        </ul>
+        <p>
+          side projects, sitting next to the company:{" "}
+          <Link href="/projects/orca">
+            <Logo src="/orca-logo.jpg" alt="ORCA" />
+            ORCA
+          </Link>
+          ,{" "}
+          <Link href="/projects/bucket">
+            <Favicon domain="brokebucket.com" alt="Bucket" />
+            Bucket
+          </Link>
+          ,{" "}
+          <Link href="/projects/whocodedmore">
+            <Logo
+              src="/whocodedmore-logo.png"
+              alt="WhoCodedMore"
+              rounded={false}
+              style={{ objectFit: "contain" }}
+            />
+            WhoCodedMore
+          </Link>
+          , D2AR, ORBIS 2045, LumenSeed, ClusterOrch-Gym,{" "}
+          <Link href="/projects">and more</Link>
+        </p>
       </section>
 
       <section className="home-section" aria-labelledby="notes-home-title">

@@ -114,7 +114,7 @@ const projects: Project[] = [
     name: "ORBIS 2045",
     icon: "/orbis.jpeg",
     shortDesc:
-      "standalone hardware device running a local LLM with adb-based mobile control, wrapped in a desk object from 2045.",
+      "desk appliance running a local LLM with adb-based phone control. pi, llama.cpp, the object sitting still.",
     site: null,
     tag: "Hardware / AI",
   },

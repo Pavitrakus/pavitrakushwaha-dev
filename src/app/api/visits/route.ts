@@ -3,6 +3,8 @@ import { formatPlace, getRedis, relativeTime, type Visit } from "@/lib/redis";
 import { SITE_VIEW_SEED } from "@/lib/view-seeds";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 function parseVisit(raw: unknown): Visit | null {
   if (!raw) return null;

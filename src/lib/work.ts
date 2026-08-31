@@ -116,16 +116,16 @@ export const work: WorkItem[] = [
   {
     slug: "supabase",
     year: "2026",
-    title: "engineer",
-    tag: "Postgres",
+    title: "supabase mcp",
+    tag: "MCP / Infra",
     oneLiner:
-      "engineer on a supabase project. postgres, auth, the stack builders actually ship.",
+      "worked with the supabase team on mcp for their company. the stack, callable from an agent.",
     mark: { kind: "favicon", domain: "supabase.com", alt: "Supabase" },
     orgHref: "https://supabase.com",
     body: [
-      "i engineered on a supabase project. postgres, auth, storage, realtime, and edge functions, with the database still in view instead of hidden behind a toy api.",
-      "row level security is where the product becomes real. the client can carry a public key because authorization lives in postgres policies tied to the session. reads and writes get separate rules, and every rule has to survive the obvious test: a different user changing the owner id and asking for someone else's row.",
-      "sessions become claims, claims reach postgres, policies decide what the query can touch, and storage follows the same identity. that chain is what i was wiring.",
+      "i worked with the supabase team on mcp for their company. the job was a protocol surface: an agent should be able to talk to postgres, auth, storage, and the rest of the stack as tools, without wrapping the database in a toy api.",
+      "mcp is the handshake. the interesting part is what the tool is allowed to touch. sessions become claims, claims reach postgres, policies decide the row, and storage follows the same identity. that is the chain we were putting in front of a reasoning loop.",
+      "i like that work because it sits where product, protocol, and postgres meet. they already have builders. they needed the stack to be callable without lying about what a query can do.",
     ],
   },
   {

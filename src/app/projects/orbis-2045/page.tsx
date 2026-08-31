@@ -85,8 +85,8 @@ export default function Orbis2045Page() {
       </h1>
 
       <p className="muted" style={{ fontSize: "0.9em", fontStyle: "italic", marginBottom: "1.8em" }}>
-        a local language model, phone control, and a desk object built to feel
-        like it arrived early from 2045
+        a local language model, phone control, and a desk object built to
+        feel like it arrived early from 2045. not a toy.
       </p>
 
       <PostChrome />

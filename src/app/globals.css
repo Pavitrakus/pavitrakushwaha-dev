@@ -251,6 +251,10 @@ p {
   margin: 0 0 1.2em;
 }
 
+.post-body h2 {
+  margin: 1.7em 0 0.55em;
+}
+
 .post-body blockquote {
   margin: 1.5em 0;
   padding: 0.5em 1em;
@@ -518,27 +522,29 @@ img {
 ───────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);
-  padding-top: 1.4em;
-  margin-top: 2em;
+  padding-top: 1.5em;
+  margin-top: 2.4em;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72em;
-  color: var(--fg-faint);
+  font-size: 0.8em;
+  color: var(--fg-dim);
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4em 1.5em;
+  gap: 0.55em 1.35em;
   align-items: center;
 }
 
 footer a {
-  color: var(--fg-faint);
+  color: var(--fg-dim);
   font-weight: 400;
+  text-decoration: underline;
   text-decoration-color: var(--border-hair);
   text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
 
 footer a:hover {
-  color: var(--fg-dim);
-  text-decoration-color: var(--fg-dim);
+  color: var(--fg);
+  text-decoration-color: var(--fg);
 }
 
 /* ─────────────────────────────────────────
@@ -633,23 +639,6 @@ footer a:hover {
   display: block;
   margin-top: 0.35em;
   font-size: 0.92em;
-}
-
-.home-projects {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55em 1.15em;
-}
-
-.home-projects li {
-  font-weight: 500;
-}
-
-.home-projects a {
-  font-weight: 600;
 }
 
 .home-close {
@@ -797,6 +786,9 @@ footer a:hover {
   margin: 0.85em 0 0;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em 1.2em;
 }
 
 .viva-sim {
@@ -1216,12 +1208,12 @@ footer a:hover {
 }
 
 .footer-trail {
-  color: var(--fg-soft) !important;
+  color: var(--fg) !important;
   font-weight: 500;
 }
 
 .footer-views {
-  color: var(--fg-faint);
+  color: var(--fg-muted);
 }
 
 .you-are-here {
@@ -1546,8 +1538,8 @@ footer a:hover {
   }
 
   footer {
-    font-size: 0.62em;
-    gap: 0.4em 0.9em;
+    font-size: 0.74em;
+    gap: 0.5em 1em;
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
