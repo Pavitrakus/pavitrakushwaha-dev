@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { PresenceProvider } from "@/components/PresenceProvider";
-import { YouAreHere } from "@/components/YouAreHere";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -215,7 +214,6 @@ export default function RootLayout({
       <body>
         <PresenceProvider>
           <ThemeToggle />
-          <YouAreHere />
           {children}
         </PresenceProvider>
       </body>
