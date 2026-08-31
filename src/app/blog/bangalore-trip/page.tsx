@@ -4,7 +4,7 @@ import { PostChrome } from "@/components/PostChrome";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "two weeks in bangalore | Pavitra Kushwaha",
+  title: "two weeks in bangalore",
   description:
     "Two weeks in Bangalore: won two hackathons, built Vivacity with 3B1B-style Manim animations for JEE/NEET, walked into ProLearn's office without an appointment, and ended up broke at a Shell petrol pump. A story about building things in India's startup capital.",
   keywords: [

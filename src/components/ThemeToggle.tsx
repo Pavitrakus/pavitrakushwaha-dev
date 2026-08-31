@@ -2,15 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-export type Theme = "void" | "dark" | "light";
+type Theme = "void" | "dark" | "light";
 
-const NEXT: Record<Theme, Theme> = {
+const nextTheme: Record<Theme, Theme> = {
   void: "dark",
   dark: "light",
   light: "void",
 };
 
-const LABEL: Record<Theme, string> = {
+const themeLabel: Record<Theme, string> = {
   void: "ultra dark",
   dark: "dark",
   light: "light",
@@ -38,29 +38,30 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>("void");
 
   useEffect(() => {
-    setTheme(readTheme());
+    const frame = requestAnimationFrame(() => setTheme(readTheme()));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
-  const label = LABEL[theme];
+  const next = nextTheme[theme];
 
   return (
     <button
       type="button"
       className="theme-toggle"
       data-mode={theme}
-      aria-label={`theme: ${label}. click for ${LABEL[NEXT[theme]]}`}
-      title={`${label} · click to cycle ultra dark, dark, light`}
+      aria-label={`theme is ${themeLabel[theme]}. switch to ${themeLabel[next]}`}
+      title={`${themeLabel[theme]} · next: ${themeLabel[next]}`}
       onClick={() => {
-        const next = NEXT[readTheme()];
-        applyTheme(next);
-        setTheme(next);
+        const updated = nextTheme[readTheme()];
+        applyTheme(updated);
+        setTheme(updated);
       }}
     >
       <span className="icon-moon icon-moon-void">
         <MoonIcon filled />
       </span>
       <span className="icon-moon icon-moon-dark">
-        <MoonIcon filled={false} />
+        <MoonIcon />
       </span>
       <span className="icon-sun">
         <SunIcon />
@@ -69,7 +70,7 @@ export function ThemeToggle() {
   );
 }
 
-const MoonIcon = ({ filled }: { filled: boolean }) => (
+const MoonIcon = ({ filled = false }: { filled?: boolean }) => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path
       d="M21 14.3A8.4 8.4 0 0 1 9.7 3 7.6 7.6 0 1 0 21 14.3Z"

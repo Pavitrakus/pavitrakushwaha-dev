@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
-import { Favicon, Logo } from "@/components/Brand";
 import { VivacitySim } from "@/components/VivacitySim";
 
+/* ── inline SVG social icons ── */
 const XIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"
     style={{ display: "inline", verticalAlign: "-0.1em", marginRight: "0.2em" }}>
@@ -28,15 +28,63 @@ const InstagramIcon = () => (
   </svg>
 );
 
+/* ── small inline logo image ── */
+const Logo = ({
+  src,
+  rounded = true,
+  className,
+  style: extraStyle,
+}: {
+  src: string;
+  alt: string;
+  rounded?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+}) => (
+  <img
+    src={src}
+    alt=""
+    aria-hidden="true"
+    className={className}
+    style={{
+      display: "inline",
+      width: "1em",
+      height: "1em",
+      objectFit: "cover",
+      verticalAlign: "-0.14em",
+      marginRight: "0.22em",
+      borderRadius: rounded ? "3px" : "0",
+      ...extraStyle,
+    }}
+  />
+);
+
+/* ── favicon from a domain (uses Google's favicon service) ── */
+const Favicon = ({ domain }: { domain: string; alt: string }) => (
+  <img
+    src={`https://www.google.com/s2/favicons?sz=32&domain=${domain}`}
+    alt=""
+    aria-hidden="true"
+    style={{
+      display: "inline",
+      width: "1em",
+      height: "1em",
+      objectFit: "contain",
+      verticalAlign: "-0.14em",
+      marginRight: "0.22em",
+      borderRadius: "3px",
+    }}
+  />
+);
+
 export default function Home() {
   return (
     <main>
+      {/* ── top nav ── */}
       <nav className="top-nav">
-        <Link href="/blog">writing</Link>
-        <span className="top-nav-sep">/</span>
-        <Link href="/blog/notes">notes</Link>
-        <span className="top-nav-sep">/</span>
         <Link href="/work">work</Link>
+        <span className="top-nav-sep">/</span>
+        <Link href="/blog">writing</Link>
         <span className="top-nav-sep">/</span>
         <Link href="/projects">things i&apos;ve built</Link>
       </nav>
@@ -44,17 +92,17 @@ export default function Home() {
       <h1>hey, i&apos;m pavitra.</h1>
 
       <p>
-        16. cofounder and cpo of{" "}
+        i&apos;m 16, cofounder and cpo of{" "}
         <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
           <Favicon domain="tryvivacity.com" alt="Vivacity" />
           Vivacity
         </a>
-        . research fellow at{" "}
+        , a research fellow at{" "}
         <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
           <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
           IIT Kanpur
         </a>
-        , still in high school at{" "}
+        , and somehow still in high school at{" "}
         <a href="https://dpskalyanpur.com/" target="_blank" rel="noopener noreferrer">
           <Logo src="/dps-logo.webp" alt="DPS" />
           DPS
@@ -63,30 +111,38 @@ export default function Home() {
       </p>
 
       <p>
-        started making animations in class 3. wrote actual code in class 5
-        because i wanted to know why the thing moved. that curiosity grew
-        teeth. now it&apos;s a runtime where an agent can instantiate a world,
-        poke it, fork five futures, and only commit the branch that still
-        conserves energy.{" "}
-        <Link href="/projects/vivacity">the long version lives here</Link>.
+        started making animations in class 3. wrote my first real line of code
+        in class 5, just to understand how something worked. never really
+        stopped. somewhere along the way the curiosity turned into companies,
+        research papers, work with{" "}
+        <a href="https://www.nvidia.com/en-us/research/" target="_blank" rel="noopener noreferrer">
+          <Favicon domain="nvidia.com" alt="NVIDIA" />
+          NVIDIA
+        </a>{" "}
+        Research, and a number of hackathon wins that&apos;s getting a little
+        embarrassing to keep count of.
       </p>
 
       <p>
-        for fun: long bike rides, breaking APIs, the{" "}
+        i&apos;m obsessed with understanding intelligence, how it emerges, how
+        to build it, how to accelerate it. the goal is to build something that
+        actually dents{" "}
+        <a href="https://www.google.com/search?q=Silicon+Valley" target="_blank" rel="noopener noreferrer">
+          Silicon Valley
+        </a>
+        . working on it.
+      </p>
+
+      <p>
+        for fun: long bike rides, breaking APIs, researching the{" "}
         <a href="https://www.simulation-argument.com/simulation.pdf" target="_blank" rel="noopener noreferrer">
           simulation hypothesis
         </a>{" "}
-        at stupid hours, and{" "}
+        at unreasonable hours, and occasionally{" "}
         <Link href="/visits" className="easter-quiet" title="yes i know where you are. chill.">
           reading the room
         </Link>
         .
-      </p>
-
-      <VivacitySim />
-      <p className="muted mono" style={{ fontSize: "0.78em", marginTop: "-1.1em" }}>
-        circular orbit. play, kick velocity, fork the futures.{" "}
-        <Link href="/projects/vivacity">full runtime →</Link>
       </p>
 
       <p className="social-links">
@@ -107,90 +163,124 @@ export default function Home() {
         </a>
       </p>
 
+      <section className="home-vivacity" aria-labelledby="vivacity-home-title">
+        <p id="vivacity-home-title" className="home-vivacity-title">
+          building{" "}
+          <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
+            <Favicon domain="tryvivacity.com" alt="Vivacity" />
+            Vivacity
+          </a>
+          : a simulation runtime where agents can inspect a world, change it,
+          fork a few futures, and keep one after the checks pass
+        </p>
+        <VivacitySim mode="compact" />
+        <p className="home-vivacity-link">
+          <Link href="/projects/vivacity">the runtime and the full sim →</Link>
+        </p>
+      </section>
+
       <p>what i&apos;ve been up to:</p>
 
       <ul>
         <li>
           cofounder and cpo of{" "}
-          <Link href="/work/vivacity">
+          <Link href="/projects/vivacity">
             <Favicon domain="tryvivacity.com" alt="Vivacity" />
             Vivacity
           </Link>
-          . agent runtime.{" "}
-          <Link href="/projects/vivacity">the stack</Link>
+          , working on product, pipelines, and the runtime contract
         </li>
+
         <li>
           research fellow at{" "}
-          <Link href="/work/iitk-mpc">
+          <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
             <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
             IIT Kanpur
-          </Link>
-          , mpc under{" "}
-          <a href="https://scholar.google.com/citations?user=jeOME6wAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+          </a>
+          , working on mpc and cryptography under{" "}
+          <a href="https://avadapal.github.io/" target="_blank" rel="noopener noreferrer">
             Prof. Adithya Vadapalli
-          </a>
+          </a>{" "}
+          in cse
         </li>
+
         <li>
-          <Link href="/work/nvidia-augonnet">
+          worked with{" "}
+          <a
+            href="https://research.nvidia.com/person/cedric-augonnet"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Favicon domain="nvidia.com" alt="NVIDIA" />
-            NVIDIA
-          </Link>{" "}
-          Research, with{" "}
-          <a href="https://www.linkedin.com/in/caugonne" target="_blank" rel="noopener noreferrer">
-            Cédric Augonnet
+            Cédric Augonnet at NVIDIA Research
           </a>
+          , around programming systems and accelerator runtimes
         </li>
+
         <li>
-          wrote into{" "}
-          <Link href="/work/openai-codex">
+          contributed to{" "}
+          <a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer">
             <Favicon domain="openai.com" alt="OpenAI" />
-            OpenAI Codex
-          </Link>{" "}
-          OSS
+            OpenAI Codex OSS
+          </a>
+          , the terminal agent with a real tool and approval loop
         </li>
+
         <li>
-          <Link href="/work/inflection">
-            <Favicon domain="edgecity.live" alt="Edge City" />
-            inflection grant
-          </Link>
-          . jensen&apos;s jacket money. hwahwhahwa
+          got an{" "}
+          <a href="https://www.inflectiongrants.com/" target="_blank" rel="noopener noreferrer">
+            <Favicon domain="edgecity.live" alt="Inflection Grants" />
+            Inflection Grant
+          </a>
+          . $2k from the pool funded by Jensen Huang&apos;s $960k jacket.
+          hwahwhahwa
         </li>
+
         <li>
           organized{" "}
           <Link href="/work/execron">
             <Logo src="/byteforge-logo.jpg" alt="byteforge" />
             Execron 1.0
           </Link>{" "}
-          at IITK. $75k plus $2k cash
+          under byteforge at IIT Kanpur: 290+ builders, 24 hours, $75k in
+          prizes and credits plus $2k cash
         </li>
+
         <li>
-          content with{" "}
-          <Link href="/work/supabase">
+          made technical content with{" "}
+          <a href="https://supabase.com" target="_blank" rel="noopener noreferrer">
             <Favicon domain="supabase.com" alt="Supabase" />
             Supabase
-          </Link>
+          </a>
+          , around postgres, auth, storage, and row level security
         </li>
+
         <li>
-          international robowars 8kg,{" "}
-          <Link href="/work/techfest-robowars">
-            <Logo src="/techfest-logo.jpg" alt="Techfest" />
-            Techfest IIT Bombay
-          </Link>
+          built two 8kg combat robots and won a match at{" "}
+          <a href="https://techfest.org/" target="_blank" rel="noopener noreferrer">
+            <Logo src="/techfest-logo.jpg" alt="Techfest IIT Bombay" />
+            international Robowars, Techfest IIT Bombay
+          </a>
+          . shoutout tanish
         </li>
       </ul>
 
       <p>
-        <Link href="/work">see all →</Link>
+        <Link href="/work">see everything i&apos;ve done →</Link>
+        <span className="muted">
+          {" "}prolearn, 15+ hackathons, u2u, yc, vibecon, two bounties,
+          byteforge, the synthetic intelligence paper, and kuku live there
+        </span>
       </p>
 
       <p>
-        things i&apos;ve built{" "}
-        <span className="muted">(side projects)</span>:{" "}
+        building now:{" "}
         <Link href="/projects/vivacity">
           <Favicon domain="tryvivacity.com" alt="Vivacity" />
           Vivacity
         </Link>
-        ,{" "}
+        . things i&apos;ve built{" "}
+        <span className="muted">(side projects)</span>:{" "}
         <Link href="/projects/orca">
           <Logo src="/orca-logo.jpg" alt="ORCA" />
           ORCA
@@ -215,16 +305,21 @@ export default function Home() {
       </p>
 
       <p>
-        when a day actually happens i dump it in{" "}
-        <Link href="/blog/notes">notes</Link>. the long pieces stay in{" "}
-        <Link href="/blog">writing</Link>.
+        when a day is worth keeping, i put it in{" "}
+        <Link href="/notes">notes</Link>
+        . the longer pieces stay in <Link href="/blog">writing</Link>
       </p>
 
       <p>
-        if you care about agents that can hold a world, fork it, and prove
-        the step before they commit, we&apos;re already in the same room.
-        reach me at{" "}
-        <a href="mailto:pavitra@paxus.in">pavitra@paxus.in</a>. otherwise{" "}
+        most days are split between the vivacity runtime, mpc papers, and
+        whatever broke after midnight. if one of those sounds like your
+        problem, send it over
+      </p>
+
+      <p>
+        building something ambitious? reach me at{" "}
+        <a href="mailto:pavitra@paxus.in">pavitra@paxus.in</a>. for everything
+        else, find me on{" "}
         <a href="https://x.com/pavikshw" target="_blank" rel="noopener noreferrer">
           x @pavikshw
         </a>
@@ -234,13 +329,9 @@ export default function Home() {
       <SiteFooter
         showHome={false}
         links={
-          <>
-            <Link href="/work">work</Link>
-            <Link href="/blog/notes">notes</Link>
-            <a href="/Pavitra_Kushwaha_Resume_Full.pdf" target="_blank" rel="noopener noreferrer">
-              resume
-            </a>
-          </>
+          <a href="/Pavitra_Kushwaha_Resume_Full.pdf" target="_blank" rel="noopener noreferrer">
+            resume
+          </a>
         }
       />
     </main>

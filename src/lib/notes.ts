@@ -11,9 +11,9 @@ export const notes: Note[] = [
     date: "2026-08-28",
     title: "the jacket one",
     body: [
-      "inflection grant landed. that's the $2k edge city hands to people under 25, the pool jensen huang's leather jacket funded after sotheby's went feral at $960k.",
-      "i keep saying the sentence out loud because it still sounds fake. a tom ford jacket. a kid in kanpur. same money.",
-      "hwahwhahwa. anyway. putting it into the runtime.",
+      "the inflection grant landed this week. edge city gives $2k to builders under 25, and future cohorts are being supported by the $960k from jensen huang's signed leather jacket at sotheby's.",
+      "i have repeated that sentence to three people and it gets funnier every time. a tom ford jacket changed hands in new york and some of the money reached a kid building a runtime in kanpur.",
+      "hwahwhahwa. putting mine back into vivacity.",
     ],
   },
   {
@@ -21,9 +21,9 @@ export const notes: Note[] = [
     date: "2026-08-21",
     title: "forked a world before breakfast",
     body: [
-      "good day. the kind where the orbit stays honest after you kick it.",
-      "hit observe, then act(+Δv), then fork until five ghosts were flying around the same mass. verify passed on the parent and died on the stupid branch, which is the whole point. you want the wrong future to fail in the runtime, not in a warehouse.",
-      "aditya was in the architecture, tanish in the solvers, me on the pipeline that has to not lie when the agent asks what happened. tryvivacity.com if you want the verbs. i'll write the long stack when my hands stop shaking from caffeine.",
+      "the orbit stayed honest after i kicked it this morning, so breakfast had to wait.",
+      "observe stored the state, act(+Δv) moved the eccentricity, and fork left five ghosts flying around the same mass. verify caught the branch with ugly energy drift inside the runtime, which is several million times cheaper than discovering it in a warehouse.",
+      "aditya was deep in the architecture, tanish in the solvers, and i was wiring the trace the agent reads after every action. tryvivacity.com has the verbs. the longer stack can wait until my hands stop shaking from caffeine.",
     ],
   },
 ];

@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 
 export const metadata: Metadata = {
-  title: "Bucket | Pavitra Kushwaha",
+  title: "Bucket",
   description:
-    "Bucket is an application agent that already knows your story from Claude, GPT, and your apps. It drafts every field and only starts filling when you clearly ask. Never auto-submits. For YC, grants, visas, scholarships, and the forms founders still fill by hand.",
+    "Bucket is an application agent that learns your story from Claude, GPT, a resume, and connected apps, then drafts forms and waits for your review before submission.",
   keywords: [
     "Bucket",
     "brokebucket",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://pavitrakushwaha.dev/projects/bucket",
     title: "Bucket - Say it once. We apply. | Pavitra Kushwaha",
     description:
-      "application agent that already knows your story from Claude, GPT, and your apps. drafts every field. never submits without you.",
+      "application agent that learns your story, drafts every field, and waits for your review before submission.",
     siteName: "Pavitra Kushwaha",
   },
   twitter: {
@@ -98,20 +98,20 @@ export default function BucketPage() {
         </p>
 
         <p>
-          it is not autofill. autofill dumps stored strings. Bucket retrieves
-          the right chunks of your memory, reads what that specific program
-          actually rewards, and drafts a fresh answer. talking to it is free
-          and stays chat. clear language like &ldquo;fill this&rdquo; or
-          &ldquo;apply to this URL&rdquo; is the only thing that wakes the fill
-          engine. we never auto-submit.
+          bucket treats each form as a fresh writing problem. it retrieves the
+          right parts of your memory, reads the program&apos;s wording and
+          constraints, then drafts an answer for that field. the browser worker
+          wakes up only after a clear instruction such as &ldquo;fill
+          this&rdquo; or &ldquo;apply to this url,&rdquo; and every submission
+          waits for your review
         </p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>
-          How it works
+          how it works
         </h2>
 
         <p>
-          <strong>1. Know you</strong>
+          <strong>memory</strong>
           <br />
           Import past Claude and ChatGPT threads, a resume, and whatever else
           you already wrote about yourself. Connect Gmail, GitHub, Slack,
@@ -121,16 +121,16 @@ export default function BucketPage() {
         </p>
 
         <p>
-          <strong>2. Understand the ask</strong>
+          <strong>the form</strong>
           <br />
           Before writing, it reads the form the way a good editor would: tone,
           specificity, length, and the bar for a strong answer on{" "}
           <em>that</em> program. a YC application and a student visa packet do
-          not want the same paragraph, even when both ask who you are.
+          ask for a different answer, even when both ask who you are.
         </p>
 
         <p>
-          <strong>3. Retrieve, then write</strong>
+          <strong>drafting</strong>
           <br />
           Each field is answered from retrieved memory: onboarding, resume,
           imported chats, connected apps, and anything you teach it in product.
@@ -139,27 +139,26 @@ export default function BucketPage() {
         </p>
 
         <p>
-          <strong>4. Intent gating</strong>
+          <strong>intent gate</strong>
           <br />
-          casual questions never open a browser job. the fill engine waits for
-          clear apply language. this is the difference between a chatbot that
-          accidentally starts a YC app and an OS that stays quiet until you
-          mean it.
+          casual questions stay in chat. clear apply language opens a browser
+          job with its own id, credentials, and audit trail. the gate keeps a
+          conversation from quietly becoming a live application
         </p>
 
         <p>
-          <strong>5. You confirm</strong>
+          <strong>review</strong>
           <br />
           every field is editable. credentials for live portal fill are
           encrypted with AES-256-GCM and only decrypted server-side for a job
           you start. drafts and review work now. the Playwright worker for live
           portal fill with a vaulted login is the next control-plane split:
-          same memory, separate browser runtime. we never submit without you
-          looking.
+          same memory, separate browser runtime. you inspect the completed
+          fields and make the final submission
         </p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>
-          Who it is for
+          who it is for
         </h2>
 
         <p>
@@ -171,8 +170,8 @@ export default function BucketPage() {
         </p>
 
         <p>
-          chat, discovery, and fills burn real API cost, not a fake form quota.
-          $1 is 1,000 credits. every account starts with 5,000. after 90 days
+          usage follows the model and browser work: $1 is 1,000 credits and
+          every account starts with 5,000. after 90 days
           of inactivity we purge personal memory, credentials, chats, and
           applications so stale secrets do not linger. your city, though.
           that one{" "}

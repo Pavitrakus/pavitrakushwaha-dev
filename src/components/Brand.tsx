@@ -2,7 +2,6 @@ import type { CSSProperties } from "react";
 
 export function Logo({
   src,
-  alt,
   rounded = true,
   className,
   style: extraStyle,
@@ -16,7 +15,8 @@ export function Logo({
   return (
     <img
       src={src}
-      alt={alt}
+      alt=""
+      aria-hidden="true"
       className={className}
       style={{
         display: "inline",
@@ -32,11 +32,12 @@ export function Logo({
   );
 }
 
-export function Favicon({ domain, alt }: { domain: string; alt: string }) {
+export function Favicon({ domain }: { domain: string; alt: string }) {
   return (
     <img
       src={`https://www.google.com/s2/favicons?sz=64&domain=${domain}`}
-      alt={alt}
+      alt=""
+      aria-hidden="true"
       style={{
         display: "inline",
         width: "1em",
@@ -53,6 +54,7 @@ export function Favicon({ domain, alt }: { domain: string; alt: string }) {
 export function YC() {
   return (
     <span
+      aria-hidden="true"
       style={{
         display: "inline-block",
         width: "1em",

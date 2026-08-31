@@ -41,8 +41,8 @@ export default function WorkPage() {
       <h1>what i&apos;ve been up to.</h1>
 
       <p>
-        the short list lives on the home page. this is the whole ledger. click
-        anything. the technical version is underneath.
+        the home page gets the short version. this is the full record, with
+        enough room to explain what i actually touched and why it mattered
       </p>
 
       <ul className="entry-list" style={{ marginTop: "2em" }}>

@@ -1,64 +1,76 @@
 import type { MetadataRoute } from "next";
+import { notes } from "@/lib/notes";
 import { work } from "@/lib/work";
+
+const projectSlugs = [
+  "vivacity",
+  "bucket",
+  "whocodedmore",
+  "orca",
+  "orbis-2045",
+  "byteforge",
+  "d2ar",
+  "lumenseed",
+  "clusterorch-gym",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://pavitrakushwaha.dev";
-
-  const workPages = work.map((w) => ({
-    url: `${base}/work/${w.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.75,
-  }));
+  const current = new Date();
 
   return [
     {
       url: base,
-      lastModified: new Date(),
+      lastModified: current,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${base}/work`,
-      lastModified: new Date(),
+      lastModified: current,
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    ...workPages,
+    ...work.map((item) => ({
+      url: `${base}/work/${item.slug}`,
+      lastModified: current,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
     {
       url: `${base}/projects`,
-      lastModified: new Date(),
+      lastModified: current,
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...projectSlugs.map((slug) => ({
+      url: `${base}/projects/${slug}`,
+      lastModified: current,
+      changeFrequency: "monthly" as const,
+      priority: slug === "vivacity" ? 0.9 : 0.75,
+    })),
     {
       url: `${base}/blog`,
-      lastModified: new Date(),
+      lastModified: current,
       changeFrequency: "weekly",
       priority: 0.8,
-    },
-    {
-      url: `${base}/visits`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.6,
     },
     {
       url: `${base}/blog/notes`,
-      lastModified: new Date(),
+      lastModified: current,
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.75,
     },
+    ...notes.map((note) => ({
+      url: `${base}/blog/notes/${note.slug}`,
+      lastModified: new Date(note.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    })),
     {
-      url: `${base}/blog/notes/the-jacket-one`,
-      lastModified: new Date("2026-08-28"),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${base}/blog/notes/forked-before-breakfast`,
-      lastModified: new Date("2026-08-21"),
-      changeFrequency: "monthly",
+      url: `${base}/visits`,
+      lastModified: current,
+      changeFrequency: "daily",
       priority: 0.6,
     },
     {
@@ -69,65 +81,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/blog/fishy-mesh`,
-      lastModified: new Date(),
+      lastModified: current,
       changeFrequency: "monthly",
       priority: 0.5,
-    },
-
-    // project pages
-    {
-      url: `${base}/projects/vivacity`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/projects/bucket`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/projects/whocodedmore`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/projects/orca`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/projects/orbis-2045`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/projects/byteforge`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/projects/d2ar`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/projects/lumenseed`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/projects/clusterorch-gym`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
     },
   ];
 }

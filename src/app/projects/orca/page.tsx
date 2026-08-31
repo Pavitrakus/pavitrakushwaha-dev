@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 
 export const metadata: Metadata = {
-  title: "ORCA | Pavitra Kushwaha",
+  title: "ORCA",
   description:
     "zero-step agentic task automation on android. text what you need on whatsapp or telegram and it happens in the background. no app downloads, no UI learning. architecture uses LLM intent parsing, DAG of UI gestures, headless android device cluster via ADB, and SCXML state machines.",
   keywords: [
@@ -89,33 +89,21 @@ export default function OrcaPage() {
       <PostChrome />
 
       <div className="post-body">
-        <p>the problem with apps is that there are way too many of them, and every single one is just another chore between wanting something done and actually having it happen. you unlock your phone, search for the app, wait for it to load, parse whatever interface they designed this week, click five buttons, and close it. orca is our attempt at killing that entire chain.</p>
+        <p>phones are full of tiny chores. unlock, find the app, wait, read whatever interface changed this week, tap through it, close. orca starts with the sentence you were going to say anyway and carries the task across the phone from there.</p>
 
-        <p>you don&apos;t download an app. you don&apos;t learn a ui. you just send a normal text on whatsapp or telegram, like &ldquo;order a veg burger from the place down the street and book a cab to the office,&rdquo; and it happens in the background.</p>
+        <p>send a normal message on whatsapp or telegram, like &ldquo;order a veg burger from the place down the street and book a cab to the office.&rdquo; orca turns that into two jobs, maps each one to phone actions, and reports progress in the same chat.</p>
 
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Architecture</h2>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>how it moves</h2>
 
-        <p><strong>1. Message Ingestion</strong><br />
-        WhatsApp/Telegram webhook receives the user text. The system normalizes incoming messages across both platforms into a uniform internal schema so downstream stages don&apos;t care about the source.</p>
+        <p>the webhook normalizes messages from both chat platforms into one request shape. intent parsing extracts the task, entities, account context, and any approval boundary. a request with food and travel becomes a small graph with two branches and an explicit dependency wherever one result feeds the other.</p>
 
-        <p><strong>2. Intent Parsing</strong><br />
-        A quantized Qwen variant extracts structured intent and entities from the raw text. For &ldquo;order a veg burger from the place down the street and book a cab to the office,&rdquo; the model produces two parallel intents: <em>food_order</em> with entities {'{cuisine: veg, item: burger}'} and <em>cab_booking</em> with destination: office. The model runs locally on a quantized 4-bit configuration so inference latency stays under 800ms.</p>
+        <p>each graph node describes an app action and the screen state expected before it runs. the android executor uses adb and accessibility hooks to open apps, type, tap, swipe, and read enough of the current screen to know whether the action landed. retries belong to the node, so one ugly loading screen does not restart the whole task.</p>
 
-        <p><strong>3. DAG Construction</strong><br />
-        Each intent maps to a directed acyclic graph of low-level UI gestures. A single intent decomposes into a sequence of taps, scrolls, text inputs, and swipe vectors with precise x/y coordinate mappings. The DAG executor handles dependency resolution: if &ldquo;open Swiggy&rdquo; and &ldquo;search for burger&rdquo; are parallelizable steps, they run concurrently on separate emulator instances.</p>
+        <p>the run carries checkpoints, screenshots, and a compact event log. if a device drops halfway through, the scheduler can pick up from the last clean node. actions that spend money or send something irreversible stop for confirmation in chat, then the graph continues with the receipt or booking id attached.</p>
 
-        <p><strong>4. Execution</strong><br />
-        A headless Android device cluster runs each gesture sequence sequentially via ADB (Android Debug Bridge) and custom accessibility service scripts. The cluster maintains a pool of 8-16 emulator instances with pre-configured app states so cold starts are minimized. Each gesture command is wrapped in a retry loop with exponential backoff.</p>
+        <p>the useful interface is the progress stream: opening swiggy, finding the item, waiting for approval, booking the cab, done. the phone can stay on the desk while the chat keeps enough context for you to interrupt or correct the run.</p>
 
-        <p><strong>5. State Management</strong><br />
-        SCXML state machines handle retry logic, failure rollback, and device health monitoring. If an emulator crashes mid-execution, the state machine snapshots the current DAG position and reassigns it to a healthy instance. The state machine transitions are logged to a central event store for debugging and analytics.</p>
-
-        <p><strong>6. Confirmation</strong><br />
-        Execution status streams back through the chat interface in real-time. The user sees &ldquo;opening swiggy...&rdquo; &rarr; &ldquo;searching for veg burger...&rdquo; &rarr; &ldquo;placing order...&rdquo; &rarr; &ldquo;done! your order is confirmed.&rdquo; Each step shows a timestamp and, where applicable, a screenshot of the completed action.</p>
-
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Why This Matters</h2>
-
-        <p>In India, ~500 million mobile users are genuinely not going to download one more app for one specific task. They already know how to use WhatsApp. ORCA meets them exactly where they are. The interface is text. The execution is invisible. The phone becomes a service endpoint, not an app launcher.{" "}<Link href="/visits" className="easter-quiet" title="yes, including you">also i know which city you opened this from</Link>.</p>
+        <p>whatsapp already carries half of daily life in india. orca makes that chat a control surface for the apps underneath it, which is much closer to how people ask for help in the first place.{" "}<Link href="/visits" className="easter-quiet" title="yes, including you">also i know which city you opened this from</Link>.</p>
 
         <p style={{ marginTop: "1.5em" }}>
           <a

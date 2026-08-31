@@ -28,10 +28,10 @@ export const work: WorkItem[] = [
     moreHref: "/projects/vivacity",
     moreLabel: "the stack and the live sim",
     body: [
-      "i own product and the pipelines. aditya owns systems. tanish owns research. together we built a runtime an agent can treat like a world: persistent state, addressable forks, numerical checks, then a commit.",
-      "the agent calls verbs. create(spec) compiles a domain schema into a live world. observe() returns state, or a camera if you asked for one. act(A_t) computes S_t+1. simulate(horizon) steps. fork() opens a branch without killing the parent. verify() runs conservation, clearance, units, contact. commit promotes a branch that passed. rollback restores the prior world.",
-      "the router keeps the contract still and moves the work. exact physics when a conserved quantity exists. scientific solvers for chemistry, fluids, FEM. isaac and mujoco for contact. genie, cosmos, world labs, decart when the scene is visual and the law is fog. private plant models stay private.",
-      "my job is the path from act() to a replayable trace. a verb is cheap. a verb that survives production is a pipeline that does not invent units at 3am. the long architecture and the toy two-body live on the project page.",
+      "i run product and pipelines at vivacity with aditya on systems and tanish on research. we are building a runtime where an agent can keep a world alive long enough to inspect it, change it, fork a few futures, and choose one after the checks pass.",
+      "the interface is a small set of verbs: create, observe, act, simulate, fork, verify, commit, rollback, render, route. underneath that sits persistent state and a domain schema. an agent can ask for pixels, arrays, telemetry, or whatever observation the task needs while the world keeps its own source of truth.",
+      "routing is where this becomes useful. an orbit can stay in exact physics, contact can move to a robotics simulator, a materials problem can call a domain solver, and visual uncertainty can reach a learned world model. the shared contract keeps the trace readable across those backends.",
+      "my side is the path from an action to a replayable trace. i work on the product surface, pipeline boundaries, and the boring details that stop units or state from quietly changing halfway through a run. the longer architecture and a small two-body world live on the project page.",
     ],
   },
   {
@@ -43,9 +43,9 @@ export const work: WorkItem[] = [
       "mpc and cryptography under prof. adithya vadapalli, cse. still 16. still in high school.",
     mark: { kind: "logo", src: "/iitk-logo.jpg", alt: "IIT Kanpur" },
     body: [
-      "i sit in cse at iit kanpur as a research fellow under prof. adithya vadapalli. the brief is secure computation: how parties compute a function of private inputs and leak only the output.",
-      "the work lives in the mpc stack. secret sharing, garbled circuits, oblivious transfer, the ugly constant factors that decide whether a protocol is a paper or a system. you care about rounds, communication, and what a semi-honest vs malicious adversary actually gets to see.",
-      "i write, read, and break constructions the way you break production code. a protocol that looks clean in the hybrid model still has to survive a real network, real timing, real abort. that is the part that keeps me here.",
+      "i work with prof. adithya vadapalli in cse at iit kanpur as a research fellow. the problem is secure computation: several parties should be able to evaluate a function over private inputs and learn only what the protocol allows.",
+      "that puts me around secret sharing, garbled circuits, oblivious transfer, adversary models, and the communication costs that decide whether a construction can leave the paper. round count matters. so does the exact point where a party can abort or infer something from timing.",
+      "i like the part where a clean proof meets a real network. the protocol still has messages, delays, malformed inputs, and machines that disappear at the worst possible moment. i am 16, still in high school, and somehow this is where most of my reading goes.",
     ],
   },
   {
@@ -54,12 +54,12 @@ export const work: WorkItem[] = [
     title: "nvidia research, cédric augonnet",
     tag: "Runtimes / CUDA",
     oneLiner:
-      "worked with cédric augonnet at nvidia research. runtimes, cuda task graphs, how work actually moves across devices.",
+      "worked with cédric augonnet at nvidia research. programming systems, accelerators, and the people who make heterogeneous machines usable.",
     mark: { kind: "favicon", domain: "nvidia.com", alt: "NVIDIA" },
     body: [
-      "worked with cédric augonnet at nvidia research. he is a senior research scientist there. before that he designed starpu, the runtime that schedules tasks over cpus and accelerators with one data-aware scheduler. at nvidia that instinct lives in cuda: programming models, sequential task flow, graphs that actually move data.",
-      "his public work is the neighborhood i sat in. cudastf (sc24, best paper finalist with alexandrescu, sidelnik, garland) is a sequential task-flow layer over cuda streams and graphs. you declare data, you declare tasks, the runtime wires the dependencies. i worked with him on that class of problem. the paper is his.",
-      "same instinct as vivacity. a world that can fork and verify needs a scheduler that knows what is state and what is an observation. the pretty picture comes last.",
+      "i worked with cédric augonnet at nvidia research. cédric is a senior research scientist in programming languages, systems, and tools. he designed starpu during his phd, a runtime for scheduling task graphs across cpus and accelerators.",
+      "his public work spans asynchronous programming models and gpu systems. cudastf is one example: a sequential task-flow interface over cuda streams and graphs where data dependencies shape execution. that paper and runtime are his work; my collaboration with him is a separate line on my own record.",
+      "working around people who build runtimes changes how you look at a machine. kernels are the easy nouns. data movement, dependency ordering, placement, and failure are the grammar. that thinking followed me into vivacity.",
     ],
   },
   {
@@ -68,12 +68,12 @@ export const work: WorkItem[] = [
     title: "openai codex oss",
     tag: "Agents / OSS",
     oneLiner:
-      "wrote into openai/codex. the coding agent labs actually run in a terminal.",
+      "contributed to openai/codex, the open-source coding agent that lives in a terminal.",
     mark: { kind: "favicon", domain: "openai.com", alt: "OpenAI" },
     body: [
-      "openai/codex is the local coding agent: tools, a sandbox, a loop that reads your repo and does the boring work you would otherwise type by hand. i wrote into that oss. the interesting part is the loop.",
-      "the model proposes a command, the runtime decides if it is allowed, stdout comes back as observation, the next step conditions on that. same contract as a world: observe, act, verify, commit.",
-      "i care about the edges: approval boundaries, how diffs get applied, what gets logged so a human can reconstruct why the agent touched a file. that is the same paranoia i bring to vivacity pipelines.",
+      "i contributed to openai/codex, the open-source coding agent. codex reads a repository, uses terminal tools, works inside a sandbox, and leaves a diff a human can inspect.",
+      "the loop is simple enough to say out loud: the model proposes an action, policy decides whether it can run, the tool returns an observation, and the next step sees that result. the hard engineering lives around approvals, filesystem boundaries, logs, and the point where generated text becomes a real command.",
+      "that is the part i keep coming back to. agents get useful when they can act, and they stay useful when a person can reconstruct what happened after the run.",
     ],
   },
   {
@@ -85,9 +85,9 @@ export const work: WorkItem[] = [
       "$2k from edge city. the pool was jensen huang's leather jacket after sotheby's hit $960k.",
     mark: { kind: "favicon", domain: "edgecity.live", alt: "Edge City" },
     body: [
-      "inflection grants are $2k to people under 25. edge city runs them. they want the weird, early, too-ambitious-for-a-spreadsheet version of you.",
-      "the money in that pool came from jensen huang's tom ford leather jacket. sotheby's, 65 bids, 45 collectors, $960k. sixteen times the estimate. proceeds to the edge institute: fellowships, grants, popup villages.",
-      "a jacket. a kid in kanpur. same ledger. hwahwhahwa. i put it into the runtime.",
+      "i got an inflection grant from edge city. it is $2k for builders under 25 who have something early enough that a small amount of money can still bend the path.",
+      "the funny part is the pool. jensen huang signed one of his black leather jackets, sotheby's sold it for $960k, and the proceeds went to the edge institute programs that support these grants and fellowships.",
+      "a jacket changed hands in new york and some of that money reached a 16 year old building a runtime in kanpur. hwahwhahwa. i put mine back into vivacity.",
     ],
   },
   {
@@ -96,14 +96,14 @@ export const work: WorkItem[] = [
     title: "execron 1.0",
     tag: "Hackathon",
     oneLiner:
-      "biggest hackathon in the state. elite campus iitk. $75k plus $2k cash, raised and paid by us.",
+      "built execron 1.0 at iit kanpur. 24 hours, 290+ builders, $75k in prizes and credits plus $2k cash.",
     mark: { kind: "logo", src: "/byteforge-logo.jpg", alt: "byteforge" },
     moreHref: "/projects/byteforge",
     moreLabel: "byteforge, the community under it",
     body: [
-      "execron 1.0 was the flagship under byteforge. elite campus, iit kanpur. 24 hours. 290+ builders. people came in from kanpur, lucknow, allahabad, delhi.",
-      "my team and i raised the whole thing. we paid it out: $75k plus $2k cash. no institutional sugar daddy. 2am calls, sponsors, logistics, the ugly work that makes a room exist.",
-      "teams shipped web3, agri-tech, whatever they were actually angry about. the point was a city that only knows entrance exams getting a night where shipping was the exam.",
+      "i organized execron 1.0 under byteforge at iit kanpur with my team. it ran as a workshop and 24-hour build sprint for school students during techkriti '26. more than 290 builders came through.",
+      "we raised and distributed the prize pool ourselves: $75k across prizes and credits, plus $2k in cash. sponsors, mentors, rooms, food, power, judging, the calls at 2am when one line on a spreadsheet suddenly becomes a real problem.",
+      "it became the biggest school hackathon we had seen in uttar pradesh. the part i remember is simpler: a room full of teenagers in kanpur shipping through the night because someone finally gave them the room.",
     ],
   },
   {
@@ -112,12 +112,12 @@ export const work: WorkItem[] = [
     title: "supabase content",
     tag: "Postgres / Content",
     oneLiner:
-      "content with supabase. postgres, auth, rls. the load-bearing stuff people actually ship.",
+      "made technical content with supabase around the postgres stack builders actually ship.",
     mark: { kind: "favicon", domain: "supabase.com", alt: "Supabase" },
     body: [
-      "worked with supabase on content. the product is postgres with the batteries: auth, storage, realtime, edge functions, row level security sitting on the same identity the client already has.",
-      "the interesting part is rls. a public anon key is a name tag. permission lives in the policy. every select/insert/update/delete needs one. a policy that lets you read still blocks writes until you say so. you test as anon, as the row owner, as some other user trying to swap the owner column. that is the whole security model and most tutorials skip it.",
-      "i wrote for builders who are generating frontends with agents and then need a backend that will not fold. auth sessions, jwt claims into postgres, storage in the same tenancy. boring on purpose. boring is how you stay up.",
+      "i worked with supabase on technical content. the stack gives builders postgres, auth, storage, realtime, and edge functions without hiding the database underneath.",
+      "row level security is where the product becomes real. the client can carry a public key because authorization lives in postgres policies tied to the session. reads and writes get separate rules, and every rule has to survive the obvious test: a different user changing the owner id and asking for someone else's row.",
+      "good backend content should leave a builder with a working mental model. sessions become claims, claims reach postgres, policies decide what the query can touch, and storage follows the same identity. that chain is what i wrote around.",
     ],
   },
   {
@@ -134,9 +134,9 @@ export const work: WorkItem[] = [
       contain: true,
     },
     body: [
-      "prolearn is bangalore edtech, $3.2m pre-seed, ravneet singh (ex vedantu cto, fc.one). k-12 and jee/neet, an ai-native tutor. we walked into the office unannounced. we walked out on the video pipeline.",
-      "the job is turning a topic into a watchable explanation at a cost that does not make the unit economics cry. manim-class animation, a render farm that breaks at 3am, a script-to-scene path that has to keep notation honest. you cannot hallucinate a jacobian on a jee video.",
-      "i care about the pipeline the same way i care about vivacity traces: inputs, intermediate graphs, a render you can replay when the output looks cursed. that walk-in is the bangalore trip. the engine is the work.",
+      "i walked into prolearn's bangalore office unannounced and ended up building on the video pipeline. prolearn had raised a $3.2m pre-seed and was turning jee and neet topics into generated lessons.",
+      "a useful lesson needs a script, equations, scene timing, assets, voice, and a render that survives a student's pause button. the pipeline has to carry notation cleanly from the first structured output to the final frame. you cannot hallucinate a jacobian in a jee video and call it a style choice.",
+      "that walk-in is in the bangalore note. the useful residue is the pipeline habit: keep every intermediate artifact, make a bad frame reproducible, and know which stage lied.",
     ],
   },
   {
@@ -148,8 +148,8 @@ export const work: WorkItem[] = [
       "#1 of 3,500+. india's top young founder of the year '26. cash, credits, dinner with iqlipse nova.",
     mark: { kind: "logo", src: "/u2u-logo.png", alt: "Uniform2Unicorn" },
     body: [
-      "uniform2unicorn, india's top young founder of the year '26. 3,500+ in the pool. we came first. team: aditya bhatia, tanish anand, me.",
-      "the prize stack was rs. 1,00,000 cash, rs. 10,00,000 in credits, and a dinner with iqlipse nova. the ranking is a signal. the work is still the runtime, the lab, the events.",
+      "uniform2unicorn had more than 3,500 young founders in the pool. aditya bhatia, tanish anand, and i finished first and took india's top young founder of the year '26.",
+      "the prize was rs. 1,00,000 cash, rs. 10,00,000 in credits, and dinner with iqlipse nova. we went back to the runtime after dinner.",
     ],
   },
   {
@@ -160,8 +160,8 @@ export const work: WorkItem[] = [
     oneLiner: "y combinator startup school india. 6% acceptance.",
     mark: { kind: "yc" },
     body: [
-      "selected for y combinator startup school india. 6% acceptance. the program is the boring, useful one: talk to users, ship, stop lying to yourself about the metric that matters.",
-      "i already had the disease of shipping. the room just made it louder. batchmates, office hours energy, the specific yc allergy to a slide that cannot survive a customer.",
+      "i was selected for y combinator startup school india in a cohort with a reported 6% acceptance rate.",
+      "the useful part was being around founders who could tell when a metric was decorative. talk to users, ship, look at what came back, then do it again before the deck grows another page.",
     ],
   },
   {
@@ -173,8 +173,8 @@ export const work: WorkItem[] = [
       "top 20 in india out of 20,000+. interviewed mukund jha and jared friedman.",
     mark: { kind: "logo", src: "/vibecon-logo.png", alt: "VIBECON" },
     body: [
-      "vibecon: 20,000+ builders, top 20 in india. the interesting part was the interviews. mukund jha (emergent labs) and jared friedman (yc partner).",
-      "you learn more from asking a yc partner how they actually kill companies than from another demo day. same for a founder who has already been through the fire. i showed up with questions and a recorder in my head.",
+      "vibecon started with more than 20,000 builders and i made the final 20 in india. i also got to interview mukund jha from emergent labs and jared friedman from y combinator.",
+      "i showed up with a lot of questions. how they choose a market, how they notice a founder is lying to themselves, and which parts of an early product deserve another month. the conversations stayed useful long after the ranking.",
     ],
   },
   {
@@ -182,32 +182,31 @@ export const work: WorkItem[] = [
     year: "2026",
     title: "15+ hackathons",
     tag: "Competition",
-    oneLiner: "google, deepmind, openai, cursor. two months. still counting.",
+    oneLiner: "15+ wins across two months, including events from google, openai, and cursor.",
     mark: { kind: "favicon", domain: "google.com", alt: "Google" },
     also: [
-      { kind: "favicon", domain: "deepmind.google", alt: "DeepMind" },
       { kind: "favicon", domain: "openai.com", alt: "OpenAI" },
       { kind: "favicon", domain: "cursor.com", alt: "Cursor" },
     ],
     body: [
-      "fifteen plus in about two months, including ones from google, deepmind, openai, and cursor. the wins are real. the more useful residue is the muscle: a weekend, a constraint, a demo that has to boot.",
-      "google and deepmind problems tend to want a model that generalizes. openai and cursor ones tend to want an agent that can use tools without lighting the repo on fire. i like both. one is evals and loss. the other is a tool loop with a policy.",
-      "i stopped listing every trophy on the home page because it started looking like a sticker sheet. the work is still in the repos.",
+      "i won more than 15 hackathons in roughly two months, including events from google, openai, and cursor. some were model problems, some were agent problems, and all of them ended with a demo that had to boot in front of someone.",
+      "that pace teaches a specific kind of engineering. find the one thing judges can touch, build the shortest honest path to it, and leave enough time to discover the environment variable you forgot.",
+      "the trophies live off the homepage now. the useful part was learning how quickly a team can turn a vague brief into a system with edges.",
     ],
   },
   {
     slug: "techfest-robowars",
     year: "2025",
-    title: "techfest iit bombay, robowars 8kg",
+    title: "techfest iit bombay, robowars 8kg match",
     tag: "Hardware",
     oneLiner:
-      "keynoted sparkx. won international robowars 8kg. shoutout tanish.",
+      "keynoted sparkx and won a match in the international 8kg robowars event with two self-built bots.",
     mark: { kind: "logo", src: "/techfest-logo.jpg", alt: "Techfest" },
     also: [{ kind: "favicon", domain: "iitb.ac.in", alt: "IIT Bombay" }],
     body: [
-      "techfest iit bombay. i keynoted sparkx '25, then we won international robowars in 8kg. tanish on the bot with me.",
-      "8kg is a nasty class. you get a drive train, a weapon, a battery budget, and a referee who will dq you for a wire that looks like a whip. the fight is won in the drivetrain and the weapon belt, in the hours you spend balancing torque against the moment the weapon takes a bite and the bot wants to flip.",
-      "same lab instinct as a runtime: state, actuators, a world that hits back. lumenseed also came out of sparkx (1st). the arena and the medical-report model are different objects. the weekend was the same hunger.",
+      "at techfest, iit bombay, our team entered the international robowars 8kg class with two combat robots we built ourselves. we cleared the first round and won a match. tanish was in the pit with me.",
+      "an 8kg bot gives you a small battery budget, a drivetrain, a weapon, and a chassis that has to stay controllable after the first hit. every gram moves a tradeoff between torque, armor, traction, weapon inertia, and the chance that your own machine flips.",
+      "i also keynoted sparkx around the same techfest run. lumenseed had won sparkx earlier. apparently my relationship with iit bombay involves either a microphone or a spinning piece of metal.",
     ],
   },
   {
@@ -219,8 +218,8 @@ export const work: WorkItem[] = [
       "major ai platform and a quick-commerce pricing api. 5-figure and 6-figure. they had mixed feelings.",
     mark: { kind: "favicon", domain: "github.com", alt: "security" },
     body: [
-      "two independent finds. one on a major ai platform. one on a major quick-commerce pricing api. 5-figure and 6-figure respectively. their engineering teams had mixed feelings. i am not naming them here because i like sleeping.",
-      "the short version is trust boundaries. a model with tools is an rpc surface. a cart total is not a suggestion. i reported, they paid, the holes closed. that is the whole transaction.",
+      "i independently found and responsibly reported two significant security bugs. one affected a major ai platform and the other sat in a major quick-commerce pricing api. the bounties were five figures and six figures respectively.",
+      "the targets and exploit details stay private. both reports reached the engineering teams, both issues were fixed, and both teams paid. their feelings about the timing were mixed.",
     ],
   },
   {
@@ -234,9 +233,9 @@ export const work: WorkItem[] = [
     moreHref: "/projects/byteforge",
     moreLabel: "the full writeup",
     body: [
-      "kanpur had industry and entrance exams and almost no room for kids who wanted to ship. i got bored of waiting for a college to build a scene, so i built byteforge.",
-      "discord, then a city. 4,500+ across discord, whatsapp, in-person. official hack club partner. workshops, showcases, mentorship matching, open source that actually gets merged.",
-      "execron 1.0 is the loud chapter. the quiet one is a 16 year old in kanpur who now has somewhere to dump a half-broken project on a tuesday.",
+      "kanpur had entrance exams everywhere and almost no room for school students who wanted to ship together, so i started byteforge as a discord server.",
+      "it grew to more than 4,500 people across discord, whatsapp, and in-person events, with workshops, project showcases, mentors, and an official hack club partnership.",
+      "execron 1.0 became the loud chapter. the quieter win is that a 16 year old in kanpur can now drop a half-broken project into the room on a tuesday and find someone who wants to help.",
     ],
   },
   {
@@ -244,24 +243,24 @@ export const work: WorkItem[] = [
     year: "2025",
     title: "synthetic intelligence paper",
     tag: "Research",
-    oneLiner: "published at 16. intelligence as something you grow.",
+    oneLiner: "wrote and published it at 16. intelligence as something a system can keep growing.",
     mark: { kind: "logo", src: "/iitk-logo.jpg", alt: "research" },
     body: [
-      "i published a paper on synthetic intelligence at 16. most of what we ship as ai is a frozen mapping. si is the bet that you can grow a system whose dynamics stay open, coupled to a world, still adapting.",
-      "state that persists, energy that has to balance, a loop with the environment. same instinct as vivacity. a clip is an observation. a world has to keep existing after the frame.",
-      "i was 16. i still am. the paper is a stake in the ground.",
+      "i wrote and published a paper on synthetic intelligence at 16. the idea is that intelligence can be treated as an evolving system with persistent state, environmental coupling, and room to keep adapting after deployment.",
+      "the vocabulary sits near coupled dynamics and organoid intelligence: a system carries memory, receives energy and information from its environment, and changes through that loop. vivacity grew from the same curiosity about worlds that continue after an observation ends.",
+      "i was 16 when i wrote it. i still am, which makes the chronology slightly ridiculous.",
     ],
   },
   {
     slug: "kuku-tv",
     year: "2025",
-    title: "kuku tv, content analyst",
+    title: "kuku, content analyst",
     tag: "Media",
     oneLiner: "former content analyst. catalogs, taste, the pipeline before the model.",
     mark: { kind: "favicon", domain: "kukufm.com", alt: "KuKu" },
     body: [
-      "former content analyst at kuku tv. the job is the unglamorous half of a media stack: what exists, how it is tagged, what should even be in the catalog, how a feed starts lying when the labels are junk.",
-      "before you train anything you need a spine of metadata that a human would defend. i did that. it made me vicious about pipelines later. garbage labels in, a confident model out, and nobody can tell you why a kid got the wrong video.",
+      "i worked as a content analyst at kuku, the company behind kuku fm and kuku tv. i reviewed and curated around 90,000 minutes of content, which means i spent a lot of time inside catalogs, labels, and the decisions that shape a feed.",
+      "that job made data quality painfully concrete. metadata decides what a system can retrieve, compare, and recommend. a wrong label can travel farther than the person who made it, especially once a model starts sounding confident about it.",
     ],
   },
 ];

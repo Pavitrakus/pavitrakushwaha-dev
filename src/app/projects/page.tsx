@@ -3,12 +3,12 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
-  title: "Projects | Pavitra Kushwaha",
+  title: "Projects",
   description:
-    "Vivacity simulation runtime, Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge. Pavitra Kushwaha, CPO of Vivacity.",
+    "Vivacity and projects by Pavitra Kushwaha: simulation runtime for AI agents, Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, and byteforge.",
   keywords: [
-    "Vivacity simulation runtime",
     "Pavitra Kushwaha projects",
+    "Vivacity simulation runtime",
     "Bucket application agent",
     "WhoCodedMore",
     "ORCA agentic AI",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://pavitrakushwaha.dev/projects",
     title: "Projects | Pavitra Kushwaha",
     description:
-      "Vivacity, Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
+      "Vivacity and side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
     siteName: "Pavitra Kushwaha",
   },
   twitter: {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     creator: "@pavikshw",
     title: "Projects | Pavitra Kushwaha",
     description:
-      "Vivacity, Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
+      "Vivacity and side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
   },
 };
 
@@ -72,9 +72,9 @@ const projects: Project[] = [
     icon: null,
     favicon: "tryvivacity.com",
     shortDesc:
-      "simulation runtime for AI agents. create, observe, act, fork, verify, commit. pixels are an observation. i am cofounder and cpo.",
+      "simulation runtime for AI agents. persistent world state, addressable forks, backend routing, and numerical checks before a branch becomes live.",
     site: "https://tryvivacity.com",
-    tag: "Runtime / Agents",
+    tag: "Company / Runtime",
   },
   {
     year: "2026",
@@ -83,7 +83,7 @@ const projects: Project[] = [
     icon: null,
     favicon: "brokebucket.com",
     shortDesc:
-      "application agent that already knows your story from claude, gpt, and your apps. drafts every field. never submits without you. for yc, grants, visas, and the forms founders still fill by hand.",
+      "application agent that learns your story from claude, gpt, a resume, and connected apps, then drafts forms and waits for your review.",
     site: "https://www.brokebucket.com",
     tag: "AI / Product",
   },
@@ -104,7 +104,7 @@ const projects: Project[] = [
     name: "ORCA",
     icon: "/orca-mascot.jpg",
     shortDesc:
-      "zero-step agentic task automation on android. you text what you need on whatsapp or telegram and it happens in the background. no app downloads, no UI learning.",
+      "agentic task automation on android. text what you need on whatsapp or telegram and the executor moves through the apps in the background.",
     site: "https://orca.cfd",
     tag: "AI / Agentic",
   },
@@ -114,7 +114,7 @@ const projects: Project[] = [
     name: "ORBIS 2045",
     icon: "/orbis.jpeg",
     shortDesc:
-      "standalone hardware device running a locally-hosted LLM with ADB-based mobile control. designed to look like it belongs in 2045, not 2025.",
+      "standalone hardware device running a local LLM with adb-based mobile control, wrapped in a desk object from 2045.",
     site: null,
     tag: "Hardware / AI",
   },
@@ -124,7 +124,7 @@ const projects: Project[] = [
     name: "byteforge.",
     icon: "/byteforge-logo.jpg",
     shortDesc:
-      "north india's largest independent student tech community. 4,500+ members. official Hack Club partner. started because i wanted the room to exist and it didn't.",
+      "north india's largest independent student tech community. 4,500+ members, an official Hack Club partner, and a room for builders in kanpur.",
     site: "https://byteforge.space",
     tag: "Community",
   },
@@ -168,13 +168,13 @@ export default function ProjectsPage() {
       </Link>
 
       <h1>
-        things i&apos;ve built.{" "}
-        <span className="muted">(vivacity first, then the rest)</span>
+        things i&apos;ve built.
       </h1>
 
       <p>
-        these are things i&apos;ve shipped around the work i actually do, not a
-        pile of parallel companies. all of them live on my{" "}
+        vivacity is the company i&apos;m building now. the rest are side
+        projects, research prototypes, and a community that got much bigger
+        than its first discord server. most of the code lives on my{" "}
         <a
           href="https://github.com/Pavitrakus"
           target="_blank"
@@ -182,8 +182,7 @@ export default function ProjectsPage() {
         >
           github
         </a>
-        . some of the best have real users. a few are just favorites. the ones
-        that matter most usually took the longest to name.{" "}
+        . some have real users and a few are here because i still like them.{" "}
         <Link href="/visits" className="easter-quiet" title="don't ask how i know who visited">
           stalkers welcome
         </Link>
@@ -198,7 +197,8 @@ export default function ProjectsPage() {
               {p.icon ? (
                 <img
                   src={p.icon}
-                  alt={p.name}
+                  alt=""
+                  aria-hidden="true"
                   style={{
                     width: "1em",
                     height: "1em",
@@ -213,6 +213,7 @@ export default function ProjectsPage() {
                 <img
                   src={`https://www.google.com/s2/favicons?sz=32&domain=${p.favicon}`}
                   alt=""
+                  aria-hidden="true"
                   style={{
                     width: "1em",
                     height: "1em",
@@ -265,7 +266,7 @@ export default function ProjectsPage() {
         >
           github
         </a>
-        . some of it shouldn&apos;t be public but is anyway.
+        . the stranger repositories are usually the fun ones.
       </p>
 
       <SiteFooter

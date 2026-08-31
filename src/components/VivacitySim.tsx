@@ -132,7 +132,7 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
     s.body.vy += 0.11 * ty;
     s.trail = [];
     pushLog(`act(+Δv)  |v| → ${elements(s.body).v.toFixed(4)}`);
-    syncHud("act(+Δv)", "next state computed, not guessed.");
+    syncHud("act(+Δv)", "action integrated into the next state.");
   };
 
   const fork = () => {
@@ -182,6 +182,26 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
     s.trail = [];
     pushLog("rollback()  prior world restored");
     syncHud("rollback()", "memory is a feature of the runtime.");
+  };
+
+  const commit = () => {
+    const s = state.current;
+    if (s.forks.length === 0) {
+      pushLog("commit()  no branch selected");
+      return;
+    }
+    const ranked = s.forks.toSorted(
+      (a, b) =>
+        Math.abs(elements(a).E - s.lastE) -
+        Math.abs(elements(b).E - s.lastE),
+    );
+    s.body = { ...ranked[0] };
+    s.forks = [];
+    s.last = { ...s.body };
+    s.lastE = elements(s.body).E;
+    s.trail = [];
+    pushLog("commit()  lowest-drift branch is live");
+    syncHud("commit()", "selected branch promoted to the live world.");
   };
 
   const togglePlay = () => {
@@ -335,11 +355,9 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
       ctx.font = "10px 'JetBrains Mono', monospace";
       const liveEl = elements(s.body);
       ctx.fillText("μ = 1 / R = 1", 10, 16);
-      ctx.fillText(`r ${liveEl.r.toFixed(3)} R`, 10, h - 26);
-      ctx.fillText(`|v| ${liveEl.v.toFixed(4)} R/τ`, 10, h - 12);
+      ctx.fillText(`r ${liveEl.r.toFixed(3)} R`, 10, h - 12);
       ctx.fillStyle = "rgba(236,234,230,0.55)";
-      ctx.fillText("VELOCITY VERLET", w - 118, 16);
-      ctx.fillText("INCLINED PROJECTION", 10, h - 42);
+      ctx.fillText("velocity verlet", w - 108, 16);
       ctx.fillText(`Δt ${DT} τ`, w - 88, h - 12);
 
       if (s.flash > 0.05) {
@@ -361,14 +379,6 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
     };
   }, []);
 
-  const verbs = [
-    { id: "obs", label: "observe()", run: observe },
-    { id: "act", label: "act(+Δv)", run: act },
-    { id: "fork", label: "fork()", run: fork },
-    { id: "verify", label: "verify()", run: verify },
-    ...(mode === "full" ? [{ id: "rb", label: "rollback()", run: rollback }] : []),
-  ];
-
   return (
     <div className={`viva-sim ${mode === "full" ? "viva-sim-full" : ""}`}>
       <div className="viva-sim-head">
@@ -389,11 +399,28 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
         >
           {playing ? "pause" : "play"}
         </button>
-        {verbs.map((v) => (
-          <button key={v.id} type="button" className="viva-verb" onClick={v.run}>
-            {v.label}
-          </button>
-        ))}
+        <button type="button" className="viva-verb" onClick={observe}>
+          observe()
+        </button>
+        <button type="button" className="viva-verb" onClick={act}>
+          act(+Δv)
+        </button>
+        <button type="button" className="viva-verb" onClick={fork}>
+          fork()
+        </button>
+        <button type="button" className="viva-verb" onClick={verify}>
+          verify()
+        </button>
+        {mode === "full" && (
+          <>
+            <button type="button" className="viva-verb" onClick={commit}>
+              commit()
+            </button>
+            <button type="button" className="viva-verb" onClick={rollback}>
+              rollback()
+            </button>
+          </>
+        )}
       </div>
       <p className="mono viva-sim-hud">
         {hud.verb} · E={hud.E.toFixed(3)} · e={hud.e.toFixed(3)} · peri={hud.peri.toFixed(2)} R
@@ -406,7 +433,7 @@ export function VivacitySim({ mode = "compact" }: { mode?: Mode }) {
       {mode === "full" && (
         <ol className="viva-sim-log mono" aria-live="polite">
           {log.length === 0 ? (
-            <li>world live. play it. state first, pixels later.</li>
+            <li>world live. play it. state stays underneath every frame.</li>
           ) : (
             log.map((line, i) => <li key={`${uid}-${i}`}>{line}</li>)
           )}

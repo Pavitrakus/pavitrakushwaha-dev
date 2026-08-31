@@ -5,9 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 
 export const metadata: Metadata = {
-  title: "WhoCodedMore | Pavitra Kushwaha",
+  title: "WhoCodedMore",
   description:
-    "Who coded more? One command. Real lines, tokens, and water. npx whocodedmore reads local coding-agent logs, ranks you with friends, and never leaves your machine with anything but totals.",
+    "Who coded more? One command reads local coding-agent logs, counts lines, tokens, and water, then sends only aggregate totals to the leaderboard.",
   keywords: [
     "WhoCodedMore",
     "whocodedmore",
@@ -101,15 +101,14 @@ export default function WhoCodedMorePage() {
       <div className="post-body">
         <p>
           every AI coding team eventually asks the same stupid, un-ignorable
-          question: who coded more? not who billed more, not who has the
-          loudest twitter. who actually moved. WhoCodedMore is the public
-          answer. one command reads the usage logs your agents already keep,
-          counts real lines alongside tokens, converts the burn into water,
-          and puts you on a board that flexes in public with your friends.
+          question: who coded more? they mean the work that moved through the
+          repository, across every agent and terminal. WhoCodedMore reads the
+          local logs, counts lines alongside tokens, converts the burn into
+          water, and gives the argument a public leaderboard
         </p>
 
         <p>
-          the joke is the competition. the product is a honest meter. your
+          the joke is the competition. the product is an honest meter. your
           Claude Code, Codex, Cursor, Gemini CLI, Copilot, OpenCode, Windsurf,
           Cline, and the rest of the stack each hide their own totals.
           WhoCodedMore is the screen that says: here is everything, across
@@ -117,23 +116,23 @@ export default function WhoCodedMorePage() {
         </p>
 
         <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>
-          How it works
+          how it works
         </h2>
 
         <p>
-          <strong>1. Local scan</strong>
+          <strong>local scan</strong>
           <br />
           <span className="mono">npx whocodedmore@latest</span> reads usage
           logs already on the machine. Claude Code, Codex, Gemini CLI,
           OpenClaw, Cursor, Copilot, OpenCode, Windsurf, Cline, Aider, Amp,
           Continue, Goose, Kiro, Roo Code, Zed, Warp, Droid, Pi, Kimi CLI,
           Qwen CLI, Antigravity, Hermes, plus anything{" "}
-          <span className="mono">ccusage</span> already tracks. you do not
-          pass flags naming tools. whatever you have logs for gets picked up.
+          <span className="mono">ccusage</span> already tracks. zero flags
+          naming tools; the scan discovers whichever logs exist
         </p>
 
         <p>
-          <strong>2. Lines, not just tokens</strong>
+          <strong>lines and tokens</strong>
           <br />
           token boards are easy and a little fake. a cached prompt looks huge.
           WhoCodedMore counts real lines too, then tracks tokens, estimated
@@ -143,21 +142,20 @@ export default function WhoCodedMorePage() {
         </p>
 
         <p>
-          <strong>3. Sync what is allowed to leave</strong>
+          <strong>sync</strong>
           <br />
-          only aggregates leave the machine. totals, never your code, never
-          paths, never file names. that is the whole privacy model. you can
-          stay local if you want. when you do sync, you land on the public
-          board and can climb with friends while the worldwide counters move.
+          the machine sends aggregate totals. code, paths, prompts, and file
+          names stay local. syncing adds those totals to the public board and
+          updates the worldwide counters
         </p>
 
         <p>
-          <strong>4. The board</strong>
+          <strong>the board</strong>
           <br />
           public by default once you show up. a friends board if you want the
-          argument in private. the interesting metric is not who paid OpenAI
-          the most. it is who actually coded, in the era where that question
-          has three units: lines, tokens, and the water those tokens cost.
+          argument in private. lines show what reached code, tokens show the
+          model work around it, and water gives the compute bill a unit you can
+          picture
         </p>
 
         <p>

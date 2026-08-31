@@ -15,8 +15,8 @@ const posts = [
   {
     year: "2026",
     slug: "helios-stress-test",
-    title: "Helios Stress Test Research",
-    desc: "session stability benchmark under static and rotating prompt conditions. the kind of research that sounds boring until you realize what it's actually testing.",
+    title: "helios stress test",
+    desc: "terra follow-up. twenty-minute helios sessions under static and rotating prompts, with the drift written down.",
     link: "/heliosstresstest.html",
   },
   {
@@ -48,12 +48,9 @@ export default function BlogPage() {
       <h1>writing.</h1>
 
       <p>
-        i write when something is bothering me enough that talking about it
-        isn&apos;t enough. the long ones live here. the days that actually
-        happened live in{" "}
-        <Link href="/blog/notes">notes</Link>
-        . drop your email and i&apos;ll ping you when something new goes up,
-        or just{" "}
+        i write when something keeps rattling around after the conversation
+        ends. the long pieces live here. drop your email below and i&apos;ll
+        ping you when one goes up, or just{" "}
         <Link href="/visits" className="easter-quiet" title="the gallery joke lives here">
           lurk louder
         </Link>
@@ -72,19 +69,20 @@ export default function BlogPage() {
         ))}
       </ul>
 
-      <h2 style={{ fontSize: "1em", fontWeight: 600, marginTop: "2.2em" }}>
+      <h2 style={{ fontSize: "1em", fontWeight: 600, marginTop: "2.4em", marginBottom: "0.5em" }}>
         notes
       </h2>
       <p className="muted" style={{ fontSize: "0.92em" }}>
-        shorter. a good day, a grant, a fork that verified.{" "}
-        <Link href="/blog/notes">all notes →</Link>
+        shorter things from days i want to remember. a grant landing, a fork
+        finally behaving, or whatever made the week weird.{" "}
+        <Link href="/notes">all notes →</Link>
       </p>
       <ul className="entry-list">
-        {notes.map((n) => (
-          <li key={n.slug}>
-            <span className="entry-year">{n.date.slice(5)}</span>
+        {notes.slice(0, 3).map((note) => (
+          <li key={note.slug}>
+            <span className="entry-year">{note.date.slice(5)}</span>
             <span className="entry-name">
-              <Link href={`/blog/notes/${n.slug}`}>{n.title}</Link>
+              <Link href={`/blog/notes/${note.slug}`}>{note.title}</Link>
             </span>
           </li>
         ))}
@@ -115,7 +113,7 @@ export default function BlogPage() {
       <SiteFooter
         links={
           <>
-            <Link href="/blog/notes">notes</Link>
+            <Link href="/notes">notes</Link>
             <Link href="/work">work</Link>
             <Link href="/projects">projects</Link>
           </>

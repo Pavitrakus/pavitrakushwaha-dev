@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { PresenceProvider } from "@/components/PresenceProvider";
+import { YouAreHere } from "@/components/YouAreHere";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | Pavitra Kushwaha",
   },
   description:
-    "Pavitra Kushwaha, 16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur. Work with NVIDIA Research, OpenAI Codex OSS, Inflection, Supabase, and Execron 1.0 at IITK.",
+    "Pavitra Kushwaha, 16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur, builder, and founder of byteforge.",
   keywords: [
     "Pavitra Kushwaha",
     "AI Researcher",
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
     "VIBECON",
     "YC Startup School",
     "Uniform2Unicorn",
-    "Delhi student founder",
-    "Bangalore hackathon",
     "Vivacity",
+    "simulation runtime",
+    "world state",
     "agentic AI",
     "Android automation",
     "student developer India",
@@ -41,7 +42,6 @@ export const metadata: Metadata = {
     "NLP Hindi",
     "medical report AI",
     "byteforge India",
-    "Pavitra Kushwaha Delhi",
     "young founder India",
     "IIT Kanpur research",
     "Prolearn engineer",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     url: "https://pavitrakushwaha.dev",
     title: "Pavitra Kushwaha | CPO, Vivacity",
     description:
-      "16. Cofounder and CPO of Vivacity. Research fellow at IIT Kanpur. Simulation runtime for agents. Work with NVIDIA Research, OpenAI Codex OSS, Inflection grant.",
+      "16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur.",
     siteName: "Pavitra Kushwaha",
     locale: "en_IN",
     images: [
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     creator: "@pavikshw",
     title: "Pavitra Kushwaha | CPO, Vivacity",
     description:
-      "16. Cofounder and CPO of Vivacity. Research fellow at IIT Kanpur. Simulation runtime for agents.",
+      "16. Cofounder and CPO of Vivacity. Research fellow at IIT Kanpur.",
     images: ["/og-image.png"],
   },
 };
@@ -111,13 +111,8 @@ const jsonLd = {
       email: "mailto:pavitra@paxus.in",
       jobTitle: ["CPO", "Cofounder", "AI Researcher", "Engineer"],
       description:
-        "Pavitra Kushwaha is 16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur under Prof. Adithya Vadapalli. Founder of byteforge.",
+        "Pavitra Kushwaha is 16. Cofounder and CPO of Vivacity, a simulation runtime for AI agents. Research fellow at IIT Kanpur under Prof. Adithya Vadapalli and founder of byteforge.",
       nationality: { "@type": "Country", name: "India" },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Delhi",
-        addressCountry: "IN",
-      },
       knowsAbout: [
         "Artificial Intelligence",
         "Synthetic Intelligence",
@@ -129,6 +124,7 @@ const jsonLd = {
         "Android ADB",
         "LLM Agents",
         "Simulation Runtime",
+        "World State",
         "Edge Computing",
         "NLP",
         "Reinforcement Learning",
@@ -149,10 +145,10 @@ const jsonLd = {
         "5-figure bug bounty on major AI platform",
         "6-figure bug bounty on major quick-commerce platform",
         "Won 15+ hackathons in 2 months",
-        "Published research paper on Synthetic Intelligence at 16",
+        "Authored a research paper on Synthetic Intelligence at 16",
         "Keynoted SparkX at Techfest '25 (IIT Bombay)",
-        "Won international robowars 8kg at Techfest '25",
-        "Inflection Grant (Edge City / Jensen Huang jacket fund)",
+        "Won a match in international Robowars 8kg at Techfest, IIT Bombay",
+        "Inflection Grant recipient",
         "Organized Execron 1.0 at IIT Kanpur",
       ],
       hasOccupation: [
@@ -213,6 +209,7 @@ export default function RootLayout({
       <body>
         <PresenceProvider>
           <ThemeToggle />
+          <YouAreHere />
           {children}
         </PresenceProvider>
       </body>

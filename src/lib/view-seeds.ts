@@ -4,14 +4,14 @@ export const SITE_VIEW_SEED = 1847;
 
 /** Deterministic-ish hundreds per path so counts don't jump on redeploy. */
 const PAGE_SEEDS: Record<string, number> = {
-  "/blog/bangalore-trip": 612,
-  "/blog/fishy-mesh": 241,
-  "/projects/vivacity": 640,
-  "/work/nvidia-augonnet": 276,
   "/work": 390,
   "/blog/notes": 228,
   "/blog/notes/the-jacket-one": 194,
   "/blog/notes/forked-before-breakfast": 211,
+  "/blog/bangalore-trip": 612,
+  "/blog/fishy-mesh": 241,
+  "/projects/vivacity": 640,
+  "/work/nvidia-augonnet": 276,
   "/projects/orca": 538,
   "/projects/bucket": 417,
   "/projects/whocodedmore": 489,

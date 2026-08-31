@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 
 export const metadata: Metadata = {
-  title: "LumenSeed | Pavitra Kushwaha",
+  title: "LumenSeed",
   description:
     "medical report translator that turns clinical jargon into clear language anyone can read. OCR ingestion, UMLS entity linking, LangChain RAG with Weaviate vector DB, PII stripping. Won 1st at Techfest IIT Bombay SparkX.",
   keywords: [
@@ -92,35 +92,25 @@ export default function LumenSeedPage() {
       <PostChrome />
 
       <div className="post-body">
-        <p>Whenever you get a medical report back from a lab, it is written entirely in dense jargon meant for doctors. If you try to search for the terms online, you usually end up reading extreme diagnosis threads and panicking. Most patients have no idea what their own health data means, which is a massive communication gap.</p>
+        <p>lab reports are compact because doctors already know the vocabulary. everyone else gets a page of abbreviations, reference ranges, and one highlighted value that sends them into the worst search result on the internet.</p>
 
-        <p>LumenSeed translates medical reports into clear, friendly language that anyone can read. It doesn&apos;t give medical advice. It just explains what the terms mean, what the normal ranges are, and what questions you should actually ask your doctor during your next visit.</p>
+        <p>lumenseed turns that report into a plain-language walkthrough. each explanation stays tied to the original test, the range printed by the lab, and the line it came from. it also collects the questions worth carrying into the next appointment.</p>
 
         <p>Won <strong>1st place at SparkX, Techfest IIT Bombay</strong>, the annual science and technology festival of IIT Bombay, one of India&apos;s largest tech fests.</p>
 
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Architecture</h2>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>inside the report</h2>
 
-        <p><strong>1. PDF Ingestion</strong><br />
-        OCR fallback for scanned reports using Tesseract with Hindi and English language packs. Text extraction for digital PDFs via PyMuPDF. The ingestion layer handles multi-page reports, mixed layouts, and embedded tables. Reports are classified by type (blood test, radiology, pathology, etc.) for downstream processing.</p>
+        <p>digital pdfs go through structured text extraction, while scanned pages use ocr with hindi and english language packs. layout matters here: a test name, value, unit, and reference range may sit in four columns, and flattening them in the wrong order can change the meaning before a model sees anything.</p>
 
-        <p><strong>2. Semantic Chunking</strong><br />
-        Semantic boundary detection splits the report into logical sections. Rather than naive token-count splitting, the system uses embedding similarity to detect topic shifts: when a paragraph&apos;s embedding diverges from the running section centroid, a new chunk begins. This preserves clinical coherence within each chunk.</p>
+        <p>the parser rebuilds those rows into a small schema and keeps section boundaries for panels such as cbc, liver function, thyroid, radiology findings, and impressions. extracted terms can then be linked to clinical vocabularies and retrieved definitions without losing the exact wording on the page.</p>
 
-        <p><strong>3. Entity Linking</strong><br />
-        Extracted terms are mapped to UMLS (Unified Medical Language System) ontologies. UMLS integrates over 200 biomedical vocabularies including SNOMED CT, ICD-10, LOINC, and RxNorm. Each term gets a CUI (Concept Unique Identifier) that disambiguates acronyms: &ldquo;RA&rdquo; maps to Rheumatoid Arthritis, not Right Atrium, based on surrounding context.</p>
+        <p>retrieval pulls explanations from curated medical references and ranks them against the report section. the generation step receives the original row, its surrounding text, and the retrieved definition. the answer carries that provenance forward so a reader can move from the explanation back to the document.</p>
 
-        <p><strong>4. Retrieval</strong><br />
-        LangChain RAG pipeline pulls reference definitions from verified medical dictionaries stored in a Weaviate vector database. The retrieval layer is hybrid: dense embeddings (PubMedBERT) for semantic similarity combined with sparse BM25 for keyword precision. Retrieved passages are reranked by a cross-encoder before being passed to the generation stage.</p>
+        <p>confidence follows the extraction and retrieval path. an unreadable scan, a missing unit, or a weak terminology match lowers it and pushes the test into a review list. clinical decisions stay with the doctor; lumenseed&apos;s job is to make the report legible enough for a better conversation.</p>
 
-        <p><strong>5. Generation</strong><br />
-        Fine-tuned LLM writes the summary with a strict tone classifier enforcing human, calming output. The classifier checks every generated sentence against a trained tone model that penalizes alarmist language (&ldquo;you may have cancer&rdquo;), unsupported inferences, and overly technical phrasing. Output is constrained to read like a calm, knowledgeable friend explaining test results.</p>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>privacy</h2>
 
-        <p><strong>6. Confidence Scoring</strong><br />
-        Each explanation gets a reliability score so patients know how trustworthy the information is. The score combines: (a) retrieval relevance from the vector DB, (b) semantic alignment between the question and the generated answer, and (c) a calibrated uncertainty estimate from the LLM&apos;s output logits. Low-confidence explanations flag the user to verify with their doctor.</p>
-
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Privacy-First Design</h2>
-
-        <p>Medical data is incredibly sensitive. The system runs on local-first principles wherever possible, stripping out PII (personally identifiable information) before any text gets processed by the inference layer. Name, age, patient ID, doctor name, and hospital identifiers are detected using a combination of regex patterns and a fine-tuned NER model, then replaced with anonymized tokens before the text reaches the RAG or generation stages. The original report is never stored or transmitted. your city name is not medical data, so that one{" "}
+        <p>medical data gets a short path through the system. names, patient ids, doctors, and hospital identifiers are redacted before the explanation stage, and the uploaded report is discarded after the result is built. your city name is apparently fair game, so that one{" "}
           <Link href="/visits" className="easter-quiet" title="hipaa who">
             still gets roasted publicly
           </Link>

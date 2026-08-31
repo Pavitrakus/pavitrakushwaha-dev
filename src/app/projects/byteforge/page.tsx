@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 
 export const metadata: Metadata = {
-  title: "byteforge. | Pavitra Kushwaha",
+  title: "byteforge.",
   description:
     "north india's largest independent student tech community. 4,500+ members. official Hack Club partner. Started from a small Discord server in Kanpur. Hosted Execron 1.0 BuildFest at IIT Kanpur with 290+ developers.",
   keywords: [
@@ -90,32 +90,25 @@ export default function ByteforgePage() {
       <PostChrome />
 
       <div className="post-body">
-        <p>Kanpur is a huge industrial city, but when it comes to tech and building software, it felt like a complete desert. If you&apos;re a kid here who wants to code projects or build startups, there was no community. Everyone is focused on studying for entrance exams or getting traditional credentials, which is fine, but it gets lonely when you just want to stay up all night building random tools.</p>
+        <p>kanpur has factories, coaching centers, and a lot of teenagers building alone after class. i wanted one room where a half-working project was enough reason to show up.</p>
 
-        <p>I got tired of waiting for some school or college to build a coding scene, so I decided to build it myself.</p>
+        <p>byteforge started as that room on discord. a few friends dropped screenshots, asked stupid questions, reviewed each other&apos;s code, and invited the next person.</p>
 
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>The Beginning</h2>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>from discord to a city</h2>
 
-        <p>byteforge started as a small Discord server for student builders. A few friends who wanted to share what they were working on, get feedback, and collaborate on projects. No budget, no sponsors, no experience running a community. just a shared server and a bunch of kids who wanted to build cool things.</p>
+        <p>the server grew into more than 4,500 members across discord, whatsapp, and in-person events. byteforge became an official hack club partner and started running workshops, project reviews, open-source sessions, mentor calls, and the occasional event big enough to eat the entire calendar.</p>
 
-        <p>It grew incredibly fast. What started as a handful of students turned into a regional movement. byteforge is now north India&apos;s largest independent student tech community with over 4,500 members across Discord, WhatsApp, and in-person events. We are an official Hack Club partner, which connects us to a global network of student-run coding clubs.</p>
+        <p>the useful bit is still small. someone posts a broken build on a tuesday night and another student from the same city knows why it broke.</p>
 
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Execron 1.0 BuildFest</h2>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>execron 1.0</h2>
 
-        <p>The flagship was Execron 1.0 at elite campus, <strong>IIT Kanpur</strong>. biggest hackathon the state has seen. 290+ builders, 24 hours. my team and i raised the whole thing and paid it out: $75k plus $2k cash. grinding, 2am calls, people coming in from Kanpur, Lucknow, Allahabad, Delhi. teams shipped web3, agri-tech, whatever they were actually angry about.</p>
+        <p>execron was the loud version of byteforge: a workshop and 24-hour build sprint for school students at <strong>iit kanpur</strong> during techkriti &apos;26. more than 290 builders came through. my team and i raised and distributed $75k in prizes and credits plus $2k in cash.</p>
 
-        <p>Execron proved that you don&apos;t need to live in Silicon Valley or Bangalore to have a vibrant dev culture. You just need a place where builders feel welcome to share their creations. also a place to{" "}<Link href="/visits" className="easter-quiet" title="kanpur sees you">see who showed up weirdly late at night</Link>.</p>
+        <p>the sponsor deck, mentor grid, power plan, judging, food, rooms, and the calls at 2am were raised and run by us. teams came from kanpur, lucknow, allahabad, and delhi, then spent the night shipping whatever they had been waiting to build. somehow we all survived. also useful: a place to{" "}<Link href="/visits" className="easter-quiet" title="kanpur sees you">see who showed up weirdly late at night</Link>.</p>
 
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>What byteforge Does</h2>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>what stays after the event</h2>
 
-        <ul style={{ marginTop: "0.5em" }}>
-          <li>Weekly project showcases and code reviews in themed channels</li>
-          <li>Monthly workshops on web dev, AI/ML, systems programming, and open source contribution</li>
-          <li>Hackathons and buildathons with real-world problem statements from local industries</li>
-          <li>Mentorship matching between experienced developers and beginners</li>
-          <li>Collaborative open source projects where members build portfolio-worthy work together</li>
-          <li>Speaker sessions with founders, engineers, and researchers from across India</li>
-        </ul>
+        <p>weekly project rooms, code reviews, workshops across web, ai, systems, and open source, plus mentors who remember what it felt like to ask the first question. events bring people in. the community is what gives them somewhere to return.</p>
 
         <p style={{ marginTop: "1.5em" }}>
           <a

@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 
 export const metadata: Metadata = {
-  title: "ClusterOrch-Gym | Pavitra Kushwaha",
+  title: "ClusterOrch-Gym",
   description:
     "RL benchmark for training AI agents to diagnose and fix distributed GPU training failures. 15 failure modes, 3 cluster sizes (8/64/256 GPUs). Discrete-event simulator, PPO agents. State space includes GPU utilization, memory pressure, network latency, NCCL timing, checkpoint freshness.",
   keywords: [
@@ -91,39 +91,35 @@ export default function ClusterorchGymPage() {
       <PostChrome />
 
       <div className="post-body">
-        <p>When you&apos;re training a model across hundreds of GPUs, things break in weird ways. Node failures, network partitions, NCCL timeout cascades, OOM conditions, silent gradient corruption. ClusterOrch-Gym is a reinforcement learning environment where agents learn to detect these failures and execute recovery policies autonomously, at machine speed, without waiting for a human operator to page in.</p>
+        <p>distributed training fails sideways. one sick gpu slows a collective, a timeout trips on another node, the job retries, and by the time someone gets paged the first useful signal is buried under the cascade. clusterorch-gym gives an agent a repeatable place to learn that sequence.</p>
 
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>The Environment</h2>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>the environment</h2>
 
-        <p><strong>Discrete-Event Simulator</strong><br />
-        Models real cluster telemetry from actual distributed training runs. The simulator ingests raw NCCL logs, dmesg outputs, GPU metrics from nvidia-smi, and network telemetry from infiniband counters. Event timestamps are drawn from empirical distributions so the failure arrival patterns statistically match production clusters.</p>
+        <p>the core is a discrete-event simulator that lines up nccl logs, kernel events, nvidia-smi samples, network counters, and checkpoint history on one clock. fault injectors can drop a link, poison a gradient, exhaust memory, slow a rank, or surface a gpu xid while the rest of the job keeps moving.</p>
 
-        <p><strong>State Space</strong><br />
-        GPU utilization per device, memory pressure (allocated vs. reserved vs. free), network latency between node pairs, NCCL collective timing (all-reduce, all-gather, reduce-scatter completion times), and checkpoint freshness (seconds since last successful checkpoint). The full observation vector is 847-dimensional for a 256-GPU cluster.</p>
+        <p>an observation is a rolling window over device utilization, memory pressure, collective latency, link health, rank progress, and checkpoint age. the window matters because an isolated timeout says very little; the order in which several weak signals arrive is usually the diagnosis.</p>
 
-        <p><strong>Action Space</strong><br />
-        Checkpoint rollback to last known good state, topology reconfiguration (ring vs. tree vs. hierarchical all-reduce), power capping of thermal-throttled nodes, job migration to a reserved spare pool, and node isolation for suspected hardware faults. The action space is structured as a hierarchical policy: high-level actions select a recovery strategy, low-level actions parameterize it (e.g., which checkpoint to roll back to).</p>
+        <p>actions include isolating a node, moving work to a spare, rolling back to a checkpoint, changing collective topology, restarting a rank, or waiting for another sample. every action has a cost in lost tokens, stale work, or healthy capacity, so an agent that panics at every spike learns an expensive lesson.</p>
 
-        <p><strong>Reward Function</strong><br />
-        Minimize training downtime while maximizing resource utilization. The reward is a weighted combination: negative time spent in degraded state, positive tokens/second processed, negative penalty for unnecessary preemption (false positives), and a sparsity bonus for correctly diagnosing intermittent faults on the first attempt. Weights are tuned via inverse reinforcement learning from operator logs.</p>
+        <p>the reward follows useful training time, recovery latency, checkpoint loss, and false interventions. the environment keeps diagnosis and recovery separate in the trace, which makes it possible to see whether a policy understood the fault or merely found a restart button that worked.</p>
 
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Training</h2>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>training</h2>
 
-        <p>Agents are trained using PPO (Proximal Policy Optimization) with a Transformer-based policy network that processes the temporal structure of telemetry data. The policy network uses a causal attention mask so it can only condition on past observations, mirroring the real-time constraints of the deployment environment. Training runs on a separate GPU cluster (4x A100s) with 32 parallel environment instances, achieving ~2M environment steps per hour.</p>
+        <p>the reference agent uses ppo with a temporal policy over the telemetry window. the causal mask limits it to signals already available at that step, and parallel simulator instances let the same fault arrive with different timing, load, and checkpoint freshness.</p>
 
-        <p>Agents are evaluated on failure scenarios extracted from real-world distributed training logs across three cluster sizes: 8 GPUs (single-node), 64 GPUs (multi-node), and 256 GPUs (cluster scale).</p>
+        <p>evaluation replays held-out scenarios across single-node and multi-node layouts. the score records recovered training time, interventions, and the amount of healthy work discarded along the way.</p>
 
-        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>Failure Modes</h2>
+        <h2 style={{ fontSize: "1.1em", fontWeight: 600, marginTop: "1.5em", marginBottom: "0.6em" }}>failure modes</h2>
 
         <p>The benchmark includes 15 distinct failure modes organized into 4 categories:</p>
 
-        <p><strong>Hardware:</strong> GPU XID errors, PCIe link degradation, ECC memory errors exceeding threshold, fan failure causing thermal throttling.</p>
+        <p><strong>hardware:</strong> gpu xid errors, pcie link degradation, ecc pressure, and thermal throttling.</p>
 
-        <p><strong>Network:</strong> NCCL watchdog timeout, infiniband link flap, TCP incast congestion, ARP table exhaustion on top-of-rack switches.</p>
+        <p><strong>network:</strong> nccl watchdog timeouts, infiniband link flaps, incast congestion, and routing failures.</p>
 
-        <p><strong>Software:</strong> CUDA out-of-memory, NCCL version mismatch across nodes, deadlocked all-reduce due to topology mismatch, checkpoint I/O hang on NFS.</p>
+        <p><strong>software:</strong> cuda out-of-memory, version mismatches, stuck collectives, and checkpoint i/o hangs.</p>
 
-        <p><strong>Silent:</strong> Gradient corruption (NaN injection with no error signal), straggler node slowing collective ops without failing, silent data corruption from ECC-disabled memory.</p>
+        <p><strong>silent:</strong> nan injection, stragglers, and corrupted state that keeps the job alive long enough to waste more compute.</p>
 
         <p style={{ marginTop: "1.5em" }}>
           <a

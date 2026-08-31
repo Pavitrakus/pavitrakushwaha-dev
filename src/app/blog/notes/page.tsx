@@ -6,7 +6,7 @@ import { notes } from "@/lib/notes";
 export const metadata: Metadata = {
   title: "notes",
   description:
-    "short notes from pavitra. the days that actually happened, not the essays.",
+    "short notes from Pavitra Kushwaha about good days, strange weeks, research, and things being built.",
   alternates: { canonical: "https://pavitrakushwaha.dev/blog/notes" },
 };
 
@@ -20,9 +20,9 @@ export default function NotesPage() {
       <h1>notes.</h1>
 
       <p>
-        the long pieces take months. these show up when a week actually did
-        something. a good day, a grant, a fork that verified. i&apos;ll add
-        more when it happens.
+        some days deserve a few paragraphs before they blur into the next
+        build. a good meeting, a grant landing, a fork finally behaving, a
+        week that got weird. they show up here whenever they happen
       </p>
 
       <ul className="entry-list" style={{ marginTop: "2em" }}>
