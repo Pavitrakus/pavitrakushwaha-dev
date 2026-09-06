@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { notes } from "@/lib/notes";
 import { work } from "@/lib/work";
+import { listPublishedEssays } from "@/lib/essays";
 
 const projectSlugs = [
   "vivacity",
@@ -14,9 +15,10 @@ const projectSlugs = [
   "clusterorch-gym",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = "https://pavitrakushwaha.dev";
   const current = new Date();
+  const essays = await listPublishedEssays();
 
   return [
     {
@@ -47,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}/projects/${slug}`,
       lastModified: current,
       changeFrequency: "monthly" as const,
-      priority: slug === "vivacity" ? 0.9 : 0.75,
+      priority: slug === "vivacity" ? 0.85 : 0.75,
     })),
     {
       url: `${base}/blog`,
@@ -75,13 +77,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/blog/how-it-started`,
-      lastModified: new Date("2026-09-01"),
+      lastModified: new Date("2026-09-06"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${base}/blog/bangalore-trip`,
-      lastModified: new Date("2026-07-05"),
+      lastModified: new Date("2026-09-06"),
       changeFrequency: "monthly",
       priority: 0.7,
     },
@@ -91,5 +93,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    ...essays.map((essay) => ({
+      url: `${base}/blog/${essay.slug}`,
+      lastModified: new Date(essay.updatedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   ];
 }

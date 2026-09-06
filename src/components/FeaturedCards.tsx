@@ -20,8 +20,8 @@ const cards: Card[] = [
   },
   {
     href: "/blog/bangalore-trip",
-    title: "Two weeks in Bangalore",
-    desc: "hackathons, a walk-in, and two days broke at a shell pump. the longer piece.",
+    title: "my month in bangalore",
+    desc: "hackathons, a walk-in at prolearn, and two days outside a shell pump.",
     image: "/featured/bangalore-office.jpg",
     alt: "Pavitra with friends in a Bangalore office",
   },

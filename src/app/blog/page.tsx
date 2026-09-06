@@ -1,22 +1,31 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
+import { NotifyForm } from "@/components/NotifyForm";
 import { notes } from "@/lib/notes";
+import { listPublishedEssays } from "@/lib/essays";
 
-const posts = [
+export const dynamic = "force-dynamic";
+
+type PostRow = {
+  year: string;
+  slug: string;
+  title: string;
+  desc: string;
+  link?: string;
+};
+
+const posts: PostRow[] = [
   {
     year: "2026",
     slug: "how-it-started",
     title: "how it all started",
-    desc: "kanpur, a first computer, orca, quitting the jee track, bangalore, and how that hunger became vivacity.",
+    desc: "kanpur, a first computer, orca, leaving the jee track, bangalore, and how that hunger became vivacity.",
   },
   {
     year: "2026",
     slug: "bangalore-trip",
-    title: "my month in bangalore (met the best people)",
-    desc: "a month in bangalore: two hackathons, a walk-in at prolearn, two days broke at a petrol pump, and the best people. 15 jun - 5 jul 2026.",
+    title: "my month in bangalore",
+    desc: "two hackathons, a walk-in at prolearn, two days outside a petrol pump, and the people. 15 jun - 5 jul 2026.",
   },
   {
     year: "2026",
@@ -33,17 +42,20 @@ const posts = [
   },
 ];
 
-export default function BlogPage() {
-  const [email, setEmail] = useState("");
-  const [sent, setSent] = useState(false);
+export default async function BlogPage() {
+  const live = await listPublishedEssays();
+  const taken = new Set(posts.map((p) => p.slug));
+  const extras = live
+    .filter((e) => !taken.has(e.slug))
+    .sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1))
+    .map((e): PostRow => ({
+      year: e.year,
+      slug: e.slug,
+      title: e.title,
+      desc: e.dek,
+    }));
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      window.location.href = `mailto:pavitra@paxus.in?subject=Notify me when you write&body=hey pavitra, ping me when you drop something new. my email: ${email}`;
-      setSent(true);
-    }
-  };
+  const feed = [...extras, ...posts];
 
   return (
     <main>
@@ -64,11 +76,11 @@ export default function BlogPage() {
       </p>
 
       <ul className="entry-list" style={{ marginTop: "2em" }}>
-        {posts.map((p) => (
+        {feed.map((p) => (
           <li key={p.slug}>
             <span className="entry-year">{p.year}</span>
             <span className="entry-name">
-              <Link href={p.link ? p.link : `/blog/${p.slug}`}>{p.title}</Link>
+              <Link href={p.link || `/blog/${p.slug}`}>{p.title}</Link>
               <span className="entry-desc">{p.desc}</span>
             </span>
           </li>
@@ -96,22 +108,7 @@ export default function BlogPage() {
         <p style={{ marginBottom: "0.6em" }}>
           get notified when i write something new:
         </p>
-        {sent ? (
-          <p className="muted" style={{ fontSize: "0.82em" }}>
-            you&apos;re on the list. i&apos;ll reach out when something&apos;s ready :)
-          </p>
-        ) : (
-          <form onSubmit={handleSubmit} className="notify-form">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your email"
-              required
-            />
-            <button type="submit">notify me</button>
-          </form>
-        )}
+        <NotifyForm />
       </div>
 
       <SiteFooter

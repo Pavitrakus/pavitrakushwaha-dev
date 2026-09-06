@@ -35,8 +35,8 @@ export default function FishyMeshPage() {
       </h1>
 
       <p className="muted" style={{ fontSize: "0.9em", fontStyle: "italic" }}>
-        was tired when i started writing this. will finish it soon. some things
-        take longer to become a sentence than they do to become a thought.
+        started this when i was tired and never quite finished it. some
+        thoughts take longer to become a sentence than they did to show up.
       </p>
 
       <PostChrome path="/blog/fishy-mesh" />

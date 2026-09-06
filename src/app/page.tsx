@@ -94,12 +94,12 @@ export default function Home() {
       <h1>Hey, I&apos;m Pavitra.</h1>
 
       <p>
-        i&apos;m 16, founder of{" "}
+        i&apos;m 16, building{" "}
         <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
           <Favicon domain="tryvivacity.com" alt="Vivacity" />
           Vivacity
         </a>
-        , a company building an executable simulation runtime for AI agents.
+        , a company making an executable simulation runtime for AI agents.
         research fellow at{" "}
         <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
           <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
@@ -216,13 +216,13 @@ export default function Home() {
         </li>
 
         <li>
-          cofounder and cpo of{" "}
+          building{" "}
           <Link href="/work/vivacity" className="work-row">
             <Favicon domain="tryvivacity.com" alt="Vivacity" />
             Vivacity
             <span className="work-arrow" aria-hidden="true">→</span>
           </Link>
-          , working on product, pipelines, and the runtime contract
+          , on product, pipelines, and the runtime contract
         </li>
 
         <li>

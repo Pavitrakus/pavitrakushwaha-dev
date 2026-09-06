@@ -272,6 +272,46 @@ p {
   border: 1px solid var(--border-line);
 }
 
+.essay-body {
+  line-height: 1.75;
+  color: var(--fg-soft);
+}
+
+.essay-body p,
+.essay-body h2,
+.essay-body h3,
+.essay-body blockquote,
+.essay-body ul,
+.essay-body ol {
+  margin: 0 0 1.2em;
+}
+
+.essay-body h2 {
+  margin: 1.7em 0 0.55em;
+}
+
+.essay-body blockquote {
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid var(--quote-border);
+  color: var(--quote-fg);
+  font-style: italic;
+}
+
+.essay-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em auto;
+  border-radius: 2px;
+  border: 1px solid var(--border-line);
+}
+
+.essay-body a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .post-body img.inline-mark,
 .post-body a img.inline-mark,
 .post-body img.wordmark,
@@ -1531,6 +1571,261 @@ footer a:hover {
   .viva-sim-full .viva-sim-canvas-wrap {
     height: 268px;
   }
+}
+
+/* ─────────────────────────────────────────
+   Admin desk
+───────────────────────────────────────── */
+.admin-shell {
+  max-width: 42em;
+  margin: 0 auto;
+  padding-bottom: calc(5.5em + env(safe-area-inset-bottom, 0px));
+}
+
+.admin-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.admin-login {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  margin-top: 1.4em;
+  max-width: 22em;
+}
+
+.admin-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78em;
+  color: var(--fg-muted);
+}
+
+.admin-login input,
+.admin-title,
+.admin-dek,
+.admin-linkbar input {
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 0.7em 0.8em;
+  border: 1.5px solid var(--input-border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: inherit;
+}
+
+.admin-title {
+  font-size: 1.45em;
+  font-weight: 600;
+  border: none;
+  padding: 0.2em 0;
+  margin: 0.4em 0 0.2em;
+}
+
+.admin-dek {
+  border: none;
+  padding: 0.2em 0 0.8em;
+  color: var(--fg-muted);
+  font-style: italic;
+}
+
+.admin-login input:focus,
+.admin-title:focus,
+.admin-dek:focus,
+.admin-linkbar input:focus {
+  outline: none;
+  border-color: var(--marker);
+}
+
+.admin-title:focus,
+.admin-dek:focus {
+  border-color: transparent;
+}
+
+.admin-error {
+  color: #c45c5c;
+  font-size: 0.88em;
+  margin: 0;
+}
+
+.admin-login button,
+.admin-primary,
+.admin-savebar button,
+.admin-linkbar button {
+  min-height: 44px;
+  padding: 0.55em 1.1em;
+  border: 1.5px solid var(--btn-border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--btn-fg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.84em;
+  cursor: pointer;
+}
+
+.admin-primary {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.4em 0 1.4em;
+  text-decoration: none;
+}
+
+.admin-login button:hover,
+.admin-primary:hover,
+.admin-savebar button:hover,
+.admin-linkbar button:hover {
+  background: var(--btn-hover-bg);
+  color: var(--btn-hover-fg);
+}
+
+.admin-publish {
+  background: var(--fg) !important;
+  color: var(--bg) !important;
+  border-color: var(--fg) !important;
+}
+
+.admin-text-btn {
+  background: none;
+  border: none;
+  color: var(--fg-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.88em;
+}
+
+.admin-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8em;
+  padding: 0.85em 0;
+  border-bottom: 1px solid var(--border-soft);
+  align-items: baseline;
+}
+
+.admin-row-actions {
+  display: flex;
+  gap: 0.8em;
+  flex-shrink: 0;
+  font-size: 0.82em;
+}
+
+.admin-row-actions button {
+  background: none;
+  border: none;
+  color: var(--fg-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.admin-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em;
+  padding: 0.45em 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.admin-toolbar button,
+.admin-toolbar select,
+.admin-file {
+  min-height: 40px;
+  min-width: 40px;
+  padding: 0.35em 0.55em;
+  border: 1px solid var(--border-line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--fg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78em;
+  cursor: pointer;
+}
+
+.admin-toolbar button.is-on {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.admin-file {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-file input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.admin-linkbar {
+  display: flex;
+  gap: 0.4em;
+  margin: 0.6em 0;
+}
+
+.admin-canvas {
+  min-height: 50vh;
+  padding: 0.8em 0 2em;
+  font-size: 1.05em;
+  line-height: 1.75;
+}
+
+.admin-canvas .tiptap,
+.admin-canvas .ProseMirror {
+  outline: none;
+  min-height: 46vh;
+}
+
+.admin-canvas .ProseMirror p.is-editor-empty:first-child::before {
+  color: var(--fg-faint);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.admin-canvas img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+.admin-savebar {
+  position: sticky;
+  bottom: 0;
+  z-index: 6;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  align-items: center;
+  padding: 0.7em 0 calc(0.7em + env(safe-area-inset-bottom, 0px));
+  background: var(--bg);
+  border-top: 1px solid var(--border-soft);
+}
+
+.admin-status {
+  flex: 1 1 8em;
+  font-size: 0.82em;
+  color: var(--fg-muted);
 }
 
 @media (prefers-reduced-motion: reduce) {

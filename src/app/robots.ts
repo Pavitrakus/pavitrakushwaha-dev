@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/v01"],
+        disallow: ["/v01", "/admin", "/admin/", "/api/admin"],
       },
     ],
     sitemap: "https://pavitrakushwaha.dev/sitemap.xml",

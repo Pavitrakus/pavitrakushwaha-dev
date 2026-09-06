@@ -78,7 +78,7 @@ export const work: WorkItem[] = [
     body: [
       "i contributed to openai/codex, the open-source coding agent. codex reads a repository, uses terminal tools, works inside a sandbox, and leaves a diff a human can inspect.",
       "the loop is simple enough to say out loud: the model proposes an action, policy decides whether it can run, the tool returns an observation, and the next step sees that result. the hard engineering lives around approvals, filesystem boundaries, logs, and the point where generated text becomes a real command.",
-      "that is the part i keep coming back to. agents get useful when they can act, and they stay useful when a person can reconstruct what happened after the run.",
+      "agents get useful when they can act, and they stay useful when a person can reconstruct what happened after the run."
     ],
   },
   {
@@ -125,7 +125,7 @@ export const work: WorkItem[] = [
     body: [
       "i worked with the supabase team on mpc for their company. multi-party computation: several parties should be able to evaluate a function over private inputs and learn only what the protocol allows.",
       "that is the same family of questions i read at iitk. secret sharing, rounds, abort, what a party can infer from timing. here it had to sit on a real postgres stack instead of a paper protocol.",
-      "the interesting part is the join. the database still has rows, policies, and a session. the computation still has shares and a threat model. neither side gets to pretend the other is a toy.",
+      "the interesting part is the join. the database still has rows, policies, and a session, and the computation still has shares and a threat model, so neither side gets to pretend the other is simple."
     ],
   },
   {
@@ -184,7 +184,7 @@ export const work: WorkItem[] = [
     mark: { kind: "logo", src: "/vibecon-logo.png", alt: "VIBECON" },
     body: [
       "vibecon started with more than 20,000 builders and i made the final 20 in india. i also got to interview mukund jha from emergent labs and jared friedman from y combinator.",
-      "i showed up with a lot of questions. how they choose a market, how they notice a founder is lying to themselves, and which parts of an early product deserve another month. the conversations stayed useful long after the ranking.",
+      "i showed up with a lot of questions about how they choose a market, how they notice a founder is lying to themselves, and which parts of an early product deserve another month. those conversations stayed in my head longer than the ranking."
     ],
   },
   {
@@ -260,7 +260,7 @@ export const work: WorkItem[] = [
     body: [
       "i wrote and published a paper on synthetic intelligence at 16. the idea is that intelligence can be treated as an evolving system with persistent state, environmental coupling, and room to keep adapting after deployment.",
       "the vocabulary sits near coupled dynamics and organoid intelligence: a system carries memory, receives energy and information from its environment, and changes through that loop. vivacity grew from the same curiosity about worlds that continue after an observation ends.",
-      "i was 16 when i wrote it. i still am, which makes the chronology slightly ridiculous.",
+      "i was 16 when i wrote it, and i still am, which makes the chronology slightly ridiculous."
     ],
   },
   {

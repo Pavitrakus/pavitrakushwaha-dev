@@ -5,10 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Vivacity and projects by Pavitra Kushwaha: simulation runtime for AI agents, Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, and byteforge.",
+    "Projects by Pavitra Kushwaha: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, and byteforge.",
   keywords: [
     "Pavitra Kushwaha projects",
-    "Vivacity simulation runtime",
     "Bucket application agent",
     "WhoCodedMore",
     "ORCA agentic AI",
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
     url: "https://pavitrakushwaha.dev/projects",
     title: "Projects | Pavitra Kushwaha",
     description:
-      "Vivacity and side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
+      "Side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
     siteName: "Pavitra Kushwaha",
   },
   twitter: {
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     creator: "@pavikshw",
     title: "Projects | Pavitra Kushwaha",
     description:
-      "Vivacity and side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
+      "Side projects: Bucket, WhoCodedMore, ORCA, D2AR, ORBIS 2045, ClusterOrch-Gym, LumenSeed, byteforge.",
   },
 };
 
@@ -65,17 +64,6 @@ function siteLabel(url: string) {
 }
 
 const projects: Project[] = [
-  {
-    year: "2026",
-    slug: "vivacity",
-    name: "Vivacity",
-    icon: null,
-    favicon: "tryvivacity.com",
-    shortDesc:
-      "simulation runtime for AI agents. persistent world state, addressable forks, backend routing, and numerical checks before a branch becomes live.",
-    site: "https://tryvivacity.com",
-    tag: "Company / Runtime",
-  },
   {
     year: "2026",
     slug: "bucket",
@@ -172,9 +160,13 @@ export default function ProjectsPage() {
       </h1>
 
       <p>
-        vivacity is the company i&apos;m building now. the rest are side
-        projects, research prototypes, and a community that got much bigger
-        than its first discord server. most of the code lives on my{" "}
+        side projects, research prototypes, and a community that got much
+        bigger than its first discord server. the company is{" "}
+        <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
+          vivacity
+        </a>
+        , and it lives on the homepage, not in this list. most of the code
+        lives on my{" "}
         <a
           href="https://github.com/Pavitrakus"
           target="_blank"
