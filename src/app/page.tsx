@@ -110,13 +110,9 @@ export default function Home() {
 
       <p>
         class 3 was animations. class 5 was the first real line of code. it
-        turned into companies, papers, a stretch with{" "}
-        <a href="https://www.nvidia.com/en-us/research/" target="_blank" rel="noopener noreferrer">
-          <Favicon domain="nvidia.com" alt="NVIDIA" />
-          NVIDIA Research
-        </a>
-        , and too many hackathons. most days i&apos;m trying to understand
-        intelligence well enough to leave a dent.{" "}
+        turned into companies, papers, and too many hackathons. most days
+        i&apos;m trying to understand intelligence well enough to leave a
+        dent.{" "}
         <Link href="/blog/how-it-started">how it all started →</Link>
       </p>
 
@@ -160,16 +156,6 @@ export default function Home() {
         <h2 id="work-home-title">What I&apos;ve been up to</h2>
 
         <ul className="home-work">
-        <li>
-          worked with{" "}
-          <Link href="/work/nvidia-augonnet" className="work-row">
-            <Favicon domain="nvidia.com" alt="NVIDIA" />
-            Cédric Augonnet at NVIDIA Research
-            <span className="work-arrow" aria-hidden="true">→</span>
-          </Link>
-          , around programming systems and accelerator runtimes
-        </li>
-
         <li>
           contributed to{" "}
           <Link href="/work/openai-codex" className="work-row">

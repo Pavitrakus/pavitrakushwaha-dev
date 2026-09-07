@@ -8,7 +8,7 @@ import { work, type WorkMark } from "@/lib/work";
 export const metadata: Metadata = {
   title: "work",
   description:
-    "everything pavitra has been up to: vivacity, iitk, nvidia with cédric augonnet, openai codex oss, inflection, execron, and the rest.",
+    "everything pavitra has been up to: vivacity, iitk, openai codex oss, inflection, execron, and the rest.",
   alternates: { canonical: "https://pavitrakushwaha.dev/work" },
 };
 

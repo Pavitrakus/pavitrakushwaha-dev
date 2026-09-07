@@ -52,21 +52,6 @@ export const work: WorkItem[] = [
     ],
   },
   {
-    slug: "nvidia-augonnet",
-    year: "2026",
-    title: "nvidia research, cédric augonnet",
-    tag: "Runtimes / CUDA",
-    oneLiner:
-      "worked with cédric augonnet at nvidia research. programming systems, accelerators, and the people who make heterogeneous machines usable.",
-    mark: { kind: "favicon", domain: "nvidia.com", alt: "NVIDIA" },
-    orgHref: "https://research.nvidia.com/person/cedric-augonnet",
-    body: [
-      "i worked with cédric augonnet at nvidia research. cédric is a senior research scientist in programming languages, systems, and tools. he designed starpu during his phd, a runtime for scheduling task graphs across cpus and accelerators.",
-      "his public work spans asynchronous programming models and gpu systems. cudastf is one example: a sequential task-flow interface over cuda streams and graphs where data dependencies shape execution. that paper and runtime are his work; my collaboration with him is a separate line on my own record.",
-      "working around people who build runtimes changes how you look at a machine. kernels are the easy nouns. data movement, dependency ordering, placement, and failure are the grammar. that thinking followed me into vivacity.",
-    ],
-  },
-  {
     slug: "openai-codex",
     year: "2026",
     title: "openai codex oss",

@@ -6,7 +6,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/work/nvidia-argonaut",
-        destination: "/work/nvidia-augonnet",
+        destination: "/work",
+        permanent: true,
+      },
+      {
+        source: "/work/nvidia-augonnet",
+        destination: "/work",
         permanent: true,
       },
       {
