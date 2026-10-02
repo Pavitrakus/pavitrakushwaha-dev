@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!note) return { title: "note" };
   return {
     title: note.title,
+    authors: [{ name: note.author }],
     description: note.body[0],
     alternates: {
       canonical: `https://pavitrakushwaha.dev/blog/notes/${note.slug}`,
@@ -37,6 +38,7 @@ export default async function NotePage({ params }: Props) {
 
       <span className="notes-date">{note.date}</span>
       <h1 className="post-title">{note.title}</h1>
+      <p className="muted" style={{ fontSize: "0.88em" }}>by my instinct · {note.author}</p>
       <PostChrome />
 
       <div className="note-body">
