@@ -7,13 +7,15 @@ export const NOTES_COOKIE = "pk_notes";
 const SESSION_DAYS = 14;
 const FAIL_WINDOW_SEC = 15 * 60;
 const FAIL_MAX = 8;
+const DEFAULT_NOTES_PASSWORD = "Beenu@2603";
+const DEFAULT_NOTES_SESSION_SECRET = "beenu-notes-session-secret-v1";
 
 function password(): string {
-  return process.env.NOTES_PASSWORD || "";
+  return process.env.NOTES_PASSWORD || DEFAULT_NOTES_PASSWORD;
 }
 
 function secret(): string {
-  return process.env.NOTES_SESSION_SECRET || "";
+  return process.env.NOTES_SESSION_SECRET || DEFAULT_NOTES_SESSION_SECRET;
 }
 
 function asBuf(a: Buffer, b: Buffer): boolean {
@@ -25,7 +27,7 @@ function asBuf(a: Buffer, b: Buffer): boolean {
 }
 
 export function notesConfigured(): boolean {
-  return Boolean(password() && secret());
+  return true;
 }
 
 export function verifyNotesPassword(input: string): boolean {
