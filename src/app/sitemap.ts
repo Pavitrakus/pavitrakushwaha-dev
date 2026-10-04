@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { notes } from "@/lib/notes";
 import { work } from "@/lib/work";
 import { listPublishedEssays } from "@/lib/essays";
 
@@ -57,18 +56,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-    {
-      url: `${base}/blog/notes`,
-      lastModified: current,
-      changeFrequency: "weekly",
-      priority: 0.75,
-    },
-    ...notes.map((note) => ({
-      url: `${base}/blog/notes/${note.slug}`,
-      lastModified: new Date(note.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.65,
-    })),
     {
       url: `${base}/visits`,
       lastModified: current,
