@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NotesAccessForm } from "@/components/NotesAccessForm";
+import { NotesLockButton } from "@/components/NotesLockButton";
 import { SiteFooter } from "@/components/SiteFooter";
+import { hasNotesSession, notesConfigured } from "@/lib/notes-auth";
 import { notes } from "@/lib/notes";
 
 export const metadata: Metadata = {
@@ -10,12 +13,39 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://pavitrakushwaha.dev/blog/notes" },
 };
 
-export default function NotesPage() {
+export const dynamic = "force-dynamic";
+
+export default async function NotesPage() {
+  const configured = notesConfigured();
+  const authed = configured && (await hasNotesSession());
+
+  if (!authed) {
+    return (
+      <main>
+        <Link href="/blog" className="back-link">
+          ← writing
+        </Link>
+        <h1>Notes</h1>
+        {!configured ? (
+          <p className="muted">notes access is not configured yet.</p>
+        ) : (
+          <>
+            <p className="muted">private notes. enter password to read.</p>
+            <NotesAccessForm />
+          </>
+        )}
+      </main>
+    );
+  }
+
   return (
     <main>
-      <Link href="/blog" className="back-link">
-        ← writing
-      </Link>
+      <div className="admin-top" style={{ marginBottom: "1.2em" }}>
+        <Link href="/blog" className="back-link" style={{ marginBottom: 0 }}>
+          ← writing
+        </Link>
+        <NotesLockButton />
+      </div>
 
       <h1>Notes</h1>
       <p className="mono muted">by my instinct</p>
