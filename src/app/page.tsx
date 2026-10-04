@@ -188,6 +188,21 @@ export default function Home() {
         </li>
 
         <li>
+          Awarded a $10k grant by{" "}
+          <a
+            href="https://www.mercatus.org/emergent-ventures"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="work-row"
+          >
+            <Favicon domain="mercatus.org" alt="Emergent Ventures" />
+            Emergent Ventures
+            <span className="work-arrow" aria-hidden="true">↗</span>
+          </a>{" "}
+          to build Vivacity
+        </li>
+
+        <li>
           research fellow at{" "}
           <Link href="/work/iitk-mpc" className="work-row">
             <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
