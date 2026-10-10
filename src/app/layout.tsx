@@ -153,7 +153,7 @@ const jsonLd = {
         "Authored a research paper on Synthetic Intelligence at 16",
         "Keynoted SparkX at Techfest '25 (IIT Bombay)",
         "Won a match in international Robowars 8kg at Techfest, IIT Bombay",
-        "Inflection Grant recipient",
+        "Emergent Ventures grant recipient",
         "Organized Execron 1.0 at IIT Kanpur",
       ],
       hasOccupation: [

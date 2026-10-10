@@ -156,65 +156,60 @@ export default function Home() {
         <h2 id="work-home-title">What I&apos;ve been up to</h2>
 
         <ul className="home-work">
-        <li>
-          contributed to{" "}
-          <Link href="/work/openai-codex" className="work-row">
-            <Favicon domain="openai.com" alt="OpenAI" />
-            OpenAI Codex OSS
-            <span className="work-arrow" aria-hidden="true">→</span>
-          </Link>
-          , the terminal agent with a real tool and approval loop
-        </li>
+          <li>
+            Awarded a $10k grant by{" "}
+            <a
+              href="https://www.mercatus.org/emergent-ventures"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="work-row"
+            >
+              <Favicon domain="mercatus.org" alt="Emergent Ventures" />
+              Emergent Ventures
+              <span className="work-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </a>{" "}
+            to build Vivacity
+          </li>
 
-        <li>
-          worked with the{" "}
-          <Link href="/work/supabase" className="work-row">
-            <Favicon domain="supabase.com" alt="Supabase" />
-            supabase team on mpc
-            <span className="work-arrow" aria-hidden="true">→</span>
-          </Link>
-          , for their company
-        </li>
+          <li>
+            contributed to{" "}
+            <Link href="/work/openai-codex" className="work-row">
+              <Favicon domain="openai.com" alt="OpenAI" />
+              OpenAI Codex OSS
+              <span className="work-arrow" aria-hidden="true">→</span>
+            </Link>
+            , the terminal agent with a real tool and approval loop
+          </li>
 
-        <li>
-          got an{" "}
-          <Link href="/work/inflection" className="work-row">
-            <Favicon domain="edgecity.live" alt="Inflection Grants" />
-            Inflection Grant
-            <span className="work-arrow" aria-hidden="true">→</span>
-          </Link>
-          . $2k from the pool funded by Jensen Huang&apos;s $960k jacket.
-          hwahwhahwa
-        </li>
+          <li>
+            worked with the{" "}
+            <Link href="/work/supabase" className="work-row">
+              <Favicon domain="supabase.com" alt="Supabase" />
+              supabase team on mpc
+              <span className="work-arrow" aria-hidden="true">→</span>
+            </Link>
+            , for their company
+          </li>
 
-        <li>
-          Awarded a $10k grant by{" "}
-          <a
-            href="https://www.mercatus.org/emergent-ventures"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="work-row"
-          >
-            <Favicon domain="mercatus.org" alt="Emergent Ventures" />
-            Emergent Ventures
-            <span className="work-arrow" aria-hidden="true">↗</span>
-          </a>{" "}
-          to build Vivacity
-        </li>
-
-        <li>
-          research fellow at{" "}
-          <Link href="/work/iitk-mpc" className="work-row">
-            <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
-            IIT Kanpur
-            <span className="work-arrow" aria-hidden="true">→</span>
-          </Link>
-          , working on mpc and cryptography under{" "}
-          <a href="https://avadapal.github.io/" target="_blank" rel="noopener noreferrer">
-            Prof. Adithya Vadapalli
-          </a>{" "}
-          in cse
-        </li>
+          <li>
+            research fellow at{" "}
+            <Link href="/work/iitk-mpc" className="work-row">
+              <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
+              IIT Kanpur
+              <span className="work-arrow" aria-hidden="true">→</span>
+            </Link>
+            , working on mpc and cryptography under{" "}
+            <a
+              href="https://avadapal.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Prof. Adithya Vadapalli
+            </a>{" "}
+            in cse
+          </li>
 
         <li>
           building{" "}

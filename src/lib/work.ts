@@ -67,21 +67,6 @@ export const work: WorkItem[] = [
     ],
   },
   {
-    slug: "inflection",
-    year: "2026",
-    title: "inflection grant",
-    tag: "Grant",
-    oneLiner:
-      "$2k from edge city. the pool was jensen huang's leather jacket after sotheby's hit $960k.",
-    mark: { kind: "favicon", domain: "edgecity.live", alt: "Edge City" },
-    orgHref: "https://www.inflectiongrants.com/",
-    body: [
-      "i got an inflection grant from edge city. it is $2k for builders under 25 who have something early enough that a small amount of money can still bend the path.",
-      "the funny part is the pool. jensen huang signed one of his black leather jackets, sotheby's sold it for $960k, and the proceeds went to the edge institute programs that support these grants and fellowships.",
-      "a jacket changed hands in new york and some of that money reached a 16 year old building a runtime in kanpur. hwahwhahwa. i put mine back into vivacity.",
-    ],
-  },
-  {
     slug: "execron",
     year: "2026",
     title: "execron 1.0",
