@@ -98,7 +98,7 @@ export default function Home() {
           <Favicon domain="tryvivacity.com" alt="Vivacity" />
           Vivacity
         </a>
-        {" "}— an executable simulation runtime for AI agents — and working as a
+        , an executable simulation runtime for AI agents, and working as a
         research fellow at{" "}
         <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
           <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
@@ -110,7 +110,7 @@ export default function Home() {
         class 3 was animations; class 5 was the first real line of code. since
         then it&apos;s been companies, papers, and too many hackathons. most
         days i&apos;m trying to understand intelligence well enough to leave a
-        dent —{" "}
+        dent.{" "}
         <Link href="/blog/how-it-started">how it all started →</Link>
       </p>
 
