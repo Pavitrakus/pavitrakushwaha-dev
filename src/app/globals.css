@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
   color-scheme: light;
@@ -106,13 +106,16 @@
 }
 
 html, body {
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 50% -18%, color-mix(in srgb, var(--fg) 5%, transparent), transparent 42%),
+    var(--bg);
   color: var(--fg);
-  font-family: 'Lora', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-size: 20px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   overflow-x: clip;
   text-size-adjust: 100%;
@@ -220,6 +223,7 @@ h1 {
   letter-spacing: -0.03em;
   line-height: 1.18;
   margin: 0 0 0.55em;
+  text-shadow: 0 1px 18px color-mix(in srgb, var(--fg) 10%, transparent);
 }
 
 h2 {
@@ -818,19 +822,6 @@ footer a:hover {
 }
 
 /* Vivacity runtime */
-.home-vivacity {
-  margin-top: 2em;
-}
-
-.home-vivacity-link {
-  margin: 0.85em 0 0;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7em;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45em 1.2em;
-}
-
 .viva-sim {
   overflow: hidden;
   margin: 1.2em 0;

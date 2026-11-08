@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
-import { VivacitySim } from "@/components/VivacitySim";
 import { FeaturedCards } from "@/components/FeaturedCards";
 
 /* ── inline SVG social icons ── */
@@ -99,20 +98,19 @@ export default function Home() {
           <Favicon domain="tryvivacity.com" alt="Vivacity" />
           Vivacity
         </a>
-        , a company making an executable simulation runtime for AI agents.
+        {" "}— an executable simulation runtime for AI agents — and working as a
         research fellow at{" "}
         <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener noreferrer">
           <Logo src="/iitk-logo.jpg" alt="IIT Kanpur" />
           IIT Kanpur
         </a>
-        .
       </p>
 
       <p>
-        class 3 was animations. class 5 was the first real line of code. it
-        turned into companies, papers, and too many hackathons. most days
-        i&apos;m trying to understand intelligence well enough to leave a
-        dent.{" "}
+        class 3 was animations; class 5 was the first real line of code. since
+        then it&apos;s been companies, papers, and too many hackathons. most
+        days i&apos;m trying to understand intelligence well enough to leave a
+        dent —{" "}
         <Link href="/blog/how-it-started">how it all started →</Link>
       </p>
 
@@ -133,24 +131,6 @@ export default function Home() {
           30 minutes. direct with me. cal.com/pavitrakushwaha
         </a>
       </p>
-
-      <section className="home-section home-vivacity" aria-labelledby="vivacity-home-title">
-        <header className="section-head">
-          <h2 id="vivacity-home-title">Vivacity</h2>
-          <span className="mono section-meta">example 001</span>
-        </header>
-        <p className="section-kicker">
-          Simulation infrastructure for agents that need to reason about
-          what happens next.
-        </p>
-        <VivacitySim mode="compact" />
-        <p className="home-vivacity-link">
-          <a href="https://tryvivacity.com" target="_blank" rel="noopener noreferrer">
-            visit vivacity ↗
-          </a>
-          <Link href="/projects/vivacity">try the model →</Link>
-        </p>
-      </section>
 
       <section className="home-section" aria-labelledby="work-home-title">
         <h2 id="work-home-title">What I&apos;ve been up to</h2>
